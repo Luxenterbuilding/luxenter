@@ -9,8 +9,8 @@
   <title>Luxenter for Building Contracting - Dubai</title>
 
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;500;700&display=swap" />
-  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
-
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+  
   <style>
     :root {
       --marine: #0a1f44;
@@ -18,11 +18,19 @@
       --blanc: #ffffff;
     }
 
-    body {
+    html, body {
+      height: 100%;
       margin: 0;
+      padding: 0;
+      background-color: var(--blanc);
+      box-sizing: border-box;
+    }
+
+    body {
       font-family: 'Roboto', sans-serif;
-      background: var(--blanc);
       color: var(--marine);
+      display: flex;
+      flex-direction: column;
     }
 
     header {
@@ -71,11 +79,11 @@
       font-weight: 600;
       font-size: 1.1rem;
       text-decoration: none;
-      transition: color 0.3s;
     }
 
     nav.navbar a:hover {
       color: var(--blanc);
+      transition: color 0.3s;
     }
 
     .hero {
@@ -88,12 +96,6 @@
       justify-content: center;
       color: var(--blanc);
       text-align: center;
-      animation: bgShift 20s ease-in-out infinite;
-    }
-
-    @keyframes bgShift {
-      0%, 100% { background-position: center; }
-      50% { background-position: top center; }
     }
 
     .hero-overlay {
@@ -130,19 +132,14 @@
       font-weight: bold;
       cursor: pointer;
       margin-top: 1.5rem;
-      transition: all 0.3s ease, box-shadow 0.3s ease;
-      animation: pulse 2.5s infinite ease-in-out;
+      transition: all 0.3s ease;
+      display: inline-block;
+      text-decoration: none;
     }
 
     .cta-button:hover {
       background-color: #fff3d1;
       transform: scale(1.05);
-      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-    }
-
-    @keyframes pulse {
-      0%, 100% { transform: scale(1); }
-      50% { transform: scale(1.03); }
     }
 
     footer {
@@ -150,6 +147,7 @@
       color: var(--or);
       padding: 2rem 1rem;
       text-align: center;
+      margin-top: auto;
     }
 
     .footer-links {
@@ -204,6 +202,7 @@
       transition: opacity 0.6s ease, transform 0.6s ease;
     }
   </style>
+
 </head>
 <body>
 
@@ -213,7 +212,7 @@
     </div>
     <div class="lang-switcher">
       <label for="langSwitcher" data-i18n="choose_language_label">Langue :</label>
-      <select id="langSwitcher" aria-label="Choisir la langue">
+      <select id="langSwitcher">
         <option value="fr">Français</option>
         <option value="en">English</option>
         <option value="ar">العربية</option>
@@ -221,7 +220,7 @@
     </div>
   </header>
 
-  <nav class="navbar" data-aos="fade-down">
+  <nav class="navbar">
     <a href="index.html" data-i18n="nav_home">Accueil</a>
     <a href="apropos.html" data-i18n="nav_about">À propos</a>
     <a href="services.html" data-i18n="nav_services">Services</a>
@@ -236,22 +235,23 @@
       <p data-i18n="hero_subtitle">
         Réalisation de projets prestigieux à Dubaï. Excellence, innovation et architecture de pointe.
       </p>
-      <button class="cta-button" onclick="location.href='contact.html'" data-i18n="cta_contact">Nous contacter</button>
+      <a class="cta-button" href="tel:+971123456789" data-i18n="cta_contact">Nous contacter</a>
     </div>
   </section>
 
-  <footer data-aos="fade-up">
+  <footer>
     <div class="footer-links">
       <a href="mentions-legales.html" data-i18n="legal_notice">Mentions légales</a>
       <a href="confidentialite.html" data-i18n="privacy_policy">Confidentialité</a>
     </div>
-    <div class="footer-copy">
+    <div class="footer-copy" data-i18n="footer_copy">
       © 2025 Luxenter for Building Contracting. Tous droits réservés.
     </div>
   </footer>
 
   <script src="https://unpkg.com/i18next@22.4.9/dist/umd/i18next.min.js"></script>
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
   <script>
     const resources = {
       fr: {
@@ -266,7 +266,8 @@
           privacy_policy: "Confidentialité",
           hero_title: "Luxenter for Building Contracting",
           hero_subtitle: "Réalisation de projets prestigieux à Dubaï. Excellence, innovation et architecture de pointe.",
-          cta_contact: "Nous contacter"
+          cta_contact: "Nous contacter",
+          footer_copy: "© 2025 Luxenter for Building Contracting. Tous droits réservés."
         }
       },
       en: {
@@ -281,7 +282,8 @@
           privacy_policy: "Privacy Policy",
           hero_title: "Luxenter for Building Contracting",
           hero_subtitle: "Delivering prestigious projects in Dubai. Excellence, innovation, and cutting-edge architecture.",
-          cta_contact: "Contact Us"
+          cta_contact: "Contact Us",
+          footer_copy: "© 2025 Luxenter for Building Contracting. All rights reserved."
         }
       },
       ar: {
@@ -296,7 +298,8 @@
           privacy_policy: "سياسة الخصوصية",
           hero_title: "لوكسينتر للمقاولات",
           hero_subtitle: "تنفيذ مشاريع مرموقة في دبي. التميز والابتكار والهندسة المعمارية المتقدمة.",
-          cta_contact: "اتصل بنا"
+          cta_contact: "اتصل بنا",
+          footer_copy: "© 2025 لوكسينتر للمقاولات. جميع الحقوق محفوظة."
         }
       }
     };
@@ -332,5 +335,6 @@
 
     AOS.init();
   </script>
+
 </body>
 </html>

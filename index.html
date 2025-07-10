@@ -1,15 +1,34 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="fr" dir="ltr">
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Luxenter Construction Dubai</title>
+<meta name="description" content="Luxenter for Building Contracting - Entreprise de construction haut de gamme à Dubaï, spécialisée dans des projets innovants et de qualité." />
+<meta name="keywords" content="Construction, Dubaï, Luxenter, Projets, Services, Bâtiment, Haut de gamme" />
+<meta name="author" content="Luxenter for Building Contracting" />
+
+<title id="pageTitle">Luxenter for Building Contracting Dubai</title>
 
 <style>
+  /* Reset & basics */
+  *, *::before, *::after {
+    box-sizing: border-box;
+  }
   body {
     margin:0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background:#fff; color:#0a1f44;
+    line-height: 1.6;
   }
+  a {
+    color: #d4af37;
+    text-decoration: none;
+  }
+  a:hover, a:focus {
+    color: #fff;
+    outline: none;
+  }
+
+  /* Header */
   header {
     display: flex;
     justify-content: space-between;
@@ -17,70 +36,73 @@
     background:#0a1f44;
     color:#d4af37;
     padding: 1rem 2rem;
+    flex-wrap: wrap;
   }
-  .logo {
-    font-weight: 700;
-    font-size: 1.8rem;
-    letter-spacing: 2px;
+  .logo img {
+    height: 50px;
+    object-fit: contain;
   }
   .lang-switcher {
     font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: 0.5rem;
   }
   select#langSwitcher {
     background:#0a1f44; color:#d4af37; border:none; padding:0.4rem 0.8rem;
     font-size:1rem; font-weight:600; border-radius:5px;
     cursor:pointer;
-    margin-left: 0.5rem;
   }
+
+  /* Navigation */
   nav.navbar {
     background:#0a1f44;
     display: flex;
     justify-content: center;
     gap: 2.5rem;
     padding: 1rem 0;
+    flex-wrap: wrap;
   }
   nav.navbar a {
     color:#d4af37;
     font-weight: 600;
-    text-decoration: none;
     font-size: 1.1rem;
     transition: color 0.3s ease;
   }
-  nav.navbar a:hover {
+  nav.navbar a:hover,
+  nav.navbar a:focus {
     color: #fff;
   }
+
+  /* Main content */
   main {
-    max-width:900px; margin:3rem auto; padding:2rem; 
+    max-width:900px; margin:3rem auto; padding:1rem 2rem; 
     text-align:center;
   }
-  h3 {
+  h1, h3 {
     color:#0a1f44; margin-bottom:1rem;
+  }
+  h1 {
+    font-size: 2.5rem;
+  }
+  h3 {
     font-size:2rem;
   }
   p {
     font-size:1.1rem; line-height:1.5; max-width:700px; margin: 0 auto 2rem auto;
   }
   img.skyline-image {
-    display:block; max-width:100%; margin:0 auto 3rem;
+    display:block; max-width:100%; height:auto; margin:0 auto 3rem;
     border-radius:12px; box-shadow: 0 4px 8px rgba(10,31,68,0.3);
   }
+
+  /* Footer */
   footer {
     background:#0a1f44; color:#d4af37; padding:2rem 3rem 1rem;
   }
   .footer-container {
     max-width:1200px; margin:auto; display:flex; flex-wrap:wrap; justify-content:space-between; align-items:center; gap:1rem;
-  }
-  .footer-logo h2 {
-    margin:0; font-weight:700; font-size:1.8rem; letter-spacing:2px;
-  }
-  .footer-nav {
-    display:flex; gap:1.5rem; flex-wrap:wrap;
-  }
-  .footer-nav a {
-    color:#d4af37; text-decoration:none; font-weight:600; transition:color 0.3s;
-  }
-  .footer-nav a:hover {
-    color:#fff;
   }
   .footer-legal {
     display: flex;
@@ -93,39 +115,71 @@
     text-decoration: underline;
     cursor: pointer;
   }
-  .footer-legal a:hover {
+  .footer-legal a:hover,
+  .footer-legal a:focus {
     color: #fff;
-  }
-  .footer-social {
-    display:flex; gap:1rem;
-  }
-  .footer-social a svg {
-    fill:#d4af37; transition:fill 0.3s;
-  }
-  .footer-social a:hover svg {
-    fill:#fff;
   }
   .footer-copy {
     text-align:center; margin-top:1rem; font-size:0.9rem; color:#d4af37;
   }
-  @media (max-width:700px) {
-    header {
-      flex-direction: column;
-      gap: 1rem;
+
+  /* Responsive */
+  @media (max-width: 900px) {
+    main {
+      padding: 1rem 1.5rem;
     }
     nav.navbar {
-      flex-wrap: wrap;
-      gap: 1.2rem;
+      gap: 1.5rem;
+    }
+    header {
+      padding: 1rem 1.5rem;
+    }
+  }
+
+  @media (max-width: 600px) {
+    header {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 1rem;
+    }
+    .lang-switcher {
+      margin-top: 0;
+    }
+    nav.navbar {
+      flex-direction: column;
+      gap: 1rem;
+      padding: 1rem;
+    }
+    nav.navbar a {
+      font-size: 1.2rem;
+    }
+    main {
+      margin: 2rem auto;
+      padding: 0 1rem;
     }
     .footer-container {
-      flex-direction:column; align-items:flex-start; gap:1.5rem;
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+      padding: 0 1rem;
     }
-    .footer-nav, .footer-social, .footer-legal {
-      justify-content:center; width:100%;
+    .footer-legal {
+      justify-content: center;
     }
-    .footer-copy {
-      width:100%; text-align:center;
-    }
+  }
+
+  /* RTL adjustments for Arabic */
+  [dir="rtl"] body {
+    text-align: right;
+  }
+  [dir="rtl"] header,
+  [dir="rtl"] nav.navbar,
+  [dir="rtl"] .footer-container {
+    flex-direction: row-reverse;
+  }
+  [dir="rtl"] .lang-switcher {
+    flex-direction: row-reverse;
+    gap: 0.5rem;
   }
 </style>
 
@@ -135,7 +189,9 @@
 <body>
 
 <header>
-  <div class="logo" data-i18n="header">Luxenter Construction</div>
+  <div class="logo">
+    <img src="images/luxenter-logo.png" alt="Luxenter for Building Contracting Logo" />
+  </div>
   <div class="lang-switcher">
     <label for="langSwitcher" style="color:#d4af37;" data-i18n="choose_language_label">Choisissez la langue :</label>
     <select id="langSwitcher" aria-label="Switch language">
@@ -155,62 +211,40 @@
 </nav>
 
 <main>
-  <h3 data-i18n="presentation_title">À propos de Luxenter</h3>
-  <p data-i18n="presentation_text">
-    Luxenter est une entreprise de construction basée à Dubaï, spécialisée dans la réalisation de projets haut de gamme alliant innovation, qualité et respect des délais.  
-    Notre équipe d’experts est dédiée à transformer vos idées en réalisations exceptionnelles, avec une attention particulière portée à chaque détail.
-  </p>
+  <h1 data-i18n="header">Luxenter for Building Contracting</h1>
+  <section aria-labelledby="presentationTitle">
+    <h3 id="presentationTitle" data-i18n="presentation_title">À propos de Luxenter</h3>
+    <p data-i18n="presentation_text">
+      Luxenter est une entreprise de construction basée à Dubaï, spécialisée dans la réalisation de projets haut de gamme alliant innovation, qualité et respect des délais.  
+      Notre équipe d’experts est dédiée à transformer vos idées en réalisations exceptionnelles, avec une attention particulière portée à chaque détail.
+    </p>
+  </section>
 
-  <!-- Image skyline locale -->
   <img
     class="skyline-image"
-    src="dubai-skyline.jpg"
+    src="images/background.jpg"
     alt="Skyline de Dubaï"
   />
 </main>
 
 <footer>
   <div class="footer-container">
-    <div class="footer-logo">
-      <h2 data-i18n="footer_logo">Luxenter</h2>
-    </div>
-    <nav class="footer-nav" role="navigation" aria-label="Footer Navigation">
-      <a href="index.html" data-i18n="nav_home">Accueil</a>
-      <a href="apropos.html" data-i18n="nav_about">À propos</a>
-      <a href="services.html" data-i18n="nav_services">Services</a>
-      <a href="projets.html" data-i18n="nav_projects">Projets</a>
-      <a href="contact.html" data-i18n="nav_contact">Contact</a>
+    <nav class="footer-legal" aria-label="Mentions légales et confidentialité">
+      <a href="mentions-legales.html" data-i18n="legal_notice" tabindex="0">Mentions légales</a>
+      <a href="confidentialite.html" data-i18n="privacy_policy" tabindex="0">Confidentialité</a>
     </nav>
-
-    <div class="footer-legal">
-      <a href="mentions-legales.html" data-i18n="legal_notice">Mentions légales</a>
-      <a href="confidentialite.html" data-i18n="privacy_policy">Confidentialité</a>
-    </div>
-
-    <div class="footer-social" aria-label="Social Media Links">
-      <a href="#" aria-label="Facebook" title="Facebook">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path d="M22 12a10 10 0 1 0-11.5 9.8v-6.9h-2.7v-2.9h2.7v-2.2c0-2.7 1.6-4.2 4-4.2 1.2 0 2.5.2 2.5.2v2.7h-1.3c-1.3 0-1.7.8-1.7 1.6v1.9h3l-.5 2.9h-2.5v6.9A10 10 0 0 0 22 12z" fill="#d4af37"/></svg>
-      </a>
-      <a href="#" aria-label="LinkedIn" title="LinkedIn">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path d="M4 3a2 2 0 1 0 0 4 2 2 0 0 0 0-4zM3 8h2v12H3zm7 0h2v1.8a3.4 3.4 0 0 1 3-1.6c3.3 0 4 2.2 4 5v7h-2v-6.2c0-1.5-.5-2.5-2-2.5s-2.3 1.5-2.3 2.4V20H10z" fill="#d4af37"/></svg>
-      </a>
-      <a href="#" aria-label="Instagram" title="Instagram">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path d="M7 2C4.2 2 2 4.2 2 7v10c0 2.8 2.2 5 5 5h10c2.8 0 5-2.2 5-5V7c0-2.8-2.2-5-5-5H7zm8 3a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm-4 1a4 4 0 1 1 0 8 4 4 0 0 1 0-8zm0 2a2 2 0 1 0 0 4 2 2 0 0 0 0-4z" fill="#d4af37"/></svg>
-      </a>
-    </div>
   </div>
-  <p class="footer-copy">© 2025 Luxenter Construction - Tous droits réservés</p>
+  <p class="footer-copy">© 2025 Luxenter for Building Contracting - Tous droits réservés</p>
 </footer>
 
 <script>
   const resources = {
     fr: {
       translation: {
-        header: "Luxenter Building Contracting",
+        header: "Luxenter for Building Contracting",
         presentation_title: "À propos de Luxenter",
         presentation_text: "Luxenter est une entreprise de construction basée à Dubaï, spécialisée dans la réalisation de projets haut de gamme alliant innovation, qualité et respect des délais. Notre équipe d’experts est dédiée à transformer vos idées en réalisations exceptionnelles, avec une attention particulière portée à chaque détail.",
         choose_language_label: "Choisissez la langue :",
-        footer_logo: "Luxenter",
         nav_home: "Accueil",
         nav_about: "À propos",
         nav_services: "Services",
@@ -222,11 +256,10 @@
     },
     en: {
       translation: {
-        header: "Luxenter Building Contracting",
+        header: "Luxenter for Building Contracting",
         presentation_title: "About Luxenter",
         presentation_text: "Luxenter is a construction company based in Dubai, specializing in high-end projects combining innovation, quality, and timely delivery. Our team of experts is dedicated to turning your ideas into exceptional achievements, with special attention to every detail.",
         choose_language_label: "Choose language:",
-        footer_logo: "Luxenter",
         nav_home: "Home",
         nav_about: "About",
         nav_services: "Services",
@@ -238,11 +271,10 @@
     },
     ar: {
       translation: {
-        header: "شركة لوكسنتر للمقاولات الإنشائية",
+        header: "لوكسينتر للمقاولات الإنشائية",
         presentation_title: "حول لوكسينتر",
         presentation_text: "لوكسينتر هي شركة إنشاءات مقرها في دبي، متخصصة في تنفيذ مشاريع راقية تجمع بين الابتكار والجودة واحترام المواعيد. فريقنا من الخبراء مكرس لتحويل أفكارك إلى إنجازات استثنائية، مع اهتمام خاص بكل التفاصيل.",
         choose_language_label: "اختر اللغة:",
-        footer_logo: "لوكسينتر",
         nav_home: "الرئيسية",
         nav_about: "معلومات عنا",
         nav_services: "خدمات",
@@ -260,6 +292,7 @@
     resources
   }, function(err, t) {
     updateContent();
+    updateTitle();
   });
 
   function updateContent() {
@@ -269,9 +302,19 @@
     });
   }
 
+  function updateTitle() {
+    const titleEl = document.getElementById('pageTitle');
+    if(titleEl) {
+      titleEl.textContent = i18next.t('header') + ' - Luxenter for Building Contracting Dubai';
+    }
+  }
+
   document.getElementById('langSwitcher').addEventListener('change', e => {
     const selectedLang = e.target.value;
-    i18next.changeLanguage(selectedLang, updateContent);
+    i18next.changeLanguage(selectedLang, () => {
+      updateContent();
+      updateTitle();
+    });
     if(selectedLang === 'ar') {
       document.documentElement.lang = 'ar';
       document.documentElement.dir = 'rtl';

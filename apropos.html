@@ -1,80 +1,267 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="fr" dir="ltr">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Luxenter - Premium construction company operating across all Emirates in the UAE. High-end architecture and innovation in Dubai, Abu Dhabi, Sharjah, and beyond." />
-  <meta name="keywords" content="construction UAE, high-end building Dubai, contractor Abu Dhabi, Sharjah, Ajman, Ras Al Khaimah, Fujairah, Umm Al Quwain" />
-  <meta name="author" content="Luxenter for Building Contracting" />
+  <title>Luxenter - À propos</title>
+  <meta name="description" content="Luxenter, entreprise de construction haut de gamme basée à Dubaï, opérant dans tous les Émirats arabes unis. Excellence architecturale, innovation et qualité." />
+  <meta name="keywords" content="construction haut de gamme Émirats arabes unis, Luxenter Dubai, entreprise construction UAE mainland, projets de prestige UAE" />
   <meta name="geo.region" content="AE" />
-  <meta name="geo.placename" content="Dubai, Abu Dhabi, Sharjah, Ajman, Fujairah, RAK, UAQ" />
+  <meta name="geo.placename" content="Dubai, Abu Dhabi, Sharjah, Ajman, Fujairah, Ras Al Khaimah, Umm Al Quwain" />
   <meta name="geo.position" content="25.276987,55.296249" />
   <meta name="ICBM" content="25.276987,55.296249" />
-  <title>About Luxenter - Premium UAE Construction Company</title>
   <style>
-    body {
-      font-family: 'Roboto', sans-serif;
-      background-color: #ffffff;
-      color: #0a1f44;
-      margin: 0;
-      padding: 0;
-      line-height: 1.6;
+    :root {
+      --marine: #0a1f44;
+      --or: #d4af37;
+      --blanc: #ffffff;
+      --focus-color: #ffd54f;
     }
-    header, footer {
-      background-color: #0a1f44;
-      color: #d4af37;
+    body {
+      margin: 0;
+      font-family: 'Roboto', sans-serif;
+      background: var(--blanc);
+      color: var(--marine);
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+      line-height: 1.6;
+      font-size: 18px;
+    }
+    header {
+      background: var(--marine);
+      color: var(--or);
       padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .logo img {
+      height: 80px;
+    }
+    .lang-switcher label {
+      margin-right: 0.5rem;
+      font-weight: 600;
+    }
+    select#langSwitcher {
+      background: var(--marine);
+      color: var(--or);
+      border: 1px solid var(--or);
+      padding: 0.3rem 0.6rem;
+      border-radius: 4px;
+      font-weight: 600;
+      cursor: pointer;
+    }
+    nav.navbar {
+      background: var(--marine);
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      padding: 1rem 0;
+    }
+    nav.navbar a {
+      color: var(--or);
+      font-weight: 600;
+      text-decoration: none;
+    }
+    nav.navbar a:hover,
+    nav.navbar a:focus-visible {
+      text-decoration: underline;
+      outline: none;
     }
     main {
-      padding: 2rem;
+      flex-grow: 1;
+      padding: 2rem 4rem;
+      max-width: 900px;
+      margin: 0 auto;
     }
     h1, h2 {
-      color: #0a1f44;
+      color: var(--marine);
+      font-weight: 700;
     }
-    .section {
-      margin-bottom: 2rem;
+    h1 {
+      font-size: 2.8rem;
+      margin-bottom: 1rem;
+      text-align: center;
     }
-    ul {
-      padding-left: 1.5rem;
+    h2 {
+      font-size: 1.8rem;
+      margin-top: 2rem;
+      margin-bottom: 0.8rem;
+      border-bottom: 3px solid var(--or);
+      padding-bottom: 0.3rem;
+    }
+    p {
+      margin-bottom: 1.2rem;
+    }
+    footer {
+      background: var(--marine);
+      color: var(--or);
+      padding: 2rem 1rem;
+      text-align: center;
+      font-size: 0.9rem;
     }
   </style>
 </head>
 <body>
-  <header>
-    <h1>About Luxenter</h1>
+
+  <header role="banner">
+    <div class="logo">
+      <a href="index.html" aria-label="Luxenter Accueil">
+        <img src="luxenter-logo.png" alt="Logo Luxenter" />
+      </a>
+    </div>
+    <div class="lang-switcher" role="navigation" aria-label="Sélecteur de langue">
+      <label for="langSwitcher" id="label-langSwitcher">Langue :</label>
+      <select id="langSwitcher" aria-labelledby="label-langSwitcher" aria-live="polite">
+        <option value="fr" selected>Français</option>
+        <option value="en">English</option>
+        <option value="ar">العربية</option>
+      </select>
+    </div>
   </header>
-  <main>
-    <section class="section">
-      <h2>Our Identity</h2>
-      <p>Luxenter for Building Contracting is a high-end construction company established in the heart of Dubai. Licensed under the UAE Mainland regulations, we are fully authorized to operate across all seven Emirates. Our approach combines architectural finesse, technological innovation, and an unwavering commitment to excellence.</p>
+
+  <nav class="navbar" role="navigation" aria-label="Menu principal">
+    <a href="index.html" tabindex="0">Accueil</a>
+    <a href="apropos.html" tabindex="0" aria-current="page">À propos</a>
+    <a href="services.html" tabindex="0">Services</a>
+    <a href="projets.html" tabindex="0">Projets</a>
+    <a href="contact.html" tabindex="0">Contact</a>
+  </nav>
+
+  <main role="main" aria-labelledby="page-title">
+    <h1 id="page-title">À propos</h1>
+
+    <section aria-labelledby="identity-title">
+      <h2 id="identity-title">Notre Identité</h2>
+      <p>
+        Luxenter for Building Contracting est une entreprise de construction haut de gamme basée à Dubaï. Agréée par les autorités de la zone continentale des Émirats arabes unis, nous sommes habilités à opérer sur l’ensemble du territoire national. Notre approche allie excellence architecturale, innovation technologique et engagement absolu envers la qualité.
+      </p>
     </section>
 
-    <section class="section">
-      <h2>Where We Operate</h2>
-      <p>We proudly deliver prestigious construction projects across:</p>
-      <ul>
-        <li>Dubai</li>
-        <li>Abu Dhabi</li>
-        <li>Sharjah</li>
-        <li>Ajman</li>
-        <li>Fujairah</li>
-        <li>Ras Al Khaimah</li>
-        <li>Umm Al Quwain</li>
-      </ul>
+    <section aria-labelledby="operation-title">
+      <h2 id="operation-title">Où Nous Intervenons</h2>
+      <p>
+        Nous réalisons des projets de prestige à travers tous les Émirats arabes unis, en associant expertise locale et standards internationaux.
+      </p>
     </section>
 
-    <section class="section">
-      <h2>Our Values</h2>
-      <p>Every project reflects our dedication to quality, reliability, and sustainability. We collaborate with leading architects and engineers to shape iconic buildings that redefine the UAE skyline.</p>
+    <section aria-labelledby="values-title">
+      <h2 id="values-title">Nos Valeurs</h2>
+      <p>
+        Chaque projet reflète notre engagement envers la qualité, la fiabilité et la durabilité. Nous collaborons avec des architectes, des ingénieurs et des promoteurs immobiliers de renom pour concevoir des bâtiments emblématiques qui façonnent le paysage urbain des Émirats.
+      </p>
     </section>
 
-    <section class="section">
-      <h2>Why Choose Luxenter?</h2>
-      <p>From concept to completion, we ensure seamless project delivery, tailored solutions, and strict adherence to deadlines and budgets. Luxenter stands as your ideal partner for luxury construction in the UAE.</p>
+    <section aria-labelledby="why-choose-title">
+      <h2 id="why-choose-title">Pourquoi Choisir Luxenter ?</h2>
+      <p>
+        De la conception à la réalisation, nous assurons une gestion fluide, des solutions sur mesure et un respect rigoureux des délais et des budgets. Luxenter est votre partenaire de référence pour des projets de construction de luxe aux Émirats arabes unis.
+      </p>
     </section>
   </main>
-  <footer>
-    <p>&copy; 2025 Luxenter for Building Contracting. All rights reserved.</p>
+
+  <footer role="contentinfo">
+    <div class="footer-links">
+      <a href="mentions-legales.html">Mentions légales</a> |
+      <a href="confidentialite.html">Confidentialité</a>
+    </div>
+    <div>
+      © 2025 Luxenter for Building Contracting. Tous droits réservés.
+    </div>
   </footer>
+
+  <script>
+    const translations = {
+      fr: {
+        title: "À propos",
+        navAccueil: "Accueil",
+        navApropos: "À propos",
+        navServices: "Services",
+        navProjets: "Projets",
+        navContact: "Contact",
+        identityTitle: "Notre Identité",
+        identityText: "Luxenter for Building Contracting est une entreprise de construction haut de gamme basée à Dubaï. Agréée par les autorités de la zone continentale des Émirats arabes unis, nous sommes habilités à opérer sur l’ensemble du territoire national. Notre approche allie excellence architecturale, innovation technologique et engagement absolu envers la qualité.",
+        operationTitle: "Où Nous Intervenons",
+        operationText: "Nous réalisons des projets de prestige à travers tous les Émirats arabes unis, en associant expertise locale et standards internationaux.",
+        valuesTitle: "Nos Valeurs",
+        valuesText: "Chaque projet reflète notre engagement envers la qualité, la fiabilité et la durabilité. Nous collaborons avec des architectes, des ingénieurs et des promoteurs immobiliers de renom pour concevoir des bâtiments emblématiques qui façonnent le paysage urbain des Émirats.",
+        whyChooseTitle: "Pourquoi Choisir Luxenter ?",
+        whyChooseText: "De la conception à la réalisation, nous assurons une gestion fluide, des solutions sur mesure et un respect rigoureux des délais et des budgets. Luxenter est votre partenaire de référence pour des projets de construction de luxe aux Émirats arabes unis."
+      },
+      en: {
+        title: "About",
+        navAccueil: "Home",
+        navApropos: "About",
+        navServices: "Services",
+        navProjets: "Projects",
+        navContact: "Contact",
+        identityTitle: "Our Identity",
+        identityText: "Luxenter for Building Contracting is a premium construction company based in Dubai. Licensed by UAE Mainland authorities, we are authorized to operate throughout the country. Our approach combines architectural excellence, technological innovation, and an absolute commitment to quality.",
+        operationTitle: "Where We Operate",
+        operationText: "We deliver prestigious projects across all the United Arab Emirates, combining local expertise and international standards.",
+        valuesTitle: "Our Values",
+        valuesText: "Each project reflects our commitment to quality, reliability, and sustainability. We collaborate with renowned architects, engineers, and real estate developers to design iconic buildings shaping the UAE urban landscape.",
+        whyChooseTitle: "Why Choose Luxenter?",
+        whyChooseText: "From concept to completion, we ensure smooth management, tailored solutions, and strict adherence to deadlines and budgets. Luxenter is your go-to partner for luxury construction projects in the UAE."
+      },
+      ar: {
+        title: "حول",
+        navAccueil: "الرئيسية",
+        navApropos: "حول",
+        navServices: "الخدمات",
+        navProjets: "المشاريع",
+        navContact: "اتصل بنا",
+        identityTitle: "هويتنا",
+        identityText: "لوكسانتر للمقاولات البناء هي شركة بناء فاخرة مقرها في دبي. مرخصة من قبل السلطات البرية في الإمارات العربية المتحدة، ونحن مخولون للعمل في جميع أنحاء البلاد. يجمع نهجنا بين التميز المعماري والابتكار التكنولوجي والالتزام المطلق بالجودة.",
+        operationTitle: "أين نعمل",
+        operationText: "نقوم بتنفيذ مشاريع مرموقة في جميع أنحاء الإمارات العربية المتحدة، مع الجمع بين الخبرة المحلية والمعايير الدولية.",
+        valuesTitle: "قيمنا",
+        valuesText: "يعكس كل مشروع التزامنا بالجودة والموثوقية والاستدامة. نتعاون مع مهندسين ومعماريين ومطوري عقارات مشهورين لتصميم مبانٍ أيقونية تشكل المشهد الحضري للإمارات.",
+        whyChooseTitle: "لماذا تختار لوكسانتر؟",
+        whyChooseText: "من التصميم إلى التنفيذ، نضمن إدارة سلسة، حلول مخصصة، والتزام صارم بالمواعيد النهائية والميزانيات. لوكسانتر هو شريكك المثالي لمشاريع البناء الفاخرة في الإمارات."
+      }
+    };
+
+    const langSwitcher = document.getElementById('langSwitcher');
+
+    function updateLanguage(lang) {
+      document.documentElement.lang = lang;
+      document.documentElement.dir = (lang === 'ar') ? 'rtl' : 'ltr';
+
+      // Update text content
+      document.querySelector('title').textContent = `Luxenter - ${translations[lang].title}`;
+      document.getElementById('page-title').textContent = translations[lang].title;
+
+      document.querySelector('nav.navbar a[href="index.html"]').textContent = translations[lang].navAccueil;
+      document.querySelector('nav.navbar a[href="apropos.html"]').textContent = translations[lang].navApropos;
+      document.querySelector('nav.navbar a[href="services.html"]').textContent = translations[lang].navServices;
+      document.querySelector('nav.navbar a[href="projets.html"]').textContent = translations[lang].navProjets;
+      document.querySelector('nav.navbar a[href="contact.html"]').textContent = translations[lang].navContact;
+
+      // Update sections
+      const sections = [
+        { idTitle: 'identity-title', idText: null, title: translations[lang].identityTitle, text: translations[lang].identityText },
+        { idTitle: 'operation-title', idText: null, title: translations[lang].operationTitle, text: translations[lang].operationText },
+        { idTitle: 'values-title', idText: null, title: translations[lang].valuesTitle, text: translations[lang].valuesText },
+        { idTitle: 'why-choose-title', idText: null, title: translations[lang].whyChooseTitle, text: translations[lang].whyChooseText }
+      ];
+
+      sections.forEach(section => {
+        document.getElementById(section.idTitle).textContent = section.title;
+        // The paragraph is next sibling of h2, so update it
+        document.getElementById(section.idTitle).nextElementSibling.textContent = section.text;
+      });
+    }
+
+    langSwitcher.addEventListener('change', (e) => {
+      updateLanguage(e.target.value);
+    });
+
+    // Default to English on page load
+    langSwitcher.value = 'en';
+    updateLanguage('en');
+  </script>
+
 </body>
 </html>

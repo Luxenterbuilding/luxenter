@@ -4,24 +4,6 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Luxenter - Construction Haut de Gamme à Dubaï</title>
-  <meta name="description" content="Luxenter, spécialiste en construction et rénovation de luxe à Dubaï. Projets innovants et architecture haut de gamme." />
-  
-  <!-- Open Graph -->
-  <meta property="og:title" content="Luxenter - Construction Haut de Gamme à Dubaï" />
-  <meta property="og:description" content="Projets prestigieux de construction à Dubaï avec Luxenter. Excellence et innovation au cœur de l'architecture." />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://luxenterbuilding.github.io/luxenter/" />
-  <meta property="og:image" content="https://luxenterbuilding.github.io/luxenter/og-image.jpg" />
-
-  <!-- Twitter Card -->
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Luxenter - Construction Haut de Gamme à Dubaï" />
-  <meta name="twitter:description" content="Projets prestigieux de construction à Dubaï avec Luxenter." />
-  <meta name="twitter:image" content="https://luxenterbuilding.github.io/luxenter/twitter-image.jpg" />
-
-  <!-- Fonts & styles -->
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;500;700&display=swap" />
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
   <style>
     :root {
       --marine: #0a1f44;
@@ -29,11 +11,6 @@
       --blanc: #ffffff;
       --focus-color: #ffd54f;
     }
-
-    * {
-      box-sizing: border-box;
-    }
-
     body {
       margin: 0;
       font-family: 'Roboto', sans-serif;
@@ -45,131 +22,72 @@
       line-height: 1.6;
       font-size: 18px;
     }
-
-    a {
-      color: var(--or);
-      text-decoration: none;
-    }
-
-    a:hover,
-    a:focus {
-      color: #fff3d1;
-      outline: none;
-      text-decoration: underline;
-    }
-
-    a:focus-visible {
-      outline: 3px solid var(--focus-color);
-      outline-offset: 2px;
-    }
-
     header {
-      position: sticky;
-      top: 0;
-      z-index: 1000;
       background: var(--marine);
+      color: var(--or);
+      padding: 1rem 2rem;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 1rem 2rem;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.2);
     }
-
     .logo img {
-      height: 120px;
-      max-width: 100%;
-      object-fit: contain;
+      height: 80px;
     }
-
     .lang-switcher label {
-      color: var(--or);
       margin-right: 0.5rem;
       font-weight: 600;
     }
-
     select#langSwitcher {
       background: var(--marine);
       color: var(--or);
       border: 1px solid var(--or);
-      padding: 0.4rem 0.8rem;
+      padding: 0.3rem 0.6rem;
       border-radius: 4px;
       font-weight: 600;
-      font-size: 1rem;
       cursor: pointer;
     }
-
     nav.navbar {
       background: var(--marine);
       display: flex;
       justify-content: center;
       gap: 2rem;
       padding: 1rem 0;
-      flex-wrap: wrap;
     }
-
     nav.navbar a {
+      color: var(--or);
       font-weight: 600;
-      font-size: 1.1rem;
+      text-decoration: none;
     }
-
+    nav.navbar a:hover,
+    nav.navbar a:focus-visible {
+      text-decoration: underline;
+      outline: none;
+    }
     main {
       flex-grow: 1;
     }
-
     .hero {
       position: relative;
-      width: 100%;
-      height: 100vh;
-      overflow: hidden;
+      height: 80vh;
+      background: linear-gradient(135deg, #0a1f44 0%, #d4af37 100%);
+      color: var(--blanc);
       display: flex;
       justify-content: center;
       align-items: center;
       text-align: center;
-      color: var(--blanc);
+      padding: 1rem;
     }
-
-    .hero::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background:
-        linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-        url("background.jpg") center/cover no-repeat;
-      animation: zoomSlow 20s ease-in-out infinite;
-      z-index: 0;
-      will-change: transform;
-      filter: brightness(0.5);
-    }
-
-    @keyframes zoomSlow {
-      0% { transform: scale(1); }
-      50% { transform: scale(1.05); }
-      100% { transform: scale(1); }
-    }
-
     .hero-content {
-      position: relative;
-      z-index: 1;
-      max-width: 900px;
-      padding: 0 1rem;
+      max-width: 700px;
     }
-
     .hero h1 {
-      font-size: 3.5rem;
+      font-size: 3rem;
       margin-bottom: 1rem;
-      color: var(--or);
-      text-shadow:
-        2px 2px 8px rgba(0, 0, 0, 0.9),
-        0 0 10px rgba(0, 0, 0, 0.7);
     }
-
     .hero p {
-      font-size: 1.5rem;
+      font-size: 1.3rem;
       margin-bottom: 2rem;
-      text-shadow:
-        1px 1px 6px rgba(0, 0, 0, 0.8);
     }
-
     .cta-button {
       background-color: var(--or);
       color: var(--marine);
@@ -179,54 +97,22 @@
       font-size: 1.2rem;
       font-weight: 700;
       cursor: pointer;
-      transition: all 0.3s ease;
-      box-shadow: 0 4px 6px rgba(0,0,0,0.3);
       text-decoration: none;
       display: inline-block;
+      transition: background-color 0.3s ease, transform 0.3s ease;
     }
-
     .cta-button:hover,
     .cta-button:focus-visible {
       background-color: #fff3d1;
       transform: scale(1.05);
       outline: none;
     }
-
     footer {
       background: var(--marine);
       color: var(--or);
       padding: 2rem 1rem;
       text-align: center;
       font-size: 0.9rem;
-    }
-
-    .footer-links {
-      margin-bottom: 1rem;
-      display: flex;
-      justify-content: center;
-      gap: 2rem;
-      flex-wrap: wrap;
-    }
-
-    .footer-links a {
-      color: var(--or);
-      text-decoration: underline;
-    }
-
-    /* Responsive */
-    @media (max-width: 600px) {
-      .hero h1 {
-        font-size: 2.2rem;
-      }
-      .hero p {
-        font-size: 1.1rem;
-      }
-      .logo img {
-        height: 80px;
-      }
-      nav.navbar {
-        gap: 1rem;
-      }
     }
   </style>
 </head>
@@ -235,7 +121,7 @@
   <header role="banner">
     <div class="logo">
       <a href="index.html" aria-label="Luxenter Accueil">
-        <img src="luxenter-logo.png" alt="Logo Luxenter" />
+        <img src="https://via.placeholder.com/150x80?text=Luxenter+Logo" alt="Logo Luxenter" />
       </a>
     </div>
     <div class="lang-switcher" role="navigation" aria-label="Sélecteur de langue">
@@ -258,7 +144,7 @@
 
   <main role="main">
     <section class="hero" aria-label="Présentation principale">
-      <div class="hero-content" data-aos="fade-up">
+      <div class="hero-content">
         <h1 id="hero-title">Luxenter for building contracting</h1>
         <p id="hero-description">Réalisation de projets prestigieux à Dubaï. Excellence, innovation et architecture de pointe.</p>
         <a class="cta-button" href="tel:+971501234567" aria-label="Appeler Luxenter">Nous contacter</a>
@@ -268,7 +154,7 @@
 
   <footer role="contentinfo">
     <div class="footer-links">
-      <a href="mentions-legales.html">Mentions légales</a>
+      <a href="mentions-legales.html">Mentions légales</a> |
       <a href="confidentialite.html">Confidentialité</a>
     </div>
     <div>
@@ -279,7 +165,7 @@
   <script>
     const translations = {
       fr: {
-        title: "Luxenter for building contracting",
+        title: "Luxenter pour la construction",
         description: "Réalisation de projets prestigieux à Dubaï. Excellence, innovation et architecture de pointe.",
       },
       en: {
@@ -300,7 +186,6 @@
       heroTitle.textContent = translations[lang].title;
       heroDescription.textContent = translations[lang].description;
 
-      // Change document language and direction for Arabic
       document.documentElement.lang = lang;
       document.documentElement.dir = (lang === 'ar') ? 'rtl' : 'ltr';
     }
@@ -309,7 +194,6 @@
       updateLanguage(e.target.value);
     });
 
-    // Initial load
     updateLanguage(langSwitcher.value);
   </script>
 

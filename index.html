@@ -1,220 +1,269 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Luxenter Construction Dubai</title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Luxenter Construction Dubai</title>
 
-  <style>
-    :root {
-      --gold: #d4af37;
-      --navy: #0a1f44;
-      --white: #ffffff;
-    }
+<style>
+  body {
+    margin:0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background:#fff; color:#0a1f44;
+  }
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background:#0a1f44;
+    color:#d4af37;
+    padding: 1rem 2rem;
+  }
+  /* Langue en haut à gauche */
+  .lang-switcher {
+    font-weight: 600;
+  }
+  select#langSwitcher {
+    background:#0a1f44; color:#d4af37; border:none; padding:0.4rem 0.8rem;
+    font-size:1rem; font-weight:600; border-radius:5px;
+    cursor:pointer;
+    margin-left: 0.5rem;
+  }
 
-    body {
-      margin: 0;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: var(--white);
-      color: var(--navy);
-    }
+  /* Logo en haut à droite */
+  .logo {
+    font-weight: 700;
+    font-size: 1.8rem;
+    letter-spacing: 2px;
+  }
 
+  /* Navigation sous header */
+  nav.navbar {
+    background:#0a1f44;
+    display: flex;
+    justify-content: center;
+    gap: 2.5rem;
+    padding: 1rem 0;
+  }
+  nav.navbar a {
+    color:#d4af37;
+    font-weight: 600;
+    text-decoration: none;
+    font-size: 1.1rem;
+    transition: color 0.3s ease;
+  }
+  nav.navbar a:hover {
+    color: #fff;
+  }
+
+  main {
+    max-width:900px; margin:3rem auto; padding:2rem; 
+    text-align:center;
+  }
+  h3 {
+    color:#0a1f44; margin-bottom:1rem;
+    font-size:2rem;
+  }
+  p {
+    font-size:1.1rem; line-height:1.5; max-width:700px; margin: 0 auto 2rem auto;
+  }
+  img.skyline-image {
+    display:block; max-width:100%; margin:0 auto 3rem;
+    border-radius:12px; box-shadow: 0 4px 8px rgba(10,31,68,0.3);
+  }
+  footer {
+    background:#0a1f44; color:#d4af37; padding:2rem 3rem 1rem;
+  }
+  .footer-container {
+    max-width:1200px; margin:auto; display:flex; flex-wrap:wrap; justify-content:space-between; align-items:center; gap:1rem;
+  }
+  .footer-logo h2 {
+    margin:0; font-weight:700; font-size:1.8rem; letter-spacing:2px;
+  }
+  .footer-nav {
+    display:flex; gap:1.5rem; flex-wrap:wrap;
+  }
+  .footer-nav a {
+    color:#d4af37; text-decoration:none; font-weight:600; transition:color 0.3s;
+  }
+  .footer-nav a:hover {
+    color:#fff;
+  }
+  .footer-social {
+    display:flex; gap:1rem;
+  }
+  .footer-social a svg {
+    fill:#d4af37; transition:fill 0.3s;
+  }
+  .footer-social a:hover svg {
+    fill:#fff;
+  }
+  .footer-copy {
+    text-align:center; margin-top:1rem; font-size:0.9rem; color:#d4af37;
+  }
+  @media (max-width:700px) {
     header {
-      background-color: var(--navy);
-      padding: 1rem 3rem;
-      color: var(--gold);
-      font-size: 1.8rem;
-      font-weight: 700;
-      letter-spacing: 2px;
-      text-align: center;
+      flex-direction: column;
+      gap: 1rem;
     }
-
-    .presentation {
-      max-width: 900px;
-      margin: 3rem auto 2rem;
-      padding: 2rem 1rem;
-      background-color: var(--gold);
-      border-radius: 10px;
-      box-shadow: 0 6px 12px rgba(212, 175, 55, 0.3);
-      text-align: center;
-      color: var(--navy);
+    nav.navbar {
+      flex-wrap: wrap;
+      gap: 1.2rem;
     }
-
-    .presentation h3 {
-      margin-bottom: 1rem;
-      font-size: 2rem;
-      font-weight: 700;
-    }
-
-    .presentation p {
-      font-size: 1.1rem;
-      line-height: 1.6;
-      max-width: 700px;
-      margin: 0 auto;
-    }
-
-    .skyline-image {
-      display: block;
-      max-width: 100%;
-      height: auto;
-      margin: 0 auto 3rem;
-      border-radius: 12px;
-      box-shadow: 0 4px 8px rgba(10, 31, 68, 0.3);
-    }
-
-    /* Footer styles */
-    footer {
-      background-color: var(--navy);
-      color: var(--gold);
-      padding: 2rem 3rem 1rem;
-    }
-
     .footer-container {
-      max-width: 1200px;
-      margin: auto;
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
-      align-items: center;
-      gap: 1rem;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      flex-direction:column; align-items:flex-start; gap:1.5rem;
     }
-
-    .footer-logo h2 {
-      margin: 0;
-      font-weight: 700;
-      font-size: 1.8rem;
-      letter-spacing: 2px;
+    .footer-nav, .footer-social {
+      justify-content:center; width:100%;
     }
-
-    .footer-nav {
-      display: flex;
-      gap: 1.5rem;
-      flex-wrap: wrap;
-    }
-
-    .footer-nav a {
-      color: var(--gold);
-      text-decoration: none;
-      font-weight: 600;
-      transition: color 0.3s;
-    }
-
-    .footer-nav a:hover {
-      color: var(--white);
-    }
-
-    .footer-social {
-      display: flex;
-      gap: 1rem;
-    }
-
-    .footer-social a svg {
-      transition: fill 0.3s;
-      fill: var(--gold);
-    }
-
-    .footer-social a:hover svg {
-      fill: var(--white);
-    }
-
-    .footer-translate {
-      min-width: 180px;
-    }
-
     .footer-copy {
-      text-align: center;
-      margin-top: 1rem;
-      font-size: 0.9rem;
-      color: var(--gold);
+      width:100%; text-align:center;
     }
+  }
+</style>
 
-    @media (max-width: 700px) {
-      .footer-container {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 1.5rem;
-      }
-      .footer-nav {
-        justify-content: center;
-        width: 100%;
-      }
-      .footer-social {
-        justify-content: center;
-        width: 100%;
-      }
-      .footer-translate {
-        justify-content: center;
-        width: 100%;
-        margin-top: 1rem;
-      }
-      .footer-copy {
-        text-align: center;
-        width: 100%;
-      }
-    }
-  </style>
+<script src="https://unpkg.com/i18next@22.4.9/dist/umd/i18next.min.js"></script>
+
 </head>
 <body>
 
-  <header>
-    Luxenter Construction
-  </header>
+<header>
+  <div class="lang-switcher">
+    <label for="langSwitcher" style="color:#d4af37;" data-i18n="choose_language_label">Choisissez la langue :</label>
+    <select id="langSwitcher" aria-label="Switch language">
+      <option value="fr">Français</option>
+      <option value="en">English</option>
+      <option value="ar">العربية</option>
+    </select>
+  </div>
+  <div class="logo" data-i18n="header">Luxenter Construction</div>
+</header>
 
-  <section class="presentation">
-    <h3>À propos de Luxenter</h3>
-    <p>
-      Luxenter est une entreprise de construction basée à Dubaï, spécialisée dans la réalisation de projets haut de gamme alliant innovation, qualité et respect des délais.  
-      Notre équipe d’experts est dédiée à transformer vos idées en réalisations exceptionnelles, avec une attention particulière portée à chaque détail.
-    </p>
-  </section>
+<nav class="navbar" role="navigation" aria-label="Main navigation">
+  <a href="index.html" data-i18n="nav_home">Accueil</a>
+  <a href="apropos.html" data-i18n="nav_about">À propos</a>
+  <a href="services.html" data-i18n="nav_services">Services</a>
+  <a href="projets.html" data-i18n="nav_projects">Projets</a>
+  <a href="contact.html" data-i18n="nav_contact">Contact</a>
+</nav>
 
+<main>
+  <h3 data-i18n="presentation_title">À propos de Luxenter</h3>
+  <p data-i18n="presentation_text">
+    Luxenter est une entreprise de construction basée à Dubaï, spécialisée dans la réalisation de projets haut de gamme alliant innovation, qualité et respect des délais.  
+    Notre équipe d’experts est dédiée à transformer vos idées en réalisations exceptionnelles, avec une attention particulière portée à chaque détail.
+  </p>
+
+  <!-- Remplacez l'URL ci-dessous par celle de votre image de skyline -->
   <img
     class="skyline-image"
     src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1200&q=80"
     alt="Skyline de Dubaï"
   />
+</main>
 
-  <footer>
-    <div class="footer-container">
-      <div class="footer-logo">
-        <h2>Luxenter</h2>
-      </div>
-      <nav class="footer-nav">
-        <a href="index.html">Accueil</a>
-        <a href="apropos.html">À propos</a>
-        <a href="services.html">Services</a>
-        <a href="projets.html">Projets</a>
-        <a href="contact.html">Contact</a>
-      </nav>
-      <div class="footer-social">
-        <a href="#" aria-label="Facebook" title="Facebook">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path d="M22 12a10 10 0 1 0-11.5 9.8v-6.9h-2.7v-2.9h2.7v-2.2c0-2.7 1.6-4.2 4-4.2 1.2 0 2.5.2 2.5.2v2.7h-1.3c-1.3 0-1.7.8-1.7 1.6v1.9h3l-.5 2.9h-2.5v6.9A10 10 0 0 0 22 12z" fill="var(--gold)"/></svg>
-        </a>
-        <a href="#" aria-label="LinkedIn" title="LinkedIn">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path d="M4 3a2 2 0 1 0 0 4 2 2 0 0 0 0-4zM3 8h2v12H3zm7 0h2v1.8a3.4 3.4 0 0 1 3-1.6c3.3 0 4 2.2 4 5v7h-2v-6.2c0-1.5-.5-2.5-2-2.5s-2.3 1.5-2.3 2.4V20H10z" fill="var(--gold)"/></svg>
-        </a>
-        <a href="#" aria-label="Instagram" title="Instagram">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path d="M7 2C4.2 2 2 4.2 2 7v10c0 2.8 2.2 5 5 5h10c2.8 0 5-2.2 5-5V7c0-2.8-2.2-5-5-5H7zm8 3a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm-4 1a4 4 0 1 1 0 8 4 4 0 0 1 0-8zm0 2a2 2 0 1 0 0 4 2 2 0 0 0 0-4z" fill="var(--gold)"/></svg>
-        </a>
-      </div>
-      <div id="google_translate_element" class="footer-translate"></div>
+<footer>
+  <div class="footer-container">
+    <div class="footer-logo">
+      <h2 data-i18n="footer_logo">Luxenter</h2>
     </div>
+    <nav class="footer-nav" role="navigation" aria-label="Footer Navigation">
+      <a href="index.html" data-i18n="nav_home">Accueil</a>
+      <a href="apropos.html" data-i18n="nav_about">À propos</a>
+      <a href="services.html" data-i18n="nav_services">Services</a>
+      <a href="projets.html" data-i18n="nav_projects">Projets</a>
+      <a href="contact.html" data-i18n="nav_contact">Contact</a>
+    </nav>
+    <div class="footer-social" aria-label="Social Media Links">
+      <a href="#" aria-label="Facebook" title="Facebook">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path d="M22 12a10 10 0 1 0-11.5 9.8v-6.9h-2.7v-2.9h2.7v-2.2c0-2.7 1.6-4.2 4-4.2 1.2 0 2.5.2 2.5.2v2.7h-1.3c-1.3 0-1.7.8-1.7 1.6v1.9h3l-.5 2.9h-2.5v6.9A10 10 0 0 0 22 12z" fill="#d4af37"/></svg>
+      </a>
+      <a href="#" aria-label="LinkedIn" title="LinkedIn">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path d="M4 3a2 2 0 1 0 0 4 2 2 0 0 0 0-4zM3 8h2v12H3zm7 0h2v1.8a3.4 3.4 0 0 1 3-1.6c3.3 0 4 2.2 4 5v7h-2v-6.2c0-1.5-.5-2.5-2-2.5s-2.3 1.5-2.3 2.4V20H10z" fill="#d4af37"/></svg>
+      </a>
+      <a href="#" aria-label="Instagram" title="Instagram">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path d="M7 2C4.2 2 2 4.2 2 7v10c0 2.8 2.2 5 5 5h10c2.8 0 5-2.2 5-5V7c0-2.8-2.2-5-5-5H7zm8 3a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm-4 1a4 4 0 1 1 0 8 4 4 0 0 1 0-8zm0 2a2 2 0 1 0 0 4 2 2 0 0 0 0-4z" fill="#d4af37"/></svg>
+      </a>
+    </div>
+  </div>
+  <p class="footer-copy">© 2025 Luxenter Construction - Tous droits réservés</p>
+</footer>
 
-    <p class="footer-copy">© 2025 Luxenter Construction - Tous droits réservés</p>
-  </footer>
-
-  <script type="text/javascript">
-    function googleTranslateElementInit() {
-      new google.translate.TranslateElement({
-        pageLanguage: 'fr',
-        includedLanguages: 'en,ar,fr',
-        layout: google.translate.TranslateElement.InlineLayout.SIMPLE
-      }, 'google_translate_element');
+<script>
+  const resources = {
+    fr: {
+      translation: {
+        header: "Luxenter Construction",
+        presentation_title: "À propos de Luxenter",
+        presentation_text: "Luxenter est une entreprise de construction basée à Dubaï, spécialisée dans la réalisation de projets haut de gamme alliant innovation, qualité et respect des délais. Notre équipe d’experts est dédiée à transformer vos idées en réalisations exceptionnelles, avec une attention particulière portée à chaque détail.",
+        choose_language_label: "Choisissez la langue :",
+        footer_logo: "Luxenter",
+        nav_home: "Accueil",
+        nav_about: "À propos",
+        nav_services: "Services",
+        nav_projects: "Projets",
+        nav_contact: "Contact"
+      }
+    },
+    en: {
+      translation: {
+        header: "Luxenter Construction",
+        presentation_title: "About Luxenter",
+        presentation_text: "Luxenter is a construction company based in Dubai, specializing in high-end projects combining innovation, quality, and timely delivery. Our team of experts is dedicated to turning your ideas into exceptional achievements, with special attention to every detail.",
+        choose_language_label: "Choose language:",
+        footer_logo: "Luxenter",
+        nav_home: "Home",
+        nav_about: "About",
+        nav_services: "Services",
+        nav_projects: "Projects",
+        nav_contact: "Contact"
+      }
+    },
+    ar: {
+      translation: {
+        header: "لوكسينتر للإنشاءات",
+        presentation_title: "حول لوكسينتر",
+        presentation_text: "لوكسينتر هي شركة إنشاءات مقرها في دبي، متخصصة في تنفيذ مشاريع راقية تجمع بين الابتكار والجودة واحترام المواعيد. فريقنا من الخبراء مكرس لتحويل أفكارك إلى إنجازات استثنائية، مع اهتمام خاص بكل التفاصيل.",
+        choose_language_label: "اختر اللغة:",
+        footer_logo: "لوكسينتر",
+        nav_home: "الرئيسية",
+        nav_about: "معلومات عنا",
+        nav_services: "خدمات",
+        nav_projects: "مشاريع",
+        nav_contact: "اتصال"
+      }
     }
-  </script>
+  };
 
-  <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+  i18next.init({
+    lng: 'fr',
+    debug: false,
+    resources
+  }, function(err, t) {
+    updateContent();
+  });
+
+  function updateContent() {
+    document.querySelectorAll('[data-i18n]').forEach(el => {
+      const key = el.getAttribute('data-i18n');
+      el.textContent = i18next.t(key);
+    });
+  }
+
+  document.getElementById('langSwitcher').addEventListener('change', e => {
+    const selectedLang = e.target.value;
+    i18next.changeLanguage(selectedLang, updateContent);
+    // RTL pour arabe
+    if(selectedLang === 'ar') {
+      document.documentElement.lang = 'ar';
+      document.documentElement.dir = 'rtl';
+      document.body.style.textAlign = "right";
+    } else {
+      document.documentElement.lang = selectedLang;
+      document.documentElement.dir = 'ltr';
+      document.body.style.textAlign = "left";
+    }
+  });
+</script>
 
 </body>
 </html>

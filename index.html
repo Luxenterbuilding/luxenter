@@ -44,6 +44,7 @@
       min-height: 100vh;
       line-height: 1.6;
       font-size: 18px;
+      transition: direction 0.3s ease;
     }
 
     a {
@@ -244,34 +245,105 @@
   </header>
 
   <nav class="navbar" role="navigation" aria-label="Menu principal">
-    <a href="index.html" tabindex="0">Accueil</a>
-    <a href="apropos.html" tabindex="0">À propos</a>
-    <a href="services.html" tabindex="0">Services</a>
-    <a href="projets.html" tabindex="0">Projets</a>
-    <a href="contact.html" tabindex="0">Contact</a>
+    <a href="index.html" id="navAccueil" tabindex="0">Accueil</a>
+    <a href="apropos.html" id="navApropos" tabindex="0">À propos</a>
+    <a href="services.html" id="navServices" tabindex="0">Services</a>
+    <a href="projets.html" id="navProjets" tabindex="0">Projets</a>
+    <a href="contact.html" id="navContact" tabindex="0">Contact</a>
   </nav>
 
   <main role="main">
     <section class="hero" aria-label="Présentation principale">
       <div class="hero-content" data-aos="fade-up">
-        <h1>Luxenter for Building Contracting</h1>
-        <p>Réalisation de projets prestigieux à Dubaï. Excellence, innovation et architecture de pointe.</p>
-        <a class="cta-button" href="tel:+971501234567" aria-label="Appeler Luxenter">Nous contacter</a>
+        <h1 id="heroTitle">Luxenter for Building Contracting</h1>
+        <p id="heroDesc">Réalisation de projets prestigieux à Dubaï. Excellence, innovation et architecture de pointe.</p>
+        <a class="cta-button" href="tel:+971501234567" id="ctaContact" aria-label="Appeler Luxenter">Nous contacter</a>
       </div>
     </section>
   </main>
 
   <footer role="contentinfo">
     <div class="footer-links">
-      <a href="mentions-legales.html">Mentions légales</a>
-      <a href="confidentialite.html">Confidentialité</a>
+      <a href="mentions-legales.html" id="legalMentions">Mentions légales</a>
+      <a href="confidentialite.html" id="legalPrivacy">Confidentialité</a>
     </div>
     <div>
       © 2025 Luxenter for Building Contracting. Tous droits réservés.
     </div>
   </footer>
 
-       display: flex;
+  <script>
+    const translations = {
+      fr: {
+        heroTitle: "Luxenter pour la Construction",
+        heroDesc: "Réalisation de projets prestigieux à Dubaï. Excellence, innovation et architecture de pointe.",
+        ctaContact: "Nous contacter",
+        navAccueil: "Accueil",
+        navApropos: "À propos",
+        navServices: "Services",
+        navProjets: "Projets",
+        navContact: "Contact",
+        legalMentions: "Mentions légales",
+        legalPrivacy: "Confidentialité"
+      },
+      en: {
+        heroTitle: "Luxenter for Building Contracting",
+        heroDesc: "Delivering prestigious projects in Dubai. Excellence, innovation, and cutting-edge architecture.",
+        ctaContact: "Contact Us",
+        navAccueil: "Home",
+        navApropos: "About",
+        navServices: "Services",
+        navProjets: "Projects",
+        navContact: "Contact",
+        legalMentions: "Legal Notice",
+        legalPrivacy: "Privacy Policy"
+      },
+      ar: {
+        heroTitle: "لوكسينتر للمقاولات",
+        heroDesc: "تنفيذ مشاريع مرموقة في دبي. التميز والابتكار والهندسة المعمارية المتطورة.",
+        ctaContact: "اتصل بنا",
+        navAccueil: "الرئيسية",
+        navApropos: "معلومات عنا",
+        navServices: "الخدمات",
+        navProjets: "المشاريع",
+        navContact: "اتصل",
+        legalMentions: "إشعارات قانونية",
+        legalPrivacy: "سياسة الخصوصية"
+      }
+    };
+
+    const langSwitcher = document.getElementById('langSwitcher');
+
+    function updateTexts(lang) {
+      const t = translations[lang];
+
+      document.getElementById('heroTitle').textContent = t.heroTitle;
+      document.getElementById('heroDesc').textContent = t.heroDesc;
+      document.getElementById('ctaContact').textContent = t.ctaContact;
+      document.getElementById('navAccueil').textContent = t.navAccueil;
+      document.getElementById('navApropos').textContent = t.navApropos;
+      document.getElementById('navServices').textContent = t.navServices;
+      document.getElementById('navProjets').textContent = t.navProjets;
+      document.getElementById('navContact').textContent = t.navContact;
+      document.getElementById('legalMentions').textContent = t.legalMentions;
+      document.getElementById('legalPrivacy').textContent = t.legalPrivacy;
+
+      // Gérer la direction RTL pour l'arabe
+      if (lang === 'ar') {
+        document.documentElement.dir = 'rtl';
+        document.body.style.textAlign = 'right';
+      } else {
+        document.documentElement.dir = 'ltr';
+        document.body.style.textAlign = 'left';
+      }
+    }
+
+    langSwitcher.addEventListener('change', (e) => {
+      updateTexts(e.target.value);
+    });
+
+    // Initialiser la page en fonction de la langue sélectionnée par défaut
+    updateTexts(langSwitcher.value);
   </script>
 
 </body>

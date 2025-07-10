@@ -69,7 +69,10 @@
     .hero {
       position: relative;
       height: 80vh;
-      background: linear-gradient(135deg, #0a1f44 0%, #d4af37 100%);
+      /* Image skyline en background avec overlay */
+      background: 
+        linear-gradient(135deg, rgba(10,31,68,0.7) 0%, rgba(212,175,55,0.7) 100%),
+        url('background.jpg') no-repeat center center/cover;
       color: var(--blanc);
       display: flex;
       justify-content: center;
@@ -114,6 +117,15 @@
       text-align: center;
       font-size: 0.9rem;
     }
+    footer a {
+      color: var(--or);
+      text-decoration: none;
+    }
+    footer a:hover,
+    footer a:focus-visible {
+      text-decoration: underline;
+      outline: none;
+    }
   </style>
 </head>
 <body>
@@ -145,7 +157,7 @@
   <main role="main">
     <section class="hero" aria-label="Présentation principale">
       <div class="hero-content">
-        <h1 id="hero-title">Luxenter for building contracting</h1>
+        <h1 id="hero-title">Luxenter pour la construction</h1>
         <p id="hero-description">Réalisation de projets prestigieux à Dubaï. Excellence, innovation et architecture de pointe.</p>
         <a class="cta-button" href="tel:+971561123764" aria-label="Appeler Luxenter">Nous contacter</a>
       </div>
@@ -158,7 +170,7 @@
       <a href="confidentialite.html">Confidentialité</a>
     </div>
     <div>
-      © 2025 Luxenter for Building Contracting. Tous droits réservés.
+      © 2025 Luxenter pour la construction. Tous droits réservés.
     </div>
   </footer>
 
@@ -167,25 +179,66 @@
       fr: {
         title: "Luxenter pour la construction",
         description: "Réalisation de projets prestigieux à Dubaï. Excellence, innovation et architecture de pointe.",
+        menu: ["Accueil", "À propos", "Services", "Projets", "Contact"],
+        langLabel: "Langue :",
+        cta: "Nous contacter",
+        footerLinks: ["Mentions légales", "Confidentialité"],
+        copyright: "© 2025 Luxenter for Building Contracting. Tous droits réservés."
       },
       en: {
         title: "Luxenter for Building Contracting",
         description: "Prestigious project delivery in Dubai. Excellence, innovation and cutting-edge architecture.",
+        menu: ["Home", "About", "Services", "Projects", "Contact"],
+        langLabel: "Language:",
+        cta: "Contact Us",
+        footerLinks: ["Legal Notice", "Privacy Policy"],
+        copyright: "© 2025 Luxenter for Building Contracting. All rights reserved."
       },
       ar: {
         title: "لوكسانتر للمقاولات البناء",
         description: "تنفيذ مشاريع مرموقة في دبي. التميز والابتكار والهندسة المعمارية الحديثة.",
+        menu: ["الرئيسية", "من نحن", "الخدمات", "المشاريع", "اتصل بنا"],
+        langLabel: "اللغة:",
+        cta: "اتصل بنا",
+        footerLinks: ["الإشعارات القانونية", "سياسة الخصوصية"],
+        copyright: "© 2025 لوكسانتر للمقاولات البناء. جميع الحقوق محفوظة."
       }
     };
 
     const langSwitcher = document.getElementById('langSwitcher');
     const heroTitle = document.getElementById('hero-title');
     const heroDescription = document.getElementById('hero-description');
+    const menuLinks = document.querySelectorAll('nav.navbar a');
+    const langLabel = document.getElementById('label-langSwitcher');
+    const ctaButton = document.querySelector('.cta-button');
+    const footerLinks = document.querySelectorAll('.footer-links a');
+    const footerCopyright = document.querySelector('footer > div:last-child');
 
     function updateLanguage(lang) {
+      // Texte de la hero
       heroTitle.textContent = translations[lang].title;
       heroDescription.textContent = translations[lang].description;
 
+      // Label langue
+      langLabel.textContent = translations[lang].langLabel;
+
+      // Menu
+      translations[lang].menu.forEach((text, i) => {
+        menuLinks[i].textContent = text;
+      });
+
+      // Bouton CTA
+      ctaButton.textContent = translations[lang].cta;
+
+      // Footer liens
+      translations[lang].footerLinks.forEach((text, i) => {
+        footerLinks[i].textContent = text;
+      });
+
+      // Footer copyright
+      footerCopyright.textContent = translations[lang].copyright;
+
+      // Lang et direction
       document.documentElement.lang = lang;
       document.documentElement.dir = (lang === 'ar') ? 'rtl' : 'ltr';
     }
@@ -194,6 +247,7 @@
       updateLanguage(e.target.value);
     });
 
+    // Initialiser à la langue par défaut
     updateLanguage(langSwitcher.value);
   </script>
 

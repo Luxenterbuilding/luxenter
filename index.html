@@ -160,6 +160,37 @@
     [dir="rtl"] .footer-links {
       flex-direction: row-reverse;
     }
+    /* Liens nav avec effet */
+nav.navbar a:hover {
+  color: var(--blanc);
+  transition: color 0.3s;
+}
+
+/* Bouton CTA */
+.cta-button {
+  background-color: var(--or);
+  color: var(--marine);
+  padding: 0.8rem 1.6rem;
+  border: none;
+  border-radius: 30px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 1.5rem;
+  transition: all 0.3s ease;
+}
+
+.cta-button:hover {
+  background-color: #fff3d1;
+  transform: scale(1.05);
+}
+
+/* Anim AOS */
+[data-aos] {
+  opacity: 0;
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
   </style>
 
   <script src="https://unpkg.com/i18next@22.4.9/dist/umd/i18next.min.js"></script>
@@ -177,6 +208,9 @@
         <option value="en">English</option>
         <option value="ar">العربية</option>
       </select>
+      <!-- AOS CSS -->
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
     </div>
   </header>
 
@@ -189,13 +223,14 @@
   </nav>
 
   <section class="hero">
-    <div class="hero-overlay"></div>
-    <div class="hero-content">
-      <h1 data-i18n="hero_title">Luxenter for Building Contracting</h1>
-      <p data-i18n="hero_subtitle">
-        Réalisation de projets prestigieux à Dubaï. Excellence, innovation et architecture de pointe.
-      </p>
-    </div>
+    <div class="hero-content" data-aos="fade-up">
+  <h1 data-i18n="hero_title">Luxenter for Building Contracting</h1>
+  <p data-i18n="hero_subtitle">
+    Réalisation de projets prestigieux à Dubaï. Excellence, innovation et architecture de pointe.
+  </p>
+  <button class="cta-button" onclick="location.href='contact.html'" data-i18n="cta_contact">Nous contacter</button>
+</div>
+
   </section>
 
   <footer>
@@ -283,5 +318,11 @@
       }
     });
   </script>
+  <!-- AOS Script -->
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  AOS.init();
+</script>
+
 </body>
 </html>

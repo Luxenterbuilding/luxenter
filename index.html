@@ -271,23 +271,7 @@
     </div>
   </footer>
 
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <script>
-    AOS.init();
-
-    // Langue switcher accessible simple example
-    const langSwitcher = document.getElementById('langSwitcher');
-    langSwitcher.addEventListener('change', (e) => {
-      const lang = e.target.value;
-      if(lang === 'ar') {
-        document.documentElement.dir = 'rtl';
-        document.documentElement.lang = 'ar';
-      } else {
-        document.documentElement.dir = 'ltr';
-        document.documentElement.lang = lang;
-      }
-      // Ici tu peux étendre avec i18n pour changer le contenu dynamiquement
-    });
+       display: flex;
   </script>
 
 </body>

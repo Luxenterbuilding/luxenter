@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Luxenter Building Contracting LLC SOC</title>
+<title>Luxenter Construction Dubai</title>
 
 <style>
   body {
@@ -18,7 +18,11 @@
     color:#d4af37;
     padding: 1rem 2rem;
   }
-  /* Langue en haut à gauche */
+  .logo {
+    font-weight: 700;
+    font-size: 1.8rem;
+    letter-spacing: 2px;
+  }
   .lang-switcher {
     font-weight: 600;
   }
@@ -28,15 +32,6 @@
     cursor:pointer;
     margin-left: 0.5rem;
   }
-
-  /* Logo en haut à droite */
-  .logo {
-    font-weight: 700;
-    font-size: 1.8rem;
-    letter-spacing: 2px;
-  }
-
-  /* Navigation sous header */
   nav.navbar {
     background:#0a1f44;
     display: flex;
@@ -54,7 +49,6 @@
   nav.navbar a:hover {
     color: #fff;
   }
-
   main {
     max-width:900px; margin:3rem auto; padding:2rem; 
     text-align:center;
@@ -88,6 +82,20 @@
   .footer-nav a:hover {
     color:#fff;
   }
+  .footer-legal {
+    display: flex;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    font-size: 0.9rem;
+  }
+  .footer-legal a {
+    color:#d4af37;
+    text-decoration: underline;
+    cursor: pointer;
+  }
+  .footer-legal a:hover {
+    color: #fff;
+  }
   .footer-social {
     display:flex; gap:1rem;
   }
@@ -112,7 +120,7 @@
     .footer-container {
       flex-direction:column; align-items:flex-start; gap:1.5rem;
     }
-    .footer-nav, .footer-social {
+    .footer-nav, .footer-social, .footer-legal {
       justify-content:center; width:100%;
     }
     .footer-copy {
@@ -127,6 +135,7 @@
 <body>
 
 <header>
+  <div class="logo" data-i18n="header">Luxenter Construction</div>
   <div class="lang-switcher">
     <label for="langSwitcher" style="color:#d4af37;" data-i18n="choose_language_label">Choisissez la langue :</label>
     <select id="langSwitcher" aria-label="Switch language">
@@ -135,7 +144,6 @@
       <option value="ar">العربية</option>
     </select>
   </div>
-  <div class="logo" data-i18n="header">Luxenter Construction</div>
 </header>
 
 <nav class="navbar" role="navigation" aria-label="Main navigation">
@@ -153,17 +161,17 @@
     Notre équipe d’experts est dédiée à transformer vos idées en réalisations exceptionnelles, avec une attention particulière portée à chaque détail.
   </p>
 
-  <!-- Remplacez l'URL ci-dessous par celle de votre image de skyline -->
+  <!-- Image skyline locale -->
   <img
     class="skyline-image"
-    src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1200&q=80"
+    src="dubai-skyline.jpg"
     alt="Skyline de Dubaï"
   />
 </main>
 
 <footer>
   <div class="footer-container">
-    <div class="luxenter-logo.png">
+    <div class="footer-logo">
       <h2 data-i18n="footer_logo">Luxenter</h2>
     </div>
     <nav class="footer-nav" role="navigation" aria-label="Footer Navigation">
@@ -173,6 +181,12 @@
       <a href="projets.html" data-i18n="nav_projects">Projets</a>
       <a href="contact.html" data-i18n="nav_contact">Contact</a>
     </nav>
+
+    <div class="footer-legal">
+      <a href="mentions-legales.html" data-i18n="legal_notice">Mentions légales</a>
+      <a href="confidentialite.html" data-i18n="privacy_policy">Confidentialité</a>
+    </div>
+
     <div class="footer-social" aria-label="Social Media Links">
       <a href="#" aria-label="Facebook" title="Facebook">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path d="M22 12a10 10 0 1 0-11.5 9.8v-6.9h-2.7v-2.9h2.7v-2.2c0-2.7 1.6-4.2 4-4.2 1.2 0 2.5.2 2.5.2v2.7h-1.3c-1.3 0-1.7.8-1.7 1.6v1.9h3l-.5 2.9h-2.5v6.9A10 10 0 0 0 22 12z" fill="#d4af37"/></svg>
@@ -192,7 +206,7 @@
   const resources = {
     fr: {
       translation: {
-        header: "Luxenter Construction",
+        header: "Luxenter Building Contracting",
         presentation_title: "À propos de Luxenter",
         presentation_text: "Luxenter est une entreprise de construction basée à Dubaï, spécialisée dans la réalisation de projets haut de gamme alliant innovation, qualité et respect des délais. Notre équipe d’experts est dédiée à transformer vos idées en réalisations exceptionnelles, avec une attention particulière portée à chaque détail.",
         choose_language_label: "Choisissez la langue :",
@@ -201,12 +215,14 @@
         nav_about: "À propos",
         nav_services: "Services",
         nav_projects: "Projets",
-        nav_contact: "Contact"
+        nav_contact: "Contact",
+        legal_notice: "Mentions légales",
+        privacy_policy: "Confidentialité"
       }
     },
     en: {
       translation: {
-        header: "Luxenter Construction",
+        header: "Luxenter Building Contracting",
         presentation_title: "About Luxenter",
         presentation_text: "Luxenter is a construction company based in Dubai, specializing in high-end projects combining innovation, quality, and timely delivery. Our team of experts is dedicated to turning your ideas into exceptional achievements, with special attention to every detail.",
         choose_language_label: "Choose language:",
@@ -215,12 +231,14 @@
         nav_about: "About",
         nav_services: "Services",
         nav_projects: "Projects",
-        nav_contact: "Contact"
+        nav_contact: "Contact",
+        legal_notice: "Legal Notice",
+        privacy_policy: "Privacy Policy"
       }
     },
     ar: {
       translation: {
-        header: "لوكسينتر للإنشاءات",
+        header: "شركة لوكسنتر للمقاولات الإنشائية",
         presentation_title: "حول لوكسينتر",
         presentation_text: "لوكسينتر هي شركة إنشاءات مقرها في دبي، متخصصة في تنفيذ مشاريع راقية تجمع بين الابتكار والجودة واحترام المواعيد. فريقنا من الخبراء مكرس لتحويل أفكارك إلى إنجازات استثنائية، مع اهتمام خاص بكل التفاصيل.",
         choose_language_label: "اختر اللغة:",
@@ -229,7 +247,9 @@
         nav_about: "معلومات عنا",
         nav_services: "خدمات",
         nav_projects: "مشاريع",
-        nav_contact: "اتصال"
+        nav_contact: "اتصال",
+        legal_notice: "الإشعارات القانونية",
+        privacy_policy: "السياسة الخصوصية"
       }
     }
   };
@@ -252,7 +272,6 @@
   document.getElementById('langSwitcher').addEventListener('change', e => {
     const selectedLang = e.target.value;
     i18next.changeLanguage(selectedLang, updateContent);
-    // RTL pour arabe
     if(selectedLang === 'ar') {
       document.documentElement.lang = 'ar';
       document.documentElement.dir = 'rtl';

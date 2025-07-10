@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Luxenter - Contact</title>
+  <meta name="description" content="Contact Luxenter for premium construction services across the UAE. Get in touch for project consultations or inquiries." />
+  <meta name="keywords" content="Contact Luxenter Dubai, construction company UAE, building services, luxury contractor" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Roboto&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Roboto', sans-serif;
+      background: #f9f9f9;
+      color: #0a1f44;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+      font-size: 18px;
+    }
+
+    header, nav, footer {
+      background: #0a1f44;
+      color: #d4af37;
+      padding: 1rem 3rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    nav a {
+      margin: 0 1rem;
+      color: #d4af37;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    main {
+      flex-grow: 1;
+      padding: 2rem 4rem;
+      max-width: 800px;
+      margin: auto;
+      background: #ffffff;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      border-radius: 12px;
+    }
+
+    h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 3rem;
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    form {
+      display: grid;
+      gap: 1.2rem;
+    }
+
+    label {
+      font-weight: bold;
+    }
+
+    input, textarea {
+      padding: 0.8rem;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 1rem;
+    }
+
+    button {
+      padding: 0.8rem 1.5rem;
+      background: #0a1f44;
+      color: #d4af37;
+      border: none;
+      font-weight: bold;
+      font-size: 1rem;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #112d5c;
+    }
+
+    .contact-info {
+      margin-top: 2rem;
+      font-size: 1rem;
+      line-height: 1.8;
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem 1rem;
+      font-size: 0.95rem;
+      flex-shrink: 0;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <a href="index.html"><img src="luxenter-logo.png" alt="Luxenter logo" style="height: 70px;"></a>
+    </div>
+    <div class="lang-switcher">
+      <label for="langSwitcher" id="label-langSwitcher">Language:</label>
+      <select id="langSwitcher" aria-labelledby="label-langSwitcher">
+        <option value="en" selected>English</option>
+        <option value="fr">Français</option>
+        <option value="ar">العربية</option>
+      </select>
+    </div>
+  </header>
+
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="apropos.html">About</a>
+    <a href="services.html">Services</a>
+    <a href="projets.html">Projects</a>
+    <a href="contact.html" aria-current="page">Contact</a>
+  </nav>
+
+  <main>
+    <h1 id="contact-title">Contact Us</h1>
+    <form action="mailto:luxenterbuildingcontracting@gmail.com" method="post" enctype="text/plain">
+      <label for="fullname" id="label-fullname">Full Name</label>
+      <input type="text" id="fullname" name="Full Name" required />
+
+      <label for="email" id="label-email">Email</label>
+      <input type="email" id="email" name="Email" required />
+
+      <label for="phone" id="label-phone">Phone Number</label>
+      <input type="tel" id="phone" name="Phone" required />
+
+      <label for="subject" id="label-subject">Subject</label>
+      <input type="text" id="subject" name="Subject" required />
+
+      <label for="message" id="label-message">Message</label>
+      <textarea id="message" name="Message" rows="6" required></textarea>
+
+      <button type="submit" id="submit-btn">Send Message</button>
+    </form>
+
+    <div class="contact-info">
+      <p><strong>Email:</strong> <a href="mailto:luxenterbuildingcontracting@gmail.com">luxenterbuildingcontracting@gmail.com</a></p>
+      <p><strong>Phone / WhatsApp:</strong> <a href="tel:+971561123764">+971 56 112 3764</a></p>
+      <p><strong>Address:</strong> AHMAD BUILDING - Office S83, 26th St - Hor Al Anz - Dubai</p>
+    </div>
+  </main>
+
+  <footer>
+    <p>© 2025 Luxenter for Building Contracting. All rights reserved.</p>
+  </footer>
+
+  <script>
+    const translations = {
+      en: {
+        title: "Contact Us",
+        fullname: "Full Name",
+        email: "Email",
+        phone: "Phone Number",
+        subject: "Subject",
+        message: "Message",
+        send: "Send Message"
+      },
+      fr: {
+        title: "Nous Contacter",
+        fullname: "Nom Complet",
+        email: "E-mail",
+        phone: "Téléphone",
+        subject: "Objet",
+        message: "Message",
+        send: "Envoyer le Message"
+      },
+      ar: {
+        title: "اتصل بنا",
+        fullname: "الاسم الكامل",
+        email: "البريد الإلكتروني",
+        phone: "رقم الهاتف",
+        subject: "الموضوع",
+        message: "الرسالة",
+        send: "أرسل الرسالة"
+      }
+    };
+
+    const langSwitcher = document.getElementById('langSwitcher');
+
+    function updateLanguage(lang) {
+      document.getElementById('contact-title').textContent = translations[lang].title;
+      document.getElementById('label-fullname').textContent = translations[lang].fullname;
+      document.getElementById('label-email').textContent = translations[lang].email;
+      document.getElementById('label-phone').textContent = translations[lang].phone;
+      document.getElementById('label-subject').textContent = translations[lang].subject;
+      document.getElementById('label-message').textContent = translations[lang].message;
+      document.getElementById('submit-btn').textContent = translations[lang].send;
+
+      document.documentElement.lang = lang;
+      document.documentElement.dir = (lang === 'ar') ? 'rtl' : 'ltr';
+    }
+
+    langSwitcher.addEventListener('change', (e) => {
+      updateLanguage(e.target.value);
+    });
+
+    updateLanguage(langSwitcher.value);
+  </script>
+</body>
+</html>

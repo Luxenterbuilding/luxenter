@@ -1,105 +1,195 @@
 <!DOCTYPE html>
-<html lang="fr" dir="ltr">
+<html lang="en" dir="ltr">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Luxenter - À propos</title>
-  <meta name="description" content="Luxenter, entreprise de construction haut de gamme basée à Dubaï, opérant dans tous les Émirats arabes unis. Excellence architecturale, innovation et qualité." />
-  <meta name="keywords" content="construction haut de gamme Émirats arabes unis, Luxenter Dubai, entreprise construction UAE mainland, projets de prestige UAE" />
-  <meta name="geo.region" content="AE" />
-  <meta name="geo.placename" content="Dubai, Abu Dhabi, Sharjah, Ajman, Fujairah, Ras Al Khaimah, Umm Al Quwain" />
-  <meta name="geo.position" content="25.276987,55.296249" />
-  <meta name="ICBM" content="25.276987,55.296249" />
+  <title>Luxenter - About</title>
+  <meta name="description" content="Luxenter, premium construction company based in Dubai operating across all Emirates. Architectural excellence, innovation and quality." />
+  <meta name="keywords" content="luxury construction UAE, Luxenter Dubai, building contracting Emirates, premium construction UAE" />
   <style>
+    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Roboto&display=swap');
+
     :root {
       --marine: #0a1f44;
-      --or: #d4af37;
-      --blanc: #ffffff;
-      --focus-color: #ffd54f;
+      --gold: #d4af37;
+      --white: #ffffff;
+      --shadow: rgba(10,31,68,0.15);
     }
+
     body {
       margin: 0;
       font-family: 'Roboto', sans-serif;
-      background: var(--blanc);
+      background: linear-gradient(135deg, #fefefe 0%, #f9f9f9 100%);
       color: var(--marine);
       display: flex;
       flex-direction: column;
       min-height: 100vh;
-      line-height: 1.6;
+      line-height: 1.7;
       font-size: 18px;
     }
+
     header {
       background: var(--marine);
-      color: var(--or);
-      padding: 1rem 2rem;
+      color: var(--gold);
+      padding: 1rem 3rem;
       display: flex;
       justify-content: space-between;
       align-items: center;
+      box-shadow: 0 4px 8px var(--shadow);
+      z-index: 10;
     }
+
     .logo img {
-      height: 80px;
+      height: 90px;
+      filter: drop-shadow(0 0 3px rgba(212,175,55,0.8));
     }
+
     .lang-switcher label {
       margin-right: 0.5rem;
       font-weight: 600;
+      font-size: 1rem;
     }
+
     select#langSwitcher {
       background: var(--marine);
-      color: var(--or);
-      border: 1px solid var(--or);
-      padding: 0.3rem 0.6rem;
-      border-radius: 4px;
+      color: var(--gold);
+      border: 1.5px solid var(--gold);
+      padding: 0.35rem 0.7rem;
+      border-radius: 5px;
       font-weight: 600;
+      font-size: 1rem;
       cursor: pointer;
+      transition: background-color 0.3s ease;
     }
+
+    select#langSwitcher:hover,
+    select#langSwitcher:focus {
+      background-color: rgba(212,175,55,0.15);
+      outline: none;
+    }
+
     nav.navbar {
       background: var(--marine);
       display: flex;
       justify-content: center;
-      gap: 2rem;
-      padding: 1rem 0;
-    }
-    nav.navbar a {
-      color: var(--or);
+      gap: 3rem;
+      padding: 1.2rem 0;
+      box-shadow: 0 2px 6px var(--shadow);
       font-weight: 600;
-      text-decoration: none;
+      font-size: 1.1rem;
     }
+
+    nav.navbar a {
+      color: var(--gold);
+      text-decoration: none;
+      letter-spacing: 0.05em;
+      transition: color 0.25s ease;
+    }
+
     nav.navbar a:hover,
     nav.navbar a:focus-visible {
+      color: var(--white);
       text-decoration: underline;
-      outline: none;
+      outline-offset: 3px;
     }
+
+    /* En-tête avec image animée */
+    .hero-image {
+      position: relative;
+      height: 350px;
+      overflow: hidden;
+      margin-bottom: 3rem;
+      box-shadow: 0 8px 15px var(--shadow);
+      border-radius: 12px;
+    }
+    .hero-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      animation: zoomFadeIn 15s ease-in-out infinite alternate;
+      border-radius: 12px;
+      filter: brightness(0.85);
+      transition: filter 0.5s ease;
+    }
+    .hero-image img:hover {
+      filter: brightness(1);
+    }
+    @keyframes zoomFadeIn {
+      0% {
+        transform: scale(1);
+        opacity: 0.85;
+      }
+      100% {
+        transform: scale(1.05);
+        opacity: 1;
+      }
+    }
+
     main {
       flex-grow: 1;
-      padding: 2rem 4rem;
+      padding: 0 4rem 3rem 4rem;
       max-width: 900px;
       margin: 0 auto;
+      background: var(--white);
+      border-radius: 12px;
+      box-shadow: 0 10px 30px var(--shadow);
     }
+
     h1, h2 {
+      font-family: 'Playfair Display', serif;
       color: var(--marine);
       font-weight: 700;
-    }
-    h1 {
-      font-size: 2.8rem;
+      letter-spacing: 0.05em;
+      margin-top: 0;
       margin-bottom: 1rem;
+    }
+
+    h1 {
+      font-size: 3rem;
       text-align: center;
+      padding-top: 1rem;
+      margin-bottom: 2rem;
     }
+
     h2 {
-      font-size: 1.8rem;
-      margin-top: 2rem;
-      margin-bottom: 0.8rem;
-      border-bottom: 3px solid var(--or);
-      padding-bottom: 0.3rem;
+      font-size: 2rem;
+      margin-top: 3rem;
+      margin-bottom: 1rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 3px solid var(--gold);
     }
+
     p {
-      margin-bottom: 1.2rem;
+      margin-bottom: 1.6rem;
+      font-size: 1.1rem;
+      line-height: 1.8;
+      color: #17233d;
+      text-align: justify;
     }
+
     footer {
       background: var(--marine);
-      color: var(--or);
+      color: var(--gold);
       padding: 2rem 1rem;
       text-align: center;
-      font-size: 0.9rem;
+      font-size: 0.95rem;
+      letter-spacing: 0.06em;
+      box-shadow: 0 -6px 15px var(--shadow);
+      user-select: none;
+    }
+
+    .footer-links a {
+      color: var(--gold);
+      margin: 0 0.5rem;
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 0.95rem;
+    }
+
+    .footer-links a:hover,
+    .footer-links a:focus-visible {
+      text-decoration: underline;
+      outline-offset: 2px;
     }
   </style>
 </head>
@@ -107,67 +197,71 @@
 
   <header role="banner">
     <div class="logo">
-      <a href="index.html" aria-label="Luxenter Accueil">
-        <img src="luxenter-logo.png" alt="Logo Luxenter" />
+      <a href="index.html" aria-label="Luxenter Home">
+        <img src="luxenter-logo.png" alt="Luxenter logo" />
       </a>
     </div>
-    <div class="lang-switcher" role="navigation" aria-label="Sélecteur de langue">
-      <label for="langSwitcher" id="label-langSwitcher">Langue :</label>
+    <div class="lang-switcher" role="navigation" aria-label="Language selector">
+      <label for="langSwitcher" id="label-langSwitcher">Language:</label>
       <select id="langSwitcher" aria-labelledby="label-langSwitcher" aria-live="polite">
-        <option value="fr" selected>Français</option>
-        <option value="en">English</option>
+        <option value="fr">Français</option>
+        <option value="en" selected>English</option>
         <option value="ar">العربية</option>
       </select>
     </div>
   </header>
 
-  <nav class="navbar" role="navigation" aria-label="Menu principal">
-    <a href="index.html" tabindex="0">Accueil</a>
-    <a href="apropos.html" tabindex="0" aria-current="page">À propos</a>
+  <nav class="navbar" role="navigation" aria-label="Main menu">
+    <a href="index.html" tabindex="0">Home</a>
+    <a href="apropos.html" tabindex="0" aria-current="page">About</a>
     <a href="services.html" tabindex="0">Services</a>
-    <a href="projets.html" tabindex="0">Projets</a>
+    <a href="projets.html" tabindex="0">Projects</a>
     <a href="contact.html" tabindex="0">Contact</a>
   </nav>
 
+  <div class="hero-image" aria-hidden="true">
+    <img src="construction-luxury-dubai.jpg" alt="Luxury building construction in Dubai" />
+  </div>
+
   <main role="main" aria-labelledby="page-title">
-    <h1 id="page-title">À propos</h1>
+    <h1 id="page-title">About</h1>
 
     <section aria-labelledby="identity-title">
-      <h2 id="identity-title">Notre Identité</h2>
+      <h2 id="identity-title">Our Identity</h2>
       <p>
-        Luxenter for Building Contracting est une entreprise de construction haut de gamme basée à Dubaï. Agréée par les autorités de la zone continentale des Émirats arabes unis, nous sommes habilités à opérer sur l’ensemble du territoire national. Notre approche allie excellence architecturale, innovation technologique et engagement absolu envers la qualité.
+        Luxenter for Building Contracting is a premium construction company based in Dubai. Licensed by UAE Mainland authorities, we are authorized to operate throughout the country. Our approach combines architectural excellence, technological innovation, and an absolute commitment to quality.
       </p>
     </section>
 
     <section aria-labelledby="operation-title">
-      <h2 id="operation-title">Où Nous Intervenons</h2>
+      <h2 id="operation-title">Where We Operate</h2>
       <p>
-        Nous réalisons des projets de prestige à travers tous les Émirats arabes unis, en associant expertise locale et standards internationaux.
+        We deliver prestigious projects across all the United Arab Emirates, combining local expertise and international standards.
       </p>
     </section>
 
     <section aria-labelledby="values-title">
-      <h2 id="values-title">Nos Valeurs</h2>
+      <h2 id="values-title">Our Values</h2>
       <p>
-        Chaque projet reflète notre engagement envers la qualité, la fiabilité et la durabilité. Nous collaborons avec des architectes, des ingénieurs et des promoteurs immobiliers de renom pour concevoir des bâtiments emblématiques qui façonnent le paysage urbain des Émirats.
+        Each project reflects our commitment to quality, reliability, and sustainability. We collaborate with renowned architects, engineers, and real estate developers to design iconic buildings shaping the UAE urban landscape.
       </p>
     </section>
 
     <section aria-labelledby="why-choose-title">
-      <h2 id="why-choose-title">Pourquoi Choisir Luxenter ?</h2>
+      <h2 id="why-choose-title">Why Choose Luxenter?</h2>
       <p>
-        De la conception à la réalisation, nous assurons une gestion fluide, des solutions sur mesure et un respect rigoureux des délais et des budgets. Luxenter est votre partenaire de référence pour des projets de construction de luxe aux Émirats arabes unis.
+        From concept to completion, we ensure smooth management, tailored solutions, and strict adherence to deadlines and budgets. Luxenter is your go-to partner for luxury construction projects in the UAE.
       </p>
     </section>
   </main>
 
   <footer role="contentinfo">
     <div class="footer-links">
-      <a href="mentions-legales.html">Mentions légales</a> |
-      <a href="confidentialite.html">Confidentialité</a>
+      <a href="mentions-legales.html">Legal Notice</a> |
+      <a href="confidentialite.html">Privacy Policy</a>
     </div>
     <div>
-      © 2025 Luxenter for Building Contracting. Tous droits réservés.
+      © 2025 Luxenter for Building Contracting. All rights reserved.
     </div>
   </footer>
 
@@ -229,39 +323,40 @@
       document.documentElement.lang = lang;
       document.documentElement.dir = (lang === 'ar') ? 'rtl' : 'ltr';
 
-      // Update text content
-      document.querySelector('title').textContent = `Luxenter - ${translations[lang].title}`;
+      // Update texts
+      document.title = `Luxenter - ${translations[lang].title}`;
       document.getElementById('page-title').textContent = translations[lang].title;
 
-      document.querySelector('nav.navbar a[href="index.html"]').textContent = translations[lang].navAccueil;
-      document.querySelector('nav.navbar a[href="apropos.html"]').textContent = translations[lang].navApropos;
-      document.querySelector('nav.navbar a[href="services.html"]').textContent = translations[lang].navServices;
-      document.querySelector('nav.navbar a[href="projets.html"]').textContent = translations[lang].navProjets;
-      document.querySelector('nav.navbar a[href="contact.html"]').textContent = translations[lang].navContact;
+      const navLinks = document.querySelectorAll('nav.navbar a');
+      navLinks[0].textContent = translations[lang].navAccueil;
+      navLinks[1].textContent = translations[lang].navApropos;
+      navLinks[2].textContent = translations[lang].navServices;
+      navLinks[3].textContent = translations[lang].navProjets;
+      navLinks[4].textContent = translations[lang].navContact;
 
-      // Update sections
-      const sections = [
-        { idTitle: 'identity-title', idText: null, title: translations[lang].identityTitle, text: translations[lang].identityText },
-        { idTitle: 'operation-title', idText: null, title: translations[lang].operationTitle, text: translations[lang].operationText },
-        { idTitle: 'values-title', idText: null, title: translations[lang].valuesTitle, text: translations[lang].valuesText },
-        { idTitle: 'why-choose-title', idText: null, title: translations[lang].whyChooseTitle, text: translations[lang].whyChooseText }
-      ];
+      // Sections
+      document.getElementById('identity-title').textContent = translations[lang].identityTitle;
+      document.getElementById('identity-title').nextElementSibling.textContent = translations[lang].identityText;
 
-      sections.forEach(section => {
-        document.getElementById(section.idTitle).textContent = section.title;
-        // The paragraph is next sibling of h2, so update it
-        document.getElementById(section.idTitle).nextElementSibling.textContent = section.text;
-      });
+      document.getElementById('operation-title').textContent = translations[lang].operationTitle;
+      document.getElementById('operation-title').nextElementSibling.textContent = translations[lang].operationText;
+
+      document.getElementById('values-title').textContent = translations[lang].valuesTitle;
+      document.getElementById('values-title').nextElementSibling.textContent = translations[lang].valuesText;
+
+      document.getElementById('why-choose-title').textContent = translations[lang].whyChooseTitle;
+      document.getElementById('why-choose-title').nextElementSibling.textContent = translations[lang].whyChooseText;
     }
+
+    // Set default language to English on page load
+    window.addEventListener('DOMContentLoaded', () => {
+      updateLanguage('en');
+      langSwitcher.value = 'en';
+    });
 
     langSwitcher.addEventListener('change', (e) => {
       updateLanguage(e.target.value);
     });
-
-    // Default to English on page load
-    langSwitcher.value = 'en';
-    updateLanguage('en');
   </script>
-
 </body>
 </html>

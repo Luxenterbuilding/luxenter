@@ -1,205 +1,286 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="fr" dir="ltr">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="description" content="Luxenter for Building Contracting - Construction haut de gamme à Dubaï." />
-  <title>Luxenter for Building Contracting</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
-  <script src="https://unpkg.com/i18next@22.4.10/dist/umd/i18next.min.js"></script>
-  <script src="https://unpkg.com/i18next-browser-languagedetector@6.1.4/i18nextBrowserLanguageDetector.min.js"></script>
-  <script src="https://unpkg.com/i18next-http-backend@2.2.0/i18nextHttpBackend.min.js"></script>
+  <meta name="keywords" content="Luxenter, Construction, Dubaï, Luxe, Projets, Architecture, Bâtiment" />
+  <meta name="author" content="Luxenter for Building Contracting" />
+  <title>Luxenter for Building Contracting - Dubai</title>
+
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;500;700&display=swap" />
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
+    :root {
+      --marine: #0a1f44;
+      --or: #d4af37;
+      --blanc: #ffffff;
     }
+
     body {
-      font-family: 'Montserrat', sans-serif;
-      background: #ffffff;
-      color: #0a1f44;
-      line-height: 1.6;
+      margin: 0;
+      font-family: 'Roboto', sans-serif;
+      background: var(--blanc);
+      color: var(--marine);
     }
+
     header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: var(--marine);
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 1.2rem 2rem;
-      background-color: #0a1f44;
-    }
-    .logo img {
-      height: 90px;
-    }
-    .lang-switcher select {
-      background: #0a1f44;
-      color: #d4af37;
-      border: 1px solid #d4af37;
-      padding: 0.4rem 0.6rem;
-      border-radius: 4px;
-      font-weight: bold;
-    }
-    nav {
-      background: #0a1f44;
       padding: 1rem 2rem;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+
+    .logo img {
+      height: 80px;
+    }
+
+    .lang-switcher {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    #langSwitcher {
+      background: var(--marine);
+      color: var(--or);
+      border: 1px solid var(--or);
+      padding: 0.4rem 0.8rem;
+      font-weight: bold;
+      border-radius: 4px;
+      font-size: 1rem;
+      cursor: pointer;
+    }
+
+    nav.navbar {
+      background: var(--marine);
       display: flex;
       justify-content: center;
       gap: 2rem;
+      padding: 1rem 0;
     }
-    nav a {
-      color: #d4af37;
+
+    nav.navbar a {
+      color: var(--or);
       font-weight: 600;
+      font-size: 1.1rem;
       text-decoration: none;
-      transition: color 0.3s;
     }
-    nav a:hover {
-      color: #ffffff;
-    }
+
     .hero {
       position: relative;
-      height: 75vh;
-      background: url('images/dubai-skyline.jpg') center/cover no-repeat;
+      width: 100%;
+      height: 60vh;
+      background: url("images/dubai-skyline.jpg") center/cover no-repeat;
       display: flex;
       align-items: center;
       justify-content: center;
-      color: white;
+      color: var(--blanc);
       text-align: center;
     }
+
     .hero-overlay {
-      background: rgba(10, 31, 68, 0.6);
-      padding: 2rem;
-      border-radius: 12px;
+      position: absolute;
+      inset: 0;
+      background: rgba(10, 31, 68, 0.5);
     }
-    .hero h1 {
-      font-size: 2.8rem;
-      color: #d4af37;
-      margin-bottom: 1rem;
-    }
-    .hero p {
-      font-size: 1.2rem;
-    }
-    .intro {
-      padding: 3rem 1.5rem;
-      text-align: center;
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
       max-width: 800px;
-      margin: auto;
+      padding: 1rem;
     }
-    .intro h2 {
-      font-size: 2rem;
+
+    .hero h1 {
+      font-size: 3rem;
       margin-bottom: 1rem;
-      color: #0a1f44;
+      color: var(--or);
     }
-    .intro p {
-      font-size: 1.1rem;
+
+    .hero p {
+      font-size: 1.3rem;
+      line-height: 1.6;
     }
+
     footer {
-      background-color: #0a1f44;
-      color: #d4af37;
+      background: var(--marine);
+      color: var(--or);
       padding: 2rem 1rem;
       text-align: center;
     }
-    footer .footer-links {
+
+    .footer-links {
+      margin-bottom: 1rem;
       display: flex;
       justify-content: center;
       gap: 2rem;
-      margin-bottom: 0.5rem;
       flex-wrap: wrap;
     }
-    footer .footer-links a {
-      color: #d4af37;
+
+    .footer-links a {
+      color: var(--or);
       text-decoration: underline;
       font-size: 0.95rem;
     }
-    footer .footer-copy {
+
+    .footer-copy {
       font-size: 0.85rem;
     }
-    @media (max-width: 768px) {
+
+    @media (max-width: 600px) {
       .hero h1 {
         font-size: 2rem;
       }
-      .intro h2 {
-        font-size: 1.5rem;
+
+      .hero p {
+        font-size: 1rem;
       }
-      header, nav {
+
+      .logo img {
+        height: 60px;
+      }
+
+      nav.navbar {
         flex-direction: column;
-        align-items: center;
+        gap: 1rem;
       }
     }
+
+    [dir="rtl"] body {
+      text-align: right;
+    }
+
+    [dir="rtl"] header,
+    [dir="rtl"] nav.navbar,
+    [dir="rtl"] .footer-links {
+      flex-direction: row-reverse;
+    }
   </style>
+
+  <script src="https://unpkg.com/i18next@22.4.9/dist/umd/i18next.min.js"></script>
 </head>
 <body>
+
   <header>
     <div class="logo">
-      <img src="images/logo.png" alt="Logo Luxenter">
+      <img src="luxenter-logo.png" alt="Luxenter Logo" />
     </div>
     <div class="lang-switcher">
+      <label for="langSwitcher" data-i18n="choose_language_label">Langue :</label>
       <select id="langSwitcher">
-        <option value="fr">FR</option>
-        <option value="en">EN</option>
-        <option value="ar">AR</option>
+        <option value="fr">Français</option>
+        <option value="en">English</option>
+        <option value="ar">العربية</option>
       </select>
     </div>
   </header>
 
-  <nav>
-    <a href="#" data-i18n="nav.home">Accueil</a>
-    <a href="#" data-i18n="nav.services">Services</a>
-    <a href="#" data-i18n="nav.projects">Projets</a>
-    <a href="#" data-i18n="nav.contact">Contact</a>
+  <nav class="navbar">
+    <a href="index.html" data-i18n="nav_home">Accueil</a>
+    <a href="apropos.html" data-i18n="nav_about">À propos</a>
+    <a href="services.html" data-i18n="nav_services">Services</a>
+    <a href="projets.html" data-i18n="nav_projects">Projets</a>
+    <a href="contact.html" data-i18n="nav_contact">Contact</a>
   </nav>
 
   <section class="hero">
-    <div class="hero-overlay">
-      <h1 data-i18n="hero.title">Luxenter for Building Contracting</h1>
-      <p data-i18n="hero.subtitle">Élever les standards de la construction à Dubaï — luxe, technologie, excellence.</p>
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <h1 data-i18n="hero_title">Luxenter for Building Contracting</h1>
+      <p data-i18n="hero_subtitle">
+        Réalisation de projets prestigieux à Dubaï. Excellence, innovation et architecture de pointe.
+      </p>
     </div>
-  </section>
-
-  <section class="intro">
-    <h2 data-i18n="intro.heading">Construire le futur avec audace</h2>
-    <p data-i18n="intro.description">
-      Luxenter est une entreprise innovante spécialisée dans les projets de construction haut de gamme à Dubaï. Nous fusionnons design d’exception, technologies de pointe et engagement rigoureux pour donner vie à des espaces qui inspirent.
-    </p>
   </section>
 
   <footer>
     <div class="footer-links">
-      <a href="#" data-i18n="footer.legal">Mentions légales</a>
-      <a href="#" data-i18n="footer.privacy">Confidentialité</a>
+      <a href="mentions-legales.html" data-i18n="legal_notice">Mentions légales</a>
+      <a href="confidentialite.html" data-i18n="privacy_policy">Confidentialité</a>
     </div>
     <div class="footer-copy">
-      &copy; 2025 Luxenter for Building Contracting - <span data-i18n="footer.rights">Tous droits réservés</span>
+      © 2025 Luxenter for Building Contracting. Tous droits réservés.
     </div>
   </footer>
 
   <script>
-    i18next
-      .use(i18nextHttpBackend)
-      .use(i18nextBrowserLanguageDetector)
-      .init({
-        debug: false,
-        fallbackLng: 'fr',
-        backend: {
-          loadPath: '/locales/{{lng}}.json'
+    const resources = {
+      fr: {
+        translation: {
+          choose_language_label: "Langue :",
+          nav_home: "Accueil",
+          nav_about: "À propos",
+          nav_services: "Services",
+          nav_projects: "Projets",
+          nav_contact: "Contact",
+          legal_notice: "Mentions légales",
+          privacy_policy: "Confidentialité",
+          hero_title: "Luxenter for Building Contracting",
+          hero_subtitle: "Réalisation de projets prestigieux à Dubaï. Excellence, innovation et architecture de pointe."
         }
-      }, function(err, t) {
-        updateContent();
-      });
+      },
+      en: {
+        translation: {
+          choose_language_label: "Language:",
+          nav_home: "Home",
+          nav_about: "About",
+          nav_services: "Services",
+          nav_projects: "Projects",
+          nav_contact: "Contact",
+          legal_notice: "Legal Notice",
+          privacy_policy: "Privacy Policy",
+          hero_title: "Luxenter for Building Contracting",
+          hero_subtitle: "Delivering prestigious projects in Dubai. Excellence, innovation, and cutting-edge architecture."
+        }
+      },
+      ar: {
+        translation: {
+          choose_language_label: "اللغة:",
+          nav_home: "الرئيسية",
+          nav_about: "حول",
+          nav_services: "الخدمات",
+          nav_projects: "المشاريع",
+          nav_contact: "اتصل بنا",
+          legal_notice: "إشعار قانوني",
+          privacy_policy: "سياسة الخصوصية",
+          hero_title: "لوكسينتر للمقاولات",
+          hero_subtitle: "تنفيذ مشاريع مرموقة في دبي. التميز والابتكار والهندسة المعمارية المتقدمة."
+        }
+      }
+    };
 
-    function updateContent() {
-      document.querySelectorAll('[data-i18n]').forEach(function(el) {
-        const key = el.getAttribute('data-i18n');
-        el.innerHTML = i18next.t(key);
-      });
-    }
-
-    i18next.on('languageChanged', () => {
+    i18next.init({
+      lng: 'fr',
+      debug: false,
+      resources
+    }, function(err, t) {
       updateContent();
     });
 
-    document.getElementById('langSwitcher').addEventListener('change', function() {
-      i18next.changeLanguage(this.value);
+    function updateContent() {
+      document.querySelectorAll('[data-i18n]').forEach(el => {
+        const key = el.getAttribute('data-i18n');
+        el.textContent = i18next.t(key);
+      });
+    }
+
+    document.getElementById('langSwitcher').addEventListener('change', e => {
+      const selectedLang = e.target.value;
+      i18next.changeLanguage(selectedLang, () => {
+        updateContent();
+      });
+      if (selectedLang === 'ar') {
+        document.documentElement.dir = 'rtl';
+        document.documentElement.lang = 'ar';
+      } else {
+        document.documentElement.dir = 'ltr';
+        document.documentElement.lang = selectedLang;
+      }
     });
   </script>
 </body>

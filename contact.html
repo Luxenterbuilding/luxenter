@@ -11,7 +11,7 @@
     body {
       margin: 0;
       font-family: 'Roboto', sans-serif;
-      background: #f9f9f9;
+      background: linear-gradient(to bottom, #f0f0f5, #ffffff);
       color: #0a1f44;
       display: flex;
       flex-direction: column;
@@ -19,7 +19,7 @@
       font-size: 18px;
     }
 
-    header, nav, footer {
+    header {
       background: #0a1f44;
       color: #d4af37;
       padding: 1rem 3rem;
@@ -28,83 +28,126 @@
       align-items: center;
     }
 
+    .logo img {
+      height: 70px;
+    }
+
+    .lang-switcher {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    nav {
+      background: #0a1f44;
+      color: #d4af37;
+      padding: 0.5rem 3rem;
+      display: flex;
+      justify-content: center;
+    }
+
     nav a {
-      margin: 0 1rem;
+      margin: 0 1.2rem;
       color: #d4af37;
       text-decoration: none;
       font-weight: 600;
+      position: relative;
     }
 
-    nav a:hover {
-      text-decoration: underline;
+    nav a::after {
+      content: '';
+      display: block;
+      width: 0;
+      height: 2px;
+      background: #d4af37;
+      transition: width 0.3s;
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+    }
+
+    nav a:hover::after {
+      width: 100%;
     }
 
     main {
       flex-grow: 1;
-      padding: 2rem 4rem;
-      max-width: 800px;
-      margin: auto;
+      padding: 3rem 2rem;
+      max-width: 900px;
+      margin: 2rem auto;
       background: #ffffff;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-      border-radius: 12px;
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+      border-radius: 16px;
     }
 
     h1 {
       font-family: 'Playfair Display', serif;
       font-size: 3rem;
       text-align: center;
+      color: #0a1f44;
       margin-bottom: 2rem;
     }
 
     form {
       display: grid;
-      gap: 1.2rem;
+      gap: 1.5rem;
     }
 
     label {
-      font-weight: bold;
+      font-weight: 600;
+      color: #0a1f44;
     }
 
     input, textarea {
-      padding: 0.8rem;
+      padding: 1rem;
       border: 1px solid #ccc;
-      border-radius: 6px;
+      border-radius: 8px;
       font-size: 1rem;
+      background: #f8f8f8;
     }
 
     button {
-      padding: 0.8rem 1.5rem;
-      background: #0a1f44;
-      color: #d4af37;
+      padding: 1rem 2rem;
+      background: #d4af37;
+      color: #0a1f44;
       border: none;
       font-weight: bold;
       font-size: 1rem;
-      border-radius: 6px;
+      border-radius: 8px;
       cursor: pointer;
+      transition: background 0.3s;
     }
 
     button:hover {
-      background: #112d5c;
+      background: #c49f2f;
     }
 
     .contact-info {
-      margin-top: 2rem;
+      margin-top: 2.5rem;
       font-size: 1rem;
       line-height: 1.8;
+      text-align: center;
+      color: #0a1f44;
+    }
+
+    .contact-info a {
+      color: #0a1f44;
+      text-decoration: none;
     }
 
     footer {
+      background: #0a1f44;
+      color: #d4af37;
       text-align: center;
       padding: 2rem 1rem;
       font-size: 0.95rem;
-      flex-shrink: 0;
     }
   </style>
 </head>
 <body>
   <header>
     <div class="logo">
-      <a href="index.html"><img src="luxenter-logo.png" alt="Luxenter logo" style="height: 70px;"></a>
+      <a href="index.html"><img src="luxenter-logo.png" alt="Luxenter logo"></a>
     </div>
     <div class="lang-switcher">
       <label for="langSwitcher" id="label-langSwitcher">Language:</label>
@@ -117,11 +160,11 @@
   </header>
 
   <nav>
-    <a href="index.html">Home</a>
-    <a href="apropos.html">About</a>
-    <a href="services.html">Services</a>
-    <a href="projets.html">Projects</a>
-    <a href="contact.html" aria-current="page">Contact</a>
+    <a href="index.html" id="nav-home">Home</a>
+    <a href="apropos.html" id="nav-about">About</a>
+    <a href="services.html" id="nav-services">Services</a>
+    <a href="projets.html" id="nav-projects">Projects</a>
+    <a href="contact.html" id="nav-contact" aria-current="page">Contact</a>
   </nav>
 
   <main>
@@ -153,50 +196,63 @@
   </main>
 
   <footer>
-    <p>© 2025 Luxenter for Building Contracting. All rights reserved.</p>
+    <p id="footer-text">© 2025 Luxenter for Building Contracting. All rights reserved.</p>
   </footer>
 
   <script>
     const translations = {
       en: {
+        nav: ["Home", "About", "Services", "Projects", "Contact"],
         title: "Contact Us",
         fullname: "Full Name",
         email: "Email",
         phone: "Phone Number",
         subject: "Subject",
         message: "Message",
-        send: "Send Message"
+        send: "Send Message",
+        footer: "© 2025 Luxenter for Building Contracting. All rights reserved."
       },
       fr: {
+        nav: ["Accueil", "À propos", "Services", "Projets", "Contact"],
         title: "Nous Contacter",
         fullname: "Nom Complet",
         email: "E-mail",
         phone: "Téléphone",
         subject: "Objet",
         message: "Message",
-        send: "Envoyer le Message"
+        send: "Envoyer le Message",
+        footer: "© 2025 Luxenter pour les Travaux de Construction. Tous droits réservés."
       },
       ar: {
+        nav: ["الرئيسية", "من نحن", "الخدمات", "المشاريع", "اتصل"],
         title: "اتصل بنا",
         fullname: "الاسم الكامل",
         email: "البريد الإلكتروني",
         phone: "رقم الهاتف",
         subject: "الموضوع",
         message: "الرسالة",
-        send: "أرسل الرسالة"
+        send: "أرسل الرسالة",
+        footer: "© 2025 لوكسنتر لأعمال البناء. جميع الحقوق محفوظة."
       }
     };
 
     const langSwitcher = document.getElementById('langSwitcher');
 
     function updateLanguage(lang) {
-      document.getElementById('contact-title').textContent = translations[lang].title;
-      document.getElementById('label-fullname').textContent = translations[lang].fullname;
-      document.getElementById('label-email').textContent = translations[lang].email;
-      document.getElementById('label-phone').textContent = translations[lang].phone;
-      document.getElementById('label-subject').textContent = translations[lang].subject;
-      document.getElementById('label-message').textContent = translations[lang].message;
-      document.getElementById('submit-btn').textContent = translations[lang].send;
+      const t = translations[lang];
+      document.getElementById('nav-home').textContent = t.nav[0];
+      document.getElementById('nav-about').textContent = t.nav[1];
+      document.getElementById('nav-services').textContent = t.nav[2];
+      document.getElementById('nav-projects').textContent = t.nav[3];
+      document.getElementById('nav-contact').textContent = t.nav[4];
+      document.getElementById('contact-title').textContent = t.title;
+      document.getElementById('label-fullname').textContent = t.fullname;
+      document.getElementById('label-email').textContent = t.email;
+      document.getElementById('label-phone').textContent = t.phone;
+      document.getElementById('label-subject').textContent = t.subject;
+      document.getElementById('label-message').textContent = t.message;
+      document.getElementById('submit-btn').textContent = t.send;
+      document.getElementById('footer-text').textContent = t.footer;
 
       document.documentElement.lang = lang;
       document.documentElement.dir = (lang === 'ar') ? 'rtl' : 'ltr';

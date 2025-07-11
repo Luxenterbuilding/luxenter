@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Luxenter - Projets</title>
+  <style>
+    :root {
+      --marine: #0a1f44;
+      --or: #d4af37;
+      --blanc: #ffffff;
+    }
+    body {
+      margin: 0;
+      font-family: 'Roboto', sans-serif;
+      background: var(--blanc);
+      color: var(--marine);
+    }
+    header, footer {
+      background: var(--marine);
+      color: var(--or);
+      padding: 1rem 2rem;
+    }
+    .logo img {
+      height: 80px;
+    }
+    .navbar {
+      background: var(--marine);
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      padding: 1rem 0;
+    }
+    .navbar a {
+      color: var(--or);
+      text-decoration: none;
+      font-weight: 600;
+    }
+    .navbar a:hover {
+      text-decoration: underline;
+    }
+    main {
+      padding: 2rem;
+    }
+    .projects {
+      text-align: center;
+    }
+    .project-types {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      justify-content: center;
+      margin-top: 2rem;
+    }
+    .project-card {
+      max-width: 300px;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+    .project-card img {
+      width: 100%;
+      height: auto;
+    }
+    .project-card h3 {
+      margin: 1rem;
+    }
+    .project-card p {
+      margin: 0 1rem 1rem;
+    }
+    .cta-button {
+      background-color: var(--or);
+      color: var(--marine);
+      padding: 1rem 2rem;
+      border: none;
+      border-radius: 30px;
+      font-size: 1rem;
+      font-weight: bold;
+      cursor: pointer;
+      margin-top: 2rem;
+      display: inline-block;
+      text-decoration: none;
+    }
+    .lang-switcher {
+      position: absolute;
+      top: 1rem;
+      right: 2rem;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <img src="luxenter-logo.png" alt="Logo Luxenter" />
+    </div>
+  </header>
+
+  <nav class="navbar">
+    <a href="index.html">Accueil</a>
+    <a href="apropos.html">À propos</a>
+    <a href="services.html">Services</a>
+    <a href="projets.html">Projets</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+
+  <main>
+    <section class="projects">
+      <h1 id="projects-title">Nos futurs projets</h1>
+      <p id="projects-description">
+        Luxenter débute ses activités aux Émirats avec des projets ambitieux en phase de conception. Nous collaborons actuellement avec des promoteurs et architectes de renom pour créer des bâtiments d'exception.
+      </p>
+      <div class="project-types">
+        <div class="project-card">
+          <img src="images/villa.jpg" alt="Villa contemporaine de luxe" />
+          <h3>Villa de luxe à Dubai Hills</h3>
+          <p>Conception d'une villa haut de gamme avec piscine, finitions nobles et design moderne.</p>
+        </div>
+        <div class="project-card">
+          <img src="images/residentiel.jpg" alt="Immeuble résidentiel" />
+          <h3>Résidentiel à Abu Dhabi</h3>
+          <p>Projet d'immeuble résidentiel de standing avec espaces verts et services intégrés.</p>
+        </div>
+        <div class="project-card">
+          <img src="images/complexe.jpg" alt="Complexe mixte" />
+          <h3>Complexe mixte</h3>
+          <p>En partenariat avec des promoteurs : commerces, bureaux et logements dans un environnement haut de gamme.</p>
+        </div>
+      </div>
+      <a class="cta-button" href="contact.html" id="projects-cta">Discutons de votre projet</a>
+    </section>
+  </main>
+
+  <footer>
+    <p id="footer-text">© 2025 Luxenter for Building Contracting. Tous droits réservés.</p>
+  </footer>
+
+  <script>
+    const translations = {
+      fr: {
+        projects_title: "Nos futurs projets",
+        projects_description: "Luxenter débute ses activités aux Émirats avec des projets ambitieux en phase de conception...",
+        projects_cta: "Discutons de votre projet",
+        footer: "© 2025 Luxenter for Building Contracting. Tous droits réservés."
+      },
+      en: {
+        projects_title: "Our Upcoming Projects",
+        projects_description: "Luxenter is launching operations in the Emirates with ambitious projects currently in design phase...",
+        projects_cta: "Let's discuss your project",
+        footer: "© 2025 Luxenter for Building Contracting. All rights reserved."
+      },
+      ar: {
+        projects_title: "مشاريعنا المستقبلية",
+        projects_description: "تبدأ لوكسانتر أنشطتها في الإمارات بمشاريع طموحة قيد التصميم...",
+        projects_cta: "دعنا نناقش مشروعك",
+        footer: "© 2025 لوكسانتر للمقاولات. جميع الحقوق محفوظة."
+      }
+    };
+
+    const lang = document.documentElement.lang;
+    const t = translations[lang] || translations['fr'];
+    document.getElementById("projects-title").textContent = t.projects_title;
+    document.getElementById("projects-description").textContent = t.projects_description;
+    document.getElementById("projects-cta").textContent = t.projects_cta;
+    document.getElementById("footer-text").textContent = t.footer;
+  </script>
+</body>
+</html>

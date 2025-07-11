@@ -3,51 +3,39 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Luxenter - About</title>
-  <meta name="description" content="Luxenter, premium construction company based in Dubai operating across all Emirates. Architectural excellence, innovation and quality." />
-  <meta name="keywords" content="luxury construction UAE, Luxenter Dubai, building contracting Emirates, premium construction UAE" />
+  <title>Luxenter - Nos Projets</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Roboto&display=swap" rel="stylesheet">
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Roboto&display=swap');
-
     :root {
       --marine: #0a1f44;
       --or: #d4af37;
       --blanc: #ffffff;
-      --shadow: rgba(10,31,68,0.15);
+      --ivoire: #f8f5f0;
     }
-
     body {
       margin: 0;
       font-family: 'Roboto', sans-serif;
-      background: linear-gradient(135deg, #fefefe 0%, #f9f9f9 100%);
+      background: var(--ivoire);
       color: var(--marine);
       display: flex;
       flex-direction: column;
       min-height: 100vh;
-      line-height: 1.7;
       font-size: 18px;
+      line-height: 1.6;
     }
-
-    header {
+    header, footer {
       background: var(--marine);
       color: var(--or);
-      padding: 1rem 2rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
     }
-
-    .logo img {
-      height: 80px;
-    }
-
     .logo-link {
       display: flex;
       align-items: center;
       gap: 0.8rem;
       text-decoration: none;
     }
-
+    .logo img {
+      height: 80px;
+    }
     .company-name {
       font-family: 'Georgia', serif;
       font-size: 2.4rem;
@@ -57,18 +45,21 @@
       user-select: none;
       transition: color 0.3s ease;
     }
-
     .logo-link:hover .company-name,
     .logo-link:focus-visible .company-name {
       color: #fff3d1;
       outline: none;
     }
-
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+    }
     .lang-switcher label {
       margin-right: 0.5rem;
       font-weight: 600;
     }
-
     select#langSwitcher {
       background: var(--marine);
       color: var(--or);
@@ -78,7 +69,6 @@
       font-weight: 600;
       cursor: pointer;
     }
-
     nav.navbar {
       background: var(--marine);
       display: flex;
@@ -86,120 +76,88 @@
       gap: 2rem;
       padding: 1rem 0;
     }
-
     nav.navbar a {
       color: var(--or);
-      font-weight: 600;
       text-decoration: none;
+      font-weight: 600;
     }
-
     nav.navbar a:hover,
     nav.navbar a:focus-visible {
       text-decoration: underline;
       outline: none;
     }
-
-    .hero-image {
-      position: relative;
-      height: 350px;
-      overflow: hidden;
-      margin-bottom: 3rem;
-      box-shadow: 0 8px 15px var(--shadow);
-      border-radius: 12px;
-    }
-
-    .hero-image img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      animation: zoomFadeIn 15s ease-in-out infinite alternate;
-      border-radius: 12px;
-      filter: brightness(0.85);
-      transition: filter 0.5s ease;
-    }
-
-    .hero-image img:hover {
-      filter: brightness(1);
-    }
-
-    @keyframes zoomFadeIn {
-      0% {
-        transform: scale(1);
-        opacity: 0.85;
-      }
-      100% {
-        transform: scale(1.05);
-        opacity: 1;
-      }
-    }
-
     main {
       flex-grow: 1;
-      padding: 0 4rem 3rem 4rem;
-      max-width: 900px;
+      padding: 2rem 1rem;
+      max-width: 1200px;
       margin: 0 auto;
-      background: var(--blanc);
-      border-radius: 12px;
-      box-shadow: 0 10px 30px var(--shadow);
     }
-
-    h1, h2 {
+    h1 {
+      text-align: center;
+      margin-bottom: 1rem;
+      font-size: 3rem;
       font-family: 'Playfair Display', serif;
       color: var(--marine);
-      font-weight: 700;
-      letter-spacing: 0.05em;
-      margin-top: 0;
-      margin-bottom: 1rem;
     }
-
-    h1 {
-      font-size: 3rem;
+    #projects-status {
       text-align: center;
-      padding-top: 1rem;
-      margin-bottom: 2rem;
+      font-style: italic;
+      margin-bottom: 3rem;
     }
-
-    h2 {
-      font-size: 2rem;
-      margin-top: 3rem;
-      margin-bottom: 1rem;
-      padding-bottom: 0.5rem;
-      border-bottom: 3px solid var(--or);
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 2rem;
     }
-
-    p {
-      margin-bottom: 1.6rem;
-      font-size: 1.1rem;
-      line-height: 1.8;
-      color: #17233d;
-      text-align: justify;
+    .project-card {
+      border-radius: 16px;
+      overflow: hidden;
+      background: var(--blanc);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
     }
-
+    .project-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 12px 40px rgba(0,0,0,0.15);
+    }
+    .project-card img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+    }
+    .project-content {
+      padding: 1.2rem;
+    }
+    .project-title {
+      font-size: 1.6rem;
+      color: var(--marine);
+      font-family: 'Playfair Display', serif;
+    }
+    .project-description {
+      margin-top: 0.5rem;
+      color: #333;
+    }
     footer {
-      background: var(--marine);
-      color: var(--or);
-      padding: 2rem 1rem;
       text-align: center;
+      padding: 2rem 1rem;
       font-size: 0.9rem;
     }
-
     footer a {
       color: var(--or);
       text-decoration: none;
     }
-
-    footer a:hover,
-    footer a:focus-visible {
+    footer a:hover {
       text-decoration: underline;
-      outline: none;
+    }
+    .footer-links {
+      margin-bottom: 0.5rem;
     }
   </style>
 </head>
 <body>
-
   <header role="banner">
     <div class="logo">
-      <a href="index.html" aria-label="Luxenter Accueil" class="logo-link">
+      <a href="index.html" class="logo-link" aria-label="Luxenter Accueil">
         <img src="luxenter-logo.png" alt="Logo Luxenter" />
         <span class="company-name">Luxenter</span>
       </a>
@@ -207,55 +165,47 @@
     <div class="lang-switcher" role="navigation" aria-label="Sélecteur de langue">
       <label for="langSwitcher" id="label-langSwitcher">Langue :</label>
       <select id="langSwitcher" aria-labelledby="label-langSwitcher" aria-live="polite">
-        <option value="fr">Français</option>
-        <option value="en" selected>English</option>
+        <option value="fr" selected>Français</option>
+        <option value="en">English</option>
         <option value="ar">العربية</option>
       </select>
     </div>
   </header>
 
   <nav class="navbar" role="navigation" aria-label="Menu principal">
-    <a href="index.html" tabindex="0">Accueil</a>
-    <a href="apropos.html" tabindex="0" aria-current="page">À propos</a>
-    <a href="services.html" tabindex="0">Services</a>
-    <a href="projets.html" tabindex="0">Projets</a>
-    <a href="contact.html" tabindex="0">Contact</a>
+    <a href="index.html">Accueil</a>
+    <a href="apropos.html">À propos</a>
+    <a href="services.html">Services</a>
+    <a href="projets.html">Projets</a>
+    <a href="contact.html">Contact</a>
   </nav>
 
-  <div class="hero-image" aria-hidden="true">
-    <img src="main.jpg" alt="Luxury building construction in Dubai" />
-  </div>
-
-  <main role="main" aria-labelledby="page-title">
-    <h1 id="page-title">About</h1>
-
-    <section aria-labelledby="identity-title">
-      <h2 id="identity-title">Our Identity</h2>
-      <p>
-        Luxenter for Building Contracting is a premium construction company based in Dubai. Licensed by UAE Mainland authorities, we are authorized to operate throughout the country. Our approach combines architectural excellence, technological innovation, and an absolute commitment to quality.
-      </p>
-    </section>
-
-    <section aria-labelledby="operation-title">
-      <h2 id="operation-title">Where We Operate</h2>
-      <p>
-        We deliver prestigious projects across all the United Arab Emirates, combining local expertise and international standards.
-      </p>
-    </section>
-
-    <section aria-labelledby="values-title">
-      <h2 id="values-title">Our Values</h2>
-      <p>
-        Each project reflects our commitment to quality, reliability, and sustainability. We collaborate with renowned architects, engineers, and real estate developers to design iconic buildings shaping the UAE urban landscape.
-      </p>
-    </section>
-
-    <section aria-labelledby="why-choose-title">
-      <h2 id="why-choose-title">Why Choose Luxenter?</h2>
-      <p>
-        From concept to completion, we ensure smooth management, tailored solutions, and strict adherence to deadlines and budgets. Luxenter is your go-to partner for luxury construction projects in the UAE.
-      </p>
-    </section>
+  <main>
+    <h1 id="projects-title">Nos Projets</h1>
+    <p id="projects-status">Voici nos projets en cours de réalisation.</p>
+    <div class="projects-grid">
+      <div class="project-card">
+        <img src="villa-dubai.png" alt="Villa de luxe">
+        <div class="project-content">
+          <div class="project-title" data-fr="Villa Privée à Palm Jumeirah" data-en="Private Villa in Palm Jumeirah" data-ar="فيلا خاصة في نخلة جميرا">Villa Privée à Palm Jumeirah</div>
+          <div class="project-description" data-fr="Un projet résidentiel haut de gamme en cours, alliant élégance et innovation architecturale." data-en="A high-end residential project underway, combining elegance and architectural innovation." data-ar="مشروع سكني فاخر قيد الإنشاء يجمع بين الأناقة والابتكار المعماري.">Un projet résidentiel haut de gamme en cours, alliant élégance et innovation architecturale.</div>
+        </div>
+      </div>
+      <div class="project-card">
+        <img src="images/residentiel.jpg" alt="Immeuble résidentiel moderne">
+        <div class="project-content">
+          <div class="project-title" data-fr="Résidence Marina View" data-en="Marina View Residence" data-ar="إقامة مارينا فيو">Résidence Marina View</div>
+          <div class="project-description" data-fr="Immeuble de luxe avec vue sur la marina de Dubaï. Livraison prévue fin 2025." data-en="Luxury residential tower overlooking Dubai Marina. Completion expected by end of 2025." data-ar="برج سكني فاخر يطل على مرسى دبي. من المتوقع الانتهاء في نهاية عام 2025.">Immeuble de luxe avec vue sur la marina de Dubaï. Livraison prévue fin 2025.</div>
+        </div>
+      </div>
+      <div class="project-card">
+        <img src="images/complexe.jpg" alt="Projet mixte commerce et résidentiel">
+        <div class="project-content">
+          <div class="project-title" data-fr="Complexe Mixte à Abu Dhabi" data-en="Mixed-Use Complex in Abu Dhabi" data-ar="مجمع متعدد الاستخدامات في أبوظبي">Complexe Mixte à Abu Dhabi</div>
+          <div class="project-description" data-fr="Développement en cours intégrant commerces, bureaux et logements haut de gamme." data-en="Ongoing development combining retail, office and premium residences." data-ar="تطوير قيد التنفيذ يجمع بين المحلات التجارية والمكاتب والمساكن الفاخرة.">Développement en cours intégrant commerces, bureaux et logements haut de gamme.</div>
+        </div>
+      </div>
+    </div>
   </main>
 
   <footer role="contentinfo">
@@ -263,7 +213,7 @@
       <a href="mentions-legales.html">Mentions légales</a> |
       <a href="confidentialite.html">Confidentialité</a>
     </div>
-    <div>
+    <div id="footer-copy">
       © 2025 Luxenter for Building Contracting. Tous droits réservés.
     </div>
   </footer>
@@ -271,63 +221,60 @@
   <script>
     const translations = {
       fr: {
-        title: "À propos",
-        navAccueil: "Accueil",
-        navApropos: "À propos",
-        navServices: "Services",
-        navProjets: "Projets",
-        navContact: "Contact",
+        menu: ["Accueil", "À propos", "Services", "Projets", "Contact"],
         langLabel: "Langue :",
-        legal: "Mentions légales",
-        privacy: "Confidentialité",
+        title: "Nos Projets",
+        status: "Voici nos projets en cours de réalisation.",
+        footerLinks: ["Mentions légales", "Confidentialité"],
         copyright: "© 2025 Luxenter for Building Contracting. Tous droits réservés."
       },
       en: {
-        title: "About",
-        navAccueil: "Home",
-        navApropos: "About",
-        navServices: "Services",
-        navProjets: "Projects",
-        navContact: "Contact",
+        menu: ["Home", "About", "Services", "Projects", "Contact"],
         langLabel: "Language:",
-        legal: "Legal Notice",
-        privacy: "Privacy Policy",
+        title: "Our Projects",
+        status: "Here are our ongoing projects.",
+        footerLinks: ["Legal Notice", "Privacy Policy"],
         copyright: "© 2025 Luxenter for Building Contracting. All rights reserved."
       },
       ar: {
-        title: "من نحن",
-        navAccueil: "الرئيسية",
-        navApropos: "من نحن",
-        navServices: "الخدمات",
-        navProjets: "المشاريع",
-        navContact: "اتصل بنا",
+        menu: ["الرئيسية", "من نحن", "الخدمات", "المشاريع", "اتصل بنا"],
         langLabel: "اللغة:",
-        legal: "الإشعارات القانونية",
-        privacy: "سياسة الخصوصية",
+        title: "مشاريعنا",
+        status: "هذه هي مشاريعنا الجارية.",
+        footerLinks: ["الإشعارات القانونية", "سياسة الخصوصية"],
         copyright: "© 2025 لوكسانتر للمقاولات البناء. جميع الحقوق محفوظة."
       }
     };
 
     const langSwitcher = document.getElementById('langSwitcher');
-    const langLabel = document.getElementById('label-langSwitcher');
+    const labelLang = document.getElementById('label-langSwitcher');
     const menuLinks = document.querySelectorAll('nav.navbar a');
+    const projectTitle = document.getElementById('projects-title');
+    const projectStatus = document.getElementById('projects-status');
     const footerLinks = document.querySelectorAll('.footer-links a');
-    const footerCopyright = document.querySelector('footer > div:last-child');
-    const pageTitle = document.getElementById('page-title');
+    const footerCopy = document.getElementById('footer-copy');
 
     function updateLanguage(lang) {
-      pageTitle.textContent = translations[lang].title;
-      langLabel.textContent = translations[lang].langLabel;
-      const navItems = [translations[lang].navAccueil, translations[lang].navApropos, translations[lang].navServices, translations[lang].navProjets, translations[lang].navContact];
-      menuLinks.forEach((link, i) => link.textContent = navItems[i]);
-      footerLinks[0].textContent = translations[lang].legal;
-      footerLinks[1].textContent = translations[lang].privacy;
+      labelLang.textContent = translations[lang].langLabel;
+      menuLinks.forEach((link, i) => link.textContent = translations[lang].menu[i]);
+      projectTitle.textContent = translations[lang].title;
+      projectStatus.textContent = translations[lang].status;
+      footerLinks.forEach((link, i) => link.textContent = translations[lang].footerLinks[i]);
+      footerCopy.textContent = translations[lang].copyright;
+
+      // Mise à jour des données data-*
+      document.querySelectorAll('[data-fr]').forEach(el => {
+        el.textContent = el.getAttribute(data-${lang});
+      });
+
       document.documentElement.lang = lang;
-      document.documentElement.dir = (lang === 'ar') ? 'rtl' : 'ltr';
-      footerCopyright.textContent = translations[lang].copyright;
+      document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
     }
 
-    langSwitcher.addEventListener('change', e => updateLanguage(e.target.value));
+    langSwitcher.addEventListener('change', e => {
+      updateLanguage(e.target.value);
+    });
+
     updateLanguage(langSwitcher.value);
   </script>
 </body>

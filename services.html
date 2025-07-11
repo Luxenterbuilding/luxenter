@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Luxenter - Services</title>
+  <style>
+    :root {
+      --marine: #0a1f44;
+      --or: #d4af37;
+      --blanc: #ffffff;
+    }
+    body {
+      margin: 0;
+      font-family: 'Roboto', sans-serif;
+      background: var(--blanc);
+      color: var(--marine);
+      line-height: 1.6;
+      font-size: 18px;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+    header, footer {
+      background: var(--marine);
+      color: var(--or);
+      padding: 1rem 2rem;
+    }
+    .logo img {
+      height: 80px;
+    }
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .lang-switcher label {
+      margin-right: 0.5rem;
+      font-weight: 600;
+    }
+    select#langSwitcher {
+      background: var(--marine);
+      color: var(--or);
+      border: 1px solid var(--or);
+      padding: 0.3rem 0.6rem;
+      border-radius: 4px;
+      font-weight: 600;
+      cursor: pointer;
+    }
+    nav.navbar {
+      background: var(--marine);
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      padding: 1rem 0;
+    }
+    nav.navbar a {
+      color: var(--or);
+      text-decoration: none;
+      font-weight: 600;
+    }
+    nav.navbar a:hover,
+    nav.navbar a:focus-visible {
+      text-decoration: underline;
+    }
+
+    main {
+      flex-grow: 1;
+      padding: 2rem;
+    }
+
+    .service {
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 3rem;
+      gap: 1.5rem;
+    }
+    .service img {
+      width: 100%;
+      max-height: 300px;
+      object-fit: cover;
+      border-radius: 10px;
+    }
+    .service-content {
+      padding: 1rem 0;
+    }
+    .service-content h2 {
+      font-size: 2rem;
+      margin-bottom: 0.5rem;
+    }
+
+    footer {
+      text-align: center;
+      font-size: 0.9rem;
+    }
+    footer a {
+      color: var(--or);
+      text-decoration: none;
+    }
+    footer a:hover {
+      text-decoration: underline;
+    }
+
+    @media (min-width: 768px) {
+      .service {
+        flex-direction: row;
+        align-items: center;
+      }
+      .service:nth-child(even) {
+        flex-direction: row-reverse;
+      }
+      .service img {
+        width: 50%;
+      }
+      .service-content {
+        width: 50%;
+        padding: 0 2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="logo">
+      <a href="index.html">
+        <img src="luxenter-logo.png" alt="Logo Luxenter" />
+      </a>
+    </div>
+    <div class="lang-switcher" role="navigation">
+      <label for="langSwitcher" id="label-langSwitcher">Langue :</label>
+      <select id="langSwitcher" aria-labelledby="label-langSwitcher" aria-live="polite">
+        <option value="fr">Français</option>
+        <option value="en" selected>English</option>
+        <option value="ar">العربية</option>
+      </select>
+    </div>
+  </header>
+
+  <nav class="navbar">
+    <a href="index.html">Accueil</a>
+    <a href="apropos.html">À propos</a>
+    <a href="services.html">Services</a>
+    <a href="projets.html">Projets</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+
+  <main>
+    <div class="service" id="service1">
+      <img src="construction.jpg" alt="Construction de bâtiments haut de gamme">
+      <div class="service-content">
+        <h2></h2>
+        <p></p>
+      </div>
+    </div>
+
+    <div class="service" id="service2">
+      <img src="renovation.jpg" alt="Rénovation de luxe">
+      <div class="service-content">
+        <h2></h2>
+        <p></p>
+      </div>
+    </div>
+
+    <div class="service" id="service3">
+      <img src="promoteurs.jpg" alt="Collaboration avec les promoteurs immobiliers">
+      <div class="service-content">
+        <h2></h2>
+        <p></p>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer-links">
+      <a href="mentions-legales.html">Mentions légales</a> |
+      <a href="confidentialite.html">Confidentialité</a>
+    </div>
+    <div id="footerCopy">© 2025 Luxenter for Building Contracting. Tous droits réservés.</div>
+  </footer>
+
+  <script>
+    const translations = {
+      fr: {
+        langLabel: "Langue :",
+        nav: ["Accueil", "À propos", "Services", "Projets", "Contact"],
+        services: [
+          {
+            title: "Construction",
+            desc: "Nous réalisons des constructions neuves de haute qualité, en alliant design moderne, durabilité et standards architecturaux stricts pour les villas, immeubles résidentiels et bâtiments commerciaux."
+          },
+          {
+            title: "Rénovation",
+            desc: "Nous transformons vos espaces existants en chefs-d'œuvre modernes grâce à notre expertise en rénovation intérieure et extérieure de luxe."
+          },
+          {
+            title: "Collaboration avec Promoteurs",
+            desc: "Nous travaillons en étroite collaboration avec des promoteurs immobiliers pour concrétiser des projets ambitieux, depuis la planification jusqu'à la livraison clé en main."
+          }
+        ],
+        footerLinks: ["Mentions légales", "Confidentialité"],
+        copyright: "© 2025 Luxenter for Building Contracting. Tous droits réservés."
+      },
+      en: {
+        langLabel: "Language:",
+        nav: ["Home", "About", "Services", "Projects", "Contact"],
+        services: [
+          {
+            title: "Construction",
+            desc: "We deliver premium new constructions with modern design, durability, and high architectural standards for villas, residential buildings, and commercial spaces."
+          },
+          {
+            title: "Renovation",
+            desc: "We transform existing spaces into luxurious environments through expert interior and exterior renovation services."
+          },
+          {
+            title: "Developer Collaboration",
+            desc: "We closely collaborate with real estate developers to realize ambitious projects, from planning to turnkey delivery."
+          }
+        ],
+        footerLinks: ["Legal Notice", "Privacy Policy"],
+        copyright: "© 2025 Luxenter for Building Contracting. All rights reserved."
+      },
+      ar: {
+        langLabel: "اللغة:",
+        nav: ["الرئيسية", "من نحن", "الخدمات", "المشاريع", "اتصل بنا"],
+        services: [
+          {
+            title: "البناء",
+            desc: "نقوم بتنفيذ مشاريع بناء جديدة عالية الجودة تجمع بين التصميم العصري والمتانة والمعايير المعمارية الصارمة للفلل والمباني السكنية والتجارية."
+          },
+          {
+            title: "التجديد",
+            desc: "نحول المساحات الحالية إلى أماكن فاخرة من خلال خدماتنا المتخصصة في التجديد الداخلي والخارجي."
+          },
+          {
+            title: "التعاون مع المطورين",
+            desc: "نتعاون بشكل وثيق مع المطورين العقاريين لتحقيق مشاريع طموحة من التخطيط حتى التسليم النهائي."
+          }
+        ],
+        footerLinks: ["الإشعارات القانونية", "سياسة الخصوصية"],
+        copyright: "© 2025 لوكسانتر للمقاولات البناء. جميع الحقوق محفوظة."
+      }
+    };
+
+    const langSwitcher = document.getElementById('langSwitcher');
+    const labelLang = document.getElementById('label-langSwitcher');
+    const navLinks = document.querySelectorAll('nav.navbar a');
+    const services = document.querySelectorAll('.service');
+    const footerLinks = document.querySelectorAll('.footer-links a');
+    const footerCopy = document.getElementById('footerCopy');
+
+    function updateLanguage(lang) {
+      const t = translations[lang];
+
+      labelLang.textContent = t.langLabel;
+
+      navLinks.forEach((link, i) => {
+        link.textContent = t.nav[i];
+      });
+
+      services.forEach((block, i) => {
+        block.querySelector("h2").textContent = t.services[i].title;
+        block.querySelector("p").textContent = t.services[i].desc;
+      });
+
+      footerLinks.forEach((link, i) => {
+        link.textContent = t.footerLinks[i];
+      });
+
+      footerCopy.textContent = t.copyright;
+
+      document.documentElement.lang = lang;
+      document.documentElement.dir = (lang === "ar") ? "rtl" : "ltr";
+    }
+
+    langSwitcher.addEventListener("change", (e) => {
+      updateLanguage(e.target.value);
+    });
+
+    // Init
+    updateLanguage(langSwitcher.value);
+  </script>
+
+</body>
+</html>

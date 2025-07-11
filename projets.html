@@ -166,7 +166,10 @@
 
   <!-- Contenu principal -->
   <main>
-    <h1 id="projects-title">Nos Projets</h1>
+     <h1 id="projects-title">Nos Projets</h1>
+  <p id="projects-status" data-fr="Voici nos projets en cours de réalisation." data-en="Here are our ongoing projects." data-ar="هذه هي مشاريعنا الجارية.">
+    Voici nos projets en cours de réalisation.
+  </p>
     <div class="projects-grid">
       <div class="project-card">
         <img src="ChatGPT Image 11 juil. 2025 à 23_15_13.png" alt="Villa de luxe">
@@ -216,6 +219,7 @@
         menu: ["Accueil", "À propos", "Services", "Projets", "Contact"],
         langLabel: "Langue :",
         title: "Nos Projets",
+        projectsStatus: "Voici nos projets en cours de réalisation.",
         footerLinks: ["Mentions légales", "Confidentialité"],
         copyright: "© 2025 Luxenter for Building Contracting. Tous droits réservés."
       },
@@ -223,6 +227,7 @@
         menu: ["Home", "About", "Services", "Projects", "Contact"],
         langLabel: "Language:",
         title: "Our Projects",
+         projectsStatus: "Here are our ongoing projects.",
         footerLinks: ["Legal Notice", "Privacy Policy"],
         copyright: "© 2025 Luxenter for Building Contracting. All rights reserved."
       },
@@ -230,6 +235,7 @@
         menu: ["الرئيسية", "من نحن", "الخدمات", "المشاريع", "اتصل بنا"],
         langLabel: "اللغة:",
         title: "مشاريعنا",
+         projectsStatus: "هذه هي مشاريعنا الجارية.",
         footerLinks: ["الإشعارات القانونية", "سياسة الخصوصية"],
         copyright: "© 2025 لوكسانتر للمقاولات. جميع الحقوق محفوظة."
       }
@@ -250,6 +256,7 @@
       });
       langLabel.textContent = translations[lang].langLabel;
       projectsTitle.textContent = translations[lang].title;
+      projectsStatus.textContent = translations[lang].projectsStatus;
       footerLinks[0].textContent = translations[lang].footerLinks[0];
       footerLinks[1].textContent = translations[lang].footerLinks[1];
       footerCopyright.textContent = translations[lang].copyright;

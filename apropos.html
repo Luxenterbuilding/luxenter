@@ -11,8 +11,8 @@
 
     :root {
       --marine: #0a1f44;
-      --gold: #d4af37;
-      --white: #ffffff;
+      --or: #d4af37;
+      --blanc: #ffffff;
       --shadow: rgba(10,31,68,0.15);
     }
 
@@ -30,70 +30,75 @@
 
     header {
       background: var(--marine);
-      color: var(--gold);
-      padding: 1rem 3rem;
+      color: var(--or);
+      padding: 1rem 2rem;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      box-shadow: 0 4px 8px var(--shadow);
-      z-index: 10;
     }
 
     .logo img {
-      height: 90px;
-      filter: drop-shadow(0 0 3px rgba(212,175,55,0.8));
+      height: 80px;
+    }
+
+    .logo-link {
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+      text-decoration: none;
+    }
+
+    .company-name {
+      font-family: 'Georgia', serif;
+      font-size: 2.4rem;
+      font-weight: 700;
+      color: var(--or);
+      letter-spacing: 0.1em;
+      user-select: none;
+      transition: color 0.3s ease;
+    }
+
+    .logo-link:hover .company-name,
+    .logo-link:focus-visible .company-name {
+      color: #fff3d1;
+      outline: none;
     }
 
     .lang-switcher label {
       margin-right: 0.5rem;
       font-weight: 600;
-      font-size: 1rem;
     }
 
     select#langSwitcher {
       background: var(--marine);
-      color: var(--gold);
-      border: 1.5px solid var(--gold);
-      padding: 0.35rem 0.7rem;
-      border-radius: 5px;
+      color: var(--or);
+      border: 1px solid var(--or);
+      padding: 0.3rem 0.6rem;
+      border-radius: 4px;
       font-weight: 600;
-      font-size: 1rem;
       cursor: pointer;
-      transition: background-color 0.3s ease;
-    }
-
-    select#langSwitcher:hover,
-    select#langSwitcher:focus {
-      background-color: rgba(212,175,55,0.15);
-      outline: none;
     }
 
     nav.navbar {
       background: var(--marine);
       display: flex;
       justify-content: center;
-      gap: 3rem;
-      padding: 1.2rem 0;
-      box-shadow: 0 2px 6px var(--shadow);
-      font-weight: 600;
-      font-size: 1.1rem;
+      gap: 2rem;
+      padding: 1rem 0;
     }
 
     nav.navbar a {
-      color: var(--gold);
+      color: var(--or);
+      font-weight: 600;
       text-decoration: none;
-      letter-spacing: 0.05em;
-      transition: color 0.25s ease;
     }
 
     nav.navbar a:hover,
     nav.navbar a:focus-visible {
-      color: var(--white);
       text-decoration: underline;
-      outline-offset: 3px;
+      outline: none;
     }
 
-    /* En-tête avec image animée */
     .hero-image {
       position: relative;
       height: 350px;
@@ -102,6 +107,7 @@
       box-shadow: 0 8px 15px var(--shadow);
       border-radius: 12px;
     }
+
     .hero-image img {
       width: 100%;
       height: 100%;
@@ -111,9 +117,11 @@
       filter: brightness(0.85);
       transition: filter 0.5s ease;
     }
+
     .hero-image img:hover {
       filter: brightness(1);
     }
+
     @keyframes zoomFadeIn {
       0% {
         transform: scale(1);
@@ -130,7 +138,7 @@
       padding: 0 4rem 3rem 4rem;
       max-width: 900px;
       margin: 0 auto;
-      background: var(--white);
+      background: var(--blanc);
       border-radius: 12px;
       box-shadow: 0 10px 30px var(--shadow);
     }
@@ -156,7 +164,7 @@
       margin-top: 3rem;
       margin-bottom: 1rem;
       padding-bottom: 0.5rem;
-      border-bottom: 3px solid var(--gold);
+      border-bottom: 3px solid var(--or);
     }
 
     p {
@@ -169,27 +177,21 @@
 
     footer {
       background: var(--marine);
-      color: var(--gold);
+      color: var(--or);
       padding: 2rem 1rem;
       text-align: center;
-      font-size: 0.95rem;
-      letter-spacing: 0.06em;
-      box-shadow: 0 -6px 15px var(--shadow);
-      user-select: none;
+      font-size: 0.9rem;
     }
 
-    .footer-links a {
-      color: var(--gold);
-      margin: 0 0.5rem;
+    footer a {
+      color: var(--or);
       text-decoration: none;
-      font-weight: 500;
-      font-size: 0.95rem;
     }
 
-    .footer-links a:hover,
-    .footer-links a:focus-visible {
+    footer a:hover,
+    footer a:focus-visible {
       text-decoration: underline;
-      outline-offset: 2px;
+      outline: none;
     }
   </style>
 </head>
@@ -197,12 +199,13 @@
 
   <header role="banner">
     <div class="logo">
-      <a href="index.html" aria-label="Luxenter Home">
-        <img src="luxenter-logo.png" alt="Luxenter logo" />
+      <a href="index.html" aria-label="Luxenter Accueil" class="logo-link">
+        <img src="luxenter-logo.png" alt="Logo Luxenter" />
+        <span class="company-name">Luxenter</span>
       </a>
     </div>
-    <div class="lang-switcher" role="navigation" aria-label="Language selector">
-      <label for="langSwitcher" id="label-langSwitcher">Language:</label>
+    <div class="lang-switcher" role="navigation" aria-label="Sélecteur de langue">
+      <label for="langSwitcher" id="label-langSwitcher">Langue :</label>
       <select id="langSwitcher" aria-labelledby="label-langSwitcher" aria-live="polite">
         <option value="fr">Français</option>
         <option value="en" selected>English</option>
@@ -211,11 +214,11 @@
     </div>
   </header>
 
-  <nav class="navbar" role="navigation" aria-label="Main menu">
-    <a href="index.html" tabindex="0">Home</a>
-    <a href="apropos.html" tabindex="0" aria-current="page">About</a>
+  <nav class="navbar" role="navigation" aria-label="Menu principal">
+    <a href="index.html" tabindex="0">Accueil</a>
+    <a href="apropos.html" tabindex="0" aria-current="page">À propos</a>
     <a href="services.html" tabindex="0">Services</a>
-    <a href="projets.html" tabindex="0">Projects</a>
+    <a href="projets.html" tabindex="0">Projets</a>
     <a href="contact.html" tabindex="0">Contact</a>
   </nav>
 
@@ -257,11 +260,11 @@
 
   <footer role="contentinfo">
     <div class="footer-links">
-      <a href="mentions-legales.html">Legal Notice</a> |
-      <a href="confidentialite.html">Privacy Policy</a>
+      <a href="mentions-legales.html">Mentions légales</a> |
+      <a href="confidentialite.html">Confidentialité</a>
     </div>
     <div>
-      © 2025 Luxenter for Building Contracting. All rights reserved.
+      © 2025 Luxenter for Building Contracting. Tous droits réservés.
     </div>
   </footer>
 
@@ -274,14 +277,10 @@
         navServices: "Services",
         navProjets: "Projets",
         navContact: "Contact",
-        identityTitle: "Notre Identité",
-        identityText: "Luxenter for Building Contracting est une entreprise de construction haut de gamme basée à Dubaï. Agréée par les autorités de la zone continentale des Émirats arabes unis, nous sommes habilités à opérer sur l’ensemble du territoire national. Notre approche allie excellence architecturale, innovation technologique et engagement absolu envers la qualité.",
-        operationTitle: "Où Nous Intervenons",
-        operationText: "Nous réalisons des projets de prestige à travers tous les Émirats arabes unis, en associant expertise locale et standards internationaux.",
-        valuesTitle: "Nos Valeurs",
-        valuesText: "Chaque projet reflète notre engagement envers la qualité, la fiabilité et la durabilité. Nous collaborons avec des architectes, des ingénieurs et des promoteurs immobiliers de renom pour concevoir des bâtiments emblématiques qui façonnent le paysage urbain des Émirats.",
-        whyChooseTitle: "Pourquoi Choisir Luxenter ?",
-        whyChooseText: "De la conception à la réalisation, nous assurons une gestion fluide, des solutions sur mesure et un respect rigoureux des délais et des budgets. Luxenter est votre partenaire de référence pour des projets de construction de luxe aux Émirats arabes unis."
+        langLabel: "Langue :",
+        legal: "Mentions légales",
+        privacy: "Confidentialité",
+        copyright: "© 2025 Luxenter for Building Contracting. Tous droits réservés."
       },
       en: {
         title: "About",
@@ -290,73 +289,46 @@
         navServices: "Services",
         navProjets: "Projects",
         navContact: "Contact",
-        identityTitle: "Our Identity",
-        identityText: "Luxenter for Building Contracting is a premium construction company based in Dubai. Licensed by UAE Mainland authorities, we are authorized to operate throughout the country. Our approach combines architectural excellence, technological innovation, and an absolute commitment to quality.",
-        operationTitle: "Where We Operate",
-        operationText: "We deliver prestigious projects across all the United Arab Emirates, combining local expertise and international standards.",
-        valuesTitle: "Our Values",
-        valuesText: "Each project reflects our commitment to quality, reliability, and sustainability. We collaborate with renowned architects, engineers, and real estate developers to design iconic buildings shaping the UAE urban landscape.",
-        whyChooseTitle: "Why Choose Luxenter?",
-        whyChooseText: "From concept to completion, we ensure smooth management, tailored solutions, and strict adherence to deadlines and budgets. Luxenter is your go-to partner for luxury construction projects in the UAE."
+        langLabel: "Language:",
+        legal: "Legal Notice",
+        privacy: "Privacy Policy",
+        copyright: "© 2025 Luxenter for Building Contracting. All rights reserved."
       },
       ar: {
-        title: "حول",
+        title: "من نحن",
         navAccueil: "الرئيسية",
-        navApropos: "حول",
+        navApropos: "من نحن",
         navServices: "الخدمات",
         navProjets: "المشاريع",
         navContact: "اتصل بنا",
-        identityTitle: "هويتنا",
-        identityText: "لوكسانتر للمقاولات البناء هي شركة بناء فاخرة مقرها في دبي. مرخصة من قبل السلطات البرية في الإمارات العربية المتحدة، ونحن مخولون للعمل في جميع أنحاء البلاد. يجمع نهجنا بين التميز المعماري والابتكار التكنولوجي والالتزام المطلق بالجودة.",
-        operationTitle: "أين نعمل",
-        operationText: "نقوم بتنفيذ مشاريع مرموقة في جميع أنحاء الإمارات العربية المتحدة، مع الجمع بين الخبرة المحلية والمعايير الدولية.",
-        valuesTitle: "قيمنا",
-        valuesText: "يعكس كل مشروع التزامنا بالجودة والموثوقية والاستدامة. نتعاون مع مهندسين ومعماريين ومطوري عقارات مشهورين لتصميم مبانٍ أيقونية تشكل المشهد الحضري للإمارات.",
-        whyChooseTitle: "لماذا تختار لوكسانتر؟",
-        whyChooseText: "من التصميم إلى التنفيذ، نضمن إدارة سلسة، حلول مخصصة، والتزام صارم بالمواعيد النهائية والميزانيات. لوكسانتر هو شريكك المثالي لمشاريع البناء الفاخرة في الإمارات."
+        langLabel: "اللغة:",
+        legal: "الإشعارات القانونية",
+        privacy: "سياسة الخصوصية",
+        copyright: "© 2025 لوكسانتر للمقاولات البناء. جميع الحقوق محفوظة."
       }
     };
 
     const langSwitcher = document.getElementById('langSwitcher');
+    const langLabel = document.getElementById('label-langSwitcher');
+    const menuLinks = document.querySelectorAll('nav.navbar a');
+    const footerLinks = document.querySelectorAll('.footer-links a');
+    const footerCopyright = document.querySelector('footer > div:last-child');
+    const pageTitle = document.getElementById('page-title');
 
     function updateLanguage(lang) {
+      pageTitle.textContent = translations[lang].title;
+      langLabel.textContent = translations[lang].langLabel;
+      const navItems = [translations[lang].navAccueil, translations[lang].navApropos, translations[lang].navServices, translations[lang].navProjets, translations[lang].navContact];
+      menuLinks.forEach((link, i) => link.textContent = navItems[i]);
+      footerLinks[0].textContent = translations[lang].legal;
+      footerLinks[1].textContent = translations[lang].privacy;
       document.documentElement.lang = lang;
       document.documentElement.dir = (lang === 'ar') ? 'rtl' : 'ltr';
-
-      // Update texts
-      document.title = `Luxenter - ${translations[lang].title}`;
-      document.getElementById('page-title').textContent = translations[lang].title;
-
-      const navLinks = document.querySelectorAll('nav.navbar a');
-      navLinks[0].textContent = translations[lang].navAccueil;
-      navLinks[1].textContent = translations[lang].navApropos;
-      navLinks[2].textContent = translations[lang].navServices;
-      navLinks[3].textContent = translations[lang].navProjets;
-      navLinks[4].textContent = translations[lang].navContact;
-
-      // Sections
-      document.getElementById('identity-title').textContent = translations[lang].identityTitle;
-      document.getElementById('identity-title').nextElementSibling.textContent = translations[lang].identityText;
-
-      document.getElementById('operation-title').textContent = translations[lang].operationTitle;
-      document.getElementById('operation-title').nextElementSibling.textContent = translations[lang].operationText;
-
-      document.getElementById('values-title').textContent = translations[lang].valuesTitle;
-      document.getElementById('values-title').nextElementSibling.textContent = translations[lang].valuesText;
-
-      document.getElementById('why-choose-title').textContent = translations[lang].whyChooseTitle;
-      document.getElementById('why-choose-title').nextElementSibling.textContent = translations[lang].whyChooseText;
+      footerCopyright.textContent = translations[lang].copyright;
     }
 
-    // Set default language to English on page load
-    window.addEventListener('DOMContentLoaded', () => {
-      updateLanguage('en');
-      langSwitcher.value = 'en';
-    });
-
-    langSwitcher.addEventListener('change', (e) => {
-      updateLanguage(e.target.value);
-    });
+    langSwitcher.addEventListener('change', e => updateLanguage(e.target.value));
+    updateLanguage(langSwitcher.value);
   </script>
 </body>
 </html>

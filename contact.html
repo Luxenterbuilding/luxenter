@@ -192,19 +192,31 @@
   </style>
 </head>
 <body>
-  <header>
-    <div class="logo">
-      <a href="index.html"><img src="luxenter-logo.png" alt="Luxenter logo"></a>
-    </div>
-    <div class="lang-switcher">
-      <label for="langSwitcher" id="label-langSwitcher">Language:</label>
-      <select id="langSwitcher" aria-labelledby="label-langSwitcher">
-        <option value="en" selected>English</option>
-        <option value="fr">Français</option>
-        <option value="ar">العربية</option>
-      </select>
-    </div>
-  </header>
+ <header role="banner">
+  <div class="logo">
+    <a href="index.html" aria-label="Luxenter Accueil" class="logo-link">
+      <img src="luxenter-logo.png" alt="Logo Luxenter" />
+      <span class="company-name">Luxenter</span>
+    </a>
+  </div>
+  <div class="lang-switcher" role="navigation" aria-label="Sélecteur de langue">
+    <label for="langSwitcher" id="label-langSwitcher">Langue :</label>
+    <select id="langSwitcher" aria-labelledby="label-langSwitcher" aria-live="polite">
+      <option value="fr">Français</option>
+      <option value="en" selected>English</option>
+      <option value="ar">العربية</option>
+    </select>
+  </div>
+</header>
+
+<nav class="navbar" role="navigation" aria-label="Menu principal">
+  <a href="index.html" tabindex="0">Accueil</a>
+  <a href="apropos.html" tabindex="0">À propos</a>
+  <a href="services.html" tabindex="0">Services</a>
+  <a href="projets.html" tabindex="0">Projets</a>
+  <a href="contact.html" tabindex="0">Contact</a>
+</nav>
+
 
   <nav>
     <a href="index.html" id="nav-home">Home</a>
@@ -255,16 +267,21 @@
     </div>
   </main>
 
-  <footer>
-    <div class="legal-links">
-      <a href="privacy.html" id="privacy-policy">Privacy Policy</a>
-      <a href="legal.html" id="legal-mentions">Legal Notice</a>
-    </div>
-    <p id="footer-text">© 2025 Luxenter for Building Contracting. All rights reserved.</p>
-  </footer>
+  <footer role="contentinfo">
+  <div class="footer-links">
+    <a href="mentions-legales.html">Mentions légales</a> |
+    <a href="confidentialite.html">Confidentialité</a>
+  </div>
+  <div>
+    © 2025 Luxenter for Building Contracting. Tous droits réservés.
+  </div>
+</footer>
+
   <script>
   const translations = {
     fr: {
+      menu: ["Accueil", "À propos", "Services", "Projets", "Contact"],
+      langLabel: "Langue :",
       contactTitle: "Contactez-nous",
       labelFullname: "Nom complet",
       labelEmail: "E-mail",
@@ -277,10 +294,12 @@
       phone: "Téléphone",
       whatsapp: "WhatsApp",
       address: "Adresse",
-      legal: "Mentions légales",
-      privacy: "Confidentialité"
+      footerLinks: ["Mentions légales", "Confidentialité"],
+      copyright: "© 2025 Luxenter for Building Contracting. Tous droits réservés."
     },
     en: {
+      menu: ["Home", "About", "Services", "Projects", "Contact"],
+      langLabel: "Language:",
       contactTitle: "Contact Us",
       labelFullname: "Full Name",
       labelEmail: "Email",
@@ -293,10 +312,12 @@
       phone: "Phone",
       whatsapp: "WhatsApp",
       address: "Address",
-      legal: "Legal Notice",
-      privacy: "Privacy Policy"
+      footerLinks: ["Legal Notice", "Privacy Policy"],
+      copyright: "© 2025 Luxenter for Building Contracting. All rights reserved."
     },
     ar: {
+      menu: ["الرئيسية", "من نحن", "الخدمات", "المشاريع", "اتصل بنا"],
+      langLabel: "اللغة:",
       contactTitle: "اتصل بنا",
       labelFullname: "الاسم الكامل",
       labelEmail: "البريد الإلكتروني",
@@ -309,12 +330,14 @@
       phone: "الهاتف",
       whatsapp: "واتساب",
       address: "العنوان",
-      legal: "الإشعارات القانونية",
-      privacy: "سياسة الخصوصية"
+      footerLinks: ["الإشعارات القانونية", "سياسة الخصوصية"],
+      copyright: "© 2025 لوكسانتر للمقاولات البناء. جميع الحقوق محفوظة."
     }
   };
 
   const elements = {
+    const menuLinks = document.querySelectorAll('nav.navbar a');
+  const langLabel = document.getElementById('label-langSwitcher');
     contactTitle: document.getElementById("contact-title"),
     fullname: document.getElementById("label-fullname"),
     email: document.getElementById("label-email"),

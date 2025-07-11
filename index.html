@@ -33,6 +33,29 @@
     .logo img {
       height: 80px;
     }
+    .logo-link {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  text-decoration: none;
+}
+
+.company-name {
+  font-family: 'Georgia', serif;
+  font-size: 2.4rem;
+  font-weight: 700;
+  color: var(--or);
+  letter-spacing: 0.1em;
+  user-select: none;
+  transition: color 0.3s ease;
+}
+
+.logo-link:hover .company-name,
+.logo-link:focus-visible .company-name {
+  color: #fff3d1;
+  outline: none;
+}
+
     .lang-switcher label {
       margin-right: 0.5rem;
       font-weight: 600;
@@ -143,10 +166,11 @@
 
   <header role="banner">
     <div class="logo">
-      <a href="index.html" aria-label="Luxenter Accueil">
-        <img src="luxenter-logo.png" alt="Logo Luxenter" />
-      </a>
-    </div>
+  <a href="index.html" aria-label="Luxenter Accueil" class="logo-link">
+    <img src="luxenter-logo.png" alt="Logo Luxenter" />
+    <span class="company-name">Luxenter</span>
+  </a>
+</div>
     <div class="lang-switcher" role="navigation" aria-label="Sélecteur de langue">
       <label for="langSwitcher" id="label-langSwitcher">Langue :</label>
       <select id="langSwitcher" aria-labelledby="label-langSwitcher" aria-live="polite">

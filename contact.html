@@ -19,45 +19,58 @@
       font-size: 18px;
     }
 
-   header {
-      background: var(--marine);
-      color: var(--or);
-      padding: 1rem 2rem;
+    header {
+      background: #0a1f44;
+      color: #d4af37;
+      padding: 1rem 3rem;
       display: flex;
       justify-content: space-between;
       align-items: center;
+      flex-wrap: wrap;
     }
+
     .logo img {
-      height: 80px;
+      height: 70px;
     }
-    .lang-switcher label {
-      margin-right: 0.5rem;
-      font-weight: 600;
+
+    .lang-switcher {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
     }
-    select#langSwitcher {
-      background: var(--marine);
-      color: var(--or);
-      border: 1px solid var(--or);
-      padding: 0.3rem 0.6rem;
-      border-radius: 4px;
-      font-weight: 600;
-      cursor: pointer;
-    }
-    nav.navbar {
-      background: var(--marine);
+
+    nav {
+      background: #0a1f44;
+      color: #d4af37;
+      padding: 0.5rem 3rem;
       display: flex;
       justify-content: center;
-      gap: 2rem;
-      padding: 1rem 0;
+      flex-wrap: wrap;
     }
-    nav.navbar a {
-      color: var(--or);
-      font-weight: 600;
+
+    nav a {
+      margin: 0 1.2rem;
+      color: #d4af37;
       text-decoration: none;
+      font-weight: 600;
+      position: relative;
     }
-    nav.navbar a:hover,
-    nav.navbar a:focus-visible {
-       } 
+
+    nav a::after {
+      content: '';
+      display: block;
+      width: 0;
+      height: 2px;
+      background: #d4af37;
+      transition: width 0.3s;
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+    }
+
+    nav a:hover::after {
+      width: 100%;
+    }
 
     main {
       flex-grow: 1;
@@ -152,30 +165,13 @@
       box-shadow: 0 0 8px rgba(212, 175, 55, 0.4), 0 8px 20px rgba(0, 0, 0, 0.1);
     }
 
-   }
     footer {
-      background: var(--marine);
-      color: var(--or);
-      padding: 2rem 1rem;
+      background: #0a1f44;
+      color: #d4af37;
       text-align: center;
-      font-size: 0.9rem;
+      padding: 2rem 1rem;
+      font-size: 0.95rem;
     }
-    footer a {
-      color: var(--or);
-      text-decoration: none;
-    }
-    footer a:hover,
-    footer a:focus-visible {
-      text-decoration: underline;
-      outline: none;
-    }
-    @keyframes zoomBackground {
-  0% {
-    background-size: 110%;
-  }
-  100% {
-    background-size: 120%;
-  }
 
     .legal-links {
       margin-bottom: 0.5rem;
@@ -196,17 +192,15 @@
   </style>
 </head>
 <body>
-   <header role="banner">
+  <header>
     <div class="logo">
-      <a href="index.html" aria-label="Luxenter Accueil">
-        <img src="luxenter-logo.png" alt="Logo Luxenter" />
-      </a>
+      <a href="index.html"><img src="luxenter-logo.png" alt="Luxenter logo"></a>
     </div>
-    <div class="lang-switcher" role="navigation" aria-label="Sélecteur de langue">
-      <label for="langSwitcher" id="label-langSwitcher">Langue :</label>
-      <select id="langSwitcher" aria-labelledby="label-langSwitcher" aria-live="polite">
-       <option value="fr">Français</option>
-       <option value="en" selected>English</option>
+    <div class="lang-switcher">
+      <label for="langSwitcher" id="label-langSwitcher">Language:</label>
+      <select id="langSwitcher" aria-labelledby="label-langSwitcher">
+        <option value="en" selected>English</option>
+        <option value="fr">Français</option>
         <option value="ar">العربية</option>
       </select>
     </div>
@@ -261,91 +255,116 @@
     </div>
   </main>
 
-    <footer role="contentinfo">
-    <div class="footer-links">
-      <a href="mentions-legales.html">Mentions légales</a> |
-      <a href="confidentialite.html">Confidentialité</a>
+  <footer>
+    <div class="legal-links">
+      <a href="privacy.html" id="privacy-policy">Privacy Policy</a>
+      <a href="legal.html" id="legal-mentions">Legal Notice</a>
     </div>
-    <div>
-      © 2025 Luxenter for Building Contracting. Tous droits réservés.
-    </div>
+    <p id="footer-text">© 2025 Luxenter for Building Contracting. All rights reserved.</p>
   </footer>
   <script>
   const translations = {
-    en: {
-      'label-langSwitcher': 'Language:',
-      'nav-home': 'Home',
-      'nav-about': 'About',
-      'nav-services': 'Services',
-      'nav-projects': 'Projects',
-      'nav-contact': 'Contact',
-      'contact-title': 'Contact Us',
-      'label-fullname': 'Full Name',
-      'label-email': 'Email',
-      'label-phone': 'Phone Number',
-      'label-subject': 'Subject',
-      'label-message': 'Message',
-      'label-attachment': 'Attachment (optional)',
-      'submit-btn': 'Send Message',
-      'privacy-policy': 'Privacy Policy',
-      'legal-mentions': 'Legal Notice',
-      'footer-text': '© 2025 Luxenter for Building Contracting. All rights reserved.'
-    },
     fr: {
-      'label-langSwitcher': 'Langue :',
-      'nav-home': 'Accueil',
-      'nav-about': 'À propos',
-      'nav-services': 'Services',
-      'nav-projects': 'Projets',
-      'nav-contact': 'Contact',
-      'contact-title': 'Nous contacter',
-      'label-fullname': 'Nom complet',
-      'label-email': 'Adresse e-mail',
-      'label-phone': 'Numéro de téléphone',
-      'label-subject': 'Sujet',
-      'label-message': 'Message',
-      'label-attachment': 'Pièce jointe (optionnelle)',
-      'submit-btn': 'Envoyer le message',
-      'privacy-policy': 'Politique de confidentialité',
-      'legal-mentions': 'Mentions légales',
-      'footer-text': '© 2025 Luxenter for Building Contracting. Tous droits réservés.'
+      contactTitle: "Contactez-nous",
+      labelFullname: "Nom complet",
+      labelEmail: "E-mail",
+      labelPhone: "Téléphone",
+      labelSubject: "Sujet",
+      labelMessage: "Message",
+      labelAttachment: "Pièce jointe (optionnelle)",
+      submitBtn: "Envoyer le message",
+      email: "E-mail",
+      phone: "Téléphone",
+      whatsapp: "WhatsApp",
+      address: "Adresse",
+      legal: "Mentions légales",
+      privacy: "Confidentialité"
+    },
+    en: {
+      contactTitle: "Contact Us",
+      labelFullname: "Full Name",
+      labelEmail: "Email",
+      labelPhone: "Phone Number",
+      labelSubject: "Subject",
+      labelMessage: "Message",
+      labelAttachment: "Attachment (optional)",
+      submitBtn: "Send Message",
+      email: "Email",
+      phone: "Phone",
+      whatsapp: "WhatsApp",
+      address: "Address",
+      legal: "Legal Notice",
+      privacy: "Privacy Policy"
     },
     ar: {
-      'label-langSwitcher': 'اللغة:',
-      'nav-home': 'الرئيسية',
-      'nav-about': 'من نحن',
-      'nav-services': 'الخدمات',
-      'nav-projects': 'المشاريع',
-      'nav-contact': 'اتصل بنا',
-      'contact-title': 'اتصل بنا',
-      'label-fullname': 'الاسم الكامل',
-      'label-email': 'البريد الإلكتروني',
-      'label-phone': 'رقم الهاتف',
-      'label-subject': 'الموضوع',
-      'label-message': 'الرسالة',
-      'label-attachment': 'مرفق (اختياري)',
-      'submit-btn': 'إرسال الرسالة',
-      'privacy-policy': 'سياسة الخصوصية',
-      'legal-mentions': 'إشعار قانوني',
-      'footer-text': '© 2025 شركة لوكسنتر للمقاولات. جميع الحقوق محفوظة.'
+      contactTitle: "اتصل بنا",
+      labelFullname: "الاسم الكامل",
+      labelEmail: "البريد الإلكتروني",
+      labelPhone: "رقم الهاتف",
+      labelSubject: "الموضوع",
+      labelMessage: "الرسالة",
+      labelAttachment: "مرفق (اختياري)",
+      submitBtn: "إرسال الرسالة",
+      email: "البريد الإلكتروني",
+      phone: "الهاتف",
+      whatsapp: "واتساب",
+      address: "العنوان",
+      legal: "الإشعارات القانونية",
+      privacy: "سياسة الخصوصية"
     }
   };
 
-  const langSwitcher = document.getElementById('langSwitcher');
+  const elements = {
+    contactTitle: document.getElementById("contact-title"),
+    fullname: document.getElementById("label-fullname"),
+    email: document.getElementById("label-email"),
+    phone: document.getElementById("label-phone"),
+    subject: document.getElementById("label-subject"),
+    message: document.getElementById("label-message"),
+    attachment: document.getElementById("label-attachment"),
+    submitBtn: document.getElementById("submit-btn"),
+    footerLegal: document.querySelector(".footer-links a[href*='mentions']"),
+    footerPrivacy: document.querySelector(".footer-links a[href*='confidentialite']"),
+    contactInfo: document.querySelectorAll(".contact-info p")
+  };
 
-  langSwitcher.addEventListener('change', () => {
-    const selectedLang = langSwitcher.value;
-    const strings = translations[selectedLang];
+  function updateLanguage(lang) {
+    const t = translations[lang];
+    if (!t) return;
 
-    for (const id in strings) {
-      const el = document.getElementById(id);
-      if (el) el.textContent = strings[id];
-    }
+    elements.contactTitle.textContent = t.contactTitle;
+    elements.fullname.textContent = t.labelFullname;
+    elements.email.textContent = t.labelEmail;
+    elements.phone.textContent = t.labelPhone;
+    elements.subject.textContent = t.labelSubject;
+    elements.message.textContent = t.labelMessage;
+    elements.attachment.textContent = t.labelAttachment;
+    elements.submitBtn.textContent = t.submitBtn;
+    elements.footerLegal.textContent = t.legal;
+    elements.footerPrivacy.textContent = t.privacy;
 
-    document.documentElement.lang = selectedLang;
-    document.documentElement.dir = selectedLang === 'ar' ? 'rtl' : 'ltr';
+    const infoLabels = ["email", "phone", "whatsapp", "address"];
+    elements.contactInfo.forEach((p, i) => {
+      const strong = p.querySelector("strong");
+      if (strong && infoLabels[i]) {
+        strong.textContent = t[infoLabels[i]] + ":";
+      }
+    });
+
+    // Direction RTL pour l’arabe
+    document.documentElement.dir = lang === "ar" ? "rtl" : "ltr";
+    document.documentElement.lang = lang;
+  }
+
+  document.getElementById("langSwitcher").addEventListener("change", (e) => {
+    const selectedLang = e.target.value;
+    updateLanguage(selectedLang);
   });
+
+  // Initialisation
+  updateLanguage(document.getElementById("langSwitcher").value);
 </script>
 
 </body>
 </html>
+

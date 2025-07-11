@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="fr" dir="ltr">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -62,26 +62,22 @@
     nav.navbar a:hover {
       text-decoration: underline;
     }
-
     main {
       flex-grow: 1;
       padding: 2rem 1rem;
       max-width: 1200px;
       margin: 0 auto;
     }
-
     h1 {
       text-align: center;
       margin-bottom: 2rem;
       font-size: 2.5rem;
     }
-
     .projects-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
       gap: 2rem;
     }
-
     .project-card {
       border: 1px solid #ddd;
       border-radius: 12px;
@@ -90,47 +86,38 @@
       background-color: #fff;
       transition: transform 0.3s ease;
     }
-
     .project-card:hover {
       transform: translateY(-5px);
     }
-
     .project-card img {
       width: 100%;
       height: 200px;
       object-fit: cover;
     }
-
     .project-content {
       padding: 1rem;
     }
-
     .project-title {
       font-size: 1.4rem;
       margin-bottom: 0.5rem;
       color: var(--marine);
     }
-
     .project-description {
       font-size: 1rem;
       color: #333;
     }
-
     footer {
       text-align: center;
       padding: 2rem 1rem;
       font-size: 0.9rem;
     }
-
     footer a {
       color: var(--or);
       text-decoration: none;
     }
-
     footer a:hover {
       text-decoration: underline;
     }
-
     .footer-links {
       margin-bottom: 0.5rem;
     }
@@ -139,13 +126,13 @@
 <body>
 
   <!-- Header -->
-  <header role="banner">
+  <header>
     <div class="logo">
       <a href="index.html" aria-label="Luxenter Accueil">
-        <img src="luxenter-logo.png" alt="Logo Luxenter" />
+        <img src="images/luxenter-logo.png" alt="Logo Luxenter" />
       </a>
     </div>
-    <div class="lang-switcher" role="navigation" aria-label="Sélecteur de langue">
+    <div class="lang-switcher">
       <label for="langSwitcher" id="label-langSwitcher">Langue :</label>
       <select id="langSwitcher" aria-labelledby="label-langSwitcher" aria-live="polite">
         <option value="fr">Français</option>
@@ -155,44 +142,53 @@
     </div>
   </header>
 
-  <!-- Menu -->
-  <nav class="navbar" role="navigation" aria-label="Menu principal">
-    <a href="index.html">Accueil</a>
-    <a href="apropos.html">À propos</a>
-    <a href="services.html">Services</a>
-    <a href="projets.html">Projets</a>
-    <a href="contact.html">Contact</a>
+  <!-- Navigation -->
+  <nav class="navbar">
+    <a href="index.html" data-fr="Accueil" data-en="Home" data-ar="الرئيسية">Accueil</a>
+    <a href="apropos.html" data-fr="À propos" data-en="About" data-ar="من نحن">À propos</a>
+    <a href="services.html" data-fr="Services" data-en="Services" data-ar="الخدمات">Services</a>
+    <a href="projets.html" data-fr="Projets" data-en="Projects" data-ar="المشاريع">Projets</a>
+    <a href="contact.html" data-fr="Contact" data-en="Contact" data-ar="اتصل بنا">Contact</a>
   </nav>
 
-  <!-- Contenu principal -->
+  <!-- Main Content -->
   <main>
-     <h1 id="projects-title">Nos Projets</h1>
-  <p id="projects-status" data-fr="Voici nos projets en cours de réalisation." data-en="Here are our ongoing projects." data-ar="هذه هي مشاريعنا الجارية.">
-    Voici nos projets en cours de réalisation.
-  </p>
+    <h1 id="projects-title" data-fr="Nos Projets" data-en="Our Projects" data-ar="مشاريعنا">Nos Projets</h1>
+    <p id="projects-status" data-fr="Voici nos projets en cours de réalisation." data-en="Here are our ongoing projects." data-ar="هذه هي مشاريعنا الجارية.">
+      Voici nos projets en cours de réalisation.
+    </p>
+
     <div class="projects-grid">
       <div class="project-card">
-        <img src="ChatGPT Image 11 juil. 2025 à 23_15_13.png" alt="Villa de luxe">
+        <img src="palm-villa.jpg" alt="Villa de luxe">
         <div class="project-content">
-          <div class="project-title" data-fr="Villa Privée à Palm Jumeirah" data-en="Private Villa in Palm Jumeirah" data-ar="فيلا خاصة في نخلة جميرا">Villa Privée à Palm Jumeirah</div>
+          <div class="project-title" data-fr="Villa Privée à Palm Jumeirah" data-en="Private Villa in Palm Jumeirah" data-ar="فيلا خاصة في نخلة جميرا">
+            Villa Privée à Palm Jumeirah
+          </div>
           <div class="project-description" data-fr="Un projet résidentiel haut de gamme en cours, alliant élégance et innovation architecturale." data-en="A high-end residential project underway, combining elegance and architectural innovation." data-ar="مشروع سكني فاخر قيد الإنشاء يجمع بين الأناقة والابتكار المعماري.">
             Un projet résidentiel haut de gamme en cours, alliant élégance et innovation architecturale.
           </div>
         </div>
       </div>
+
       <div class="project-card">
         <img src="images/residentiel.jpg" alt="Immeuble résidentiel moderne">
         <div class="project-content">
-          <div class="project-title" data-fr="Résidence Marina View" data-en="Marina View Residence" data-ar="إقامة مارينا فيو">Résidence Marina View</div>
+          <div class="project-title" data-fr="Résidence Marina View" data-en="Marina View Residence" data-ar="إقامة مارينا فيو">
+            Résidence Marina View
+          </div>
           <div class="project-description" data-fr="Immeuble de luxe avec vue sur la marina de Dubaï. Livraison prévue fin 2025." data-en="Luxury residential tower overlooking Dubai Marina. Completion expected by end of 2025." data-ar="برج سكني فاخر يطل على مرسى دبي. من المتوقع الانتهاء في نهاية عام 2025.">
             Immeuble de luxe avec vue sur la marina de Dubaï. Livraison prévue fin 2025.
           </div>
         </div>
       </div>
+
       <div class="project-card">
         <img src="images/complexe.jpg" alt="Projet mixte commerce et résidentiel">
         <div class="project-content">
-          <div class="project-title" data-fr="Complexe Mixte à Abu Dhabi" data-en="Mixed-Use Complex in Abu Dhabi" data-ar="مجمع متعدد الاستخدامات في أبوظبي">Complexe Mixte à Abu Dhabi</div>
+          <div class="project-title" data-fr="Complexe Mixte à Abu Dhabi" data-en="Mixed-Use Complex in Abu Dhabi" data-ar="مجمع متعدد الاستخدامات في أبوظبي">
+            Complexe Mixte à Abu Dhabi
+          </div>
           <div class="project-description" data-fr="Développement en cours intégrant commerces, bureaux et logements haut de gamme." data-en="Ongoing development combining retail, office and premium residences." data-ar="تطوير قيد التنفيذ يجمع بين المحلات التجارية والمكاتب والمساكن الفاخرة.">
             Développement en cours intégrant commerces, bureaux et logements haut de gamme.
           </div>
@@ -202,74 +198,29 @@
   </main>
 
   <!-- Footer -->
-  <footer role="contentinfo">
+  <footer>
     <div class="footer-links">
-      <a href="mentions-legales.html">Mentions légales</a> |
-      <a href="confidentialite.html">Confidentialité</a>
+      <a href="mentions-legales.html" data-fr="Mentions légales" data-en="Legal Notice" data-ar="الإشعارات القانونية">Mentions légales</a> |
+      <a href="confidentialite.html" data-fr="Confidentialité" data-en="Privacy Policy" data-ar="سياسة الخصوصية">Confidentialité</a>
     </div>
-    <div id="footer-copyright">
+    <div id="footer-copyright"
+      data-fr="© 2025 Luxenter for Building Contracting. Tous droits réservés."
+      data-en="© 2025 Luxenter for Building Contracting. All rights reserved."
+      data-ar="© 2025 لوكسانتر للمقاولات. جميع الحقوق محفوظة.">
       © 2025 Luxenter for Building Contracting. Tous droits réservés.
     </div>
   </footer>
 
-  <!-- Traduction JS -->
+  <!-- JS de Traduction -->
   <script>
-    const translations = {
-      fr: {
-        menu: ["Accueil", "À propos", "Services", "Projets", "Contact"],
-        langLabel: "Langue :",
-        title: "Nos Projets",
-        projectsStatus: "Voici nos projets en cours de réalisation.",
-        footerLinks: ["Mentions légales", "Confidentialité"],
-        copyright: "© 2025 Luxenter for Building Contracting. Tous droits réservés."
-      },
-      en: {
-        menu: ["Home", "About", "Services", "Projects", "Contact"],
-        langLabel: "Language:",
-        title: "Our Projects",
-         projectsStatus: "Here are our ongoing projects.",
-        footerLinks: ["Legal Notice", "Privacy Policy"],
-        copyright: "© 2025 Luxenter for Building Contracting. All rights reserved."
-      },
-      ar: {
-        menu: ["الرئيسية", "من نحن", "الخدمات", "المشاريع", "اتصل بنا"],
-        langLabel: "اللغة:",
-        title: "مشاريعنا",
-         projectsStatus: "هذه هي مشاريعنا الجارية.",
-        footerLinks: ["الإشعارات القانونية", "سياسة الخصوصية"],
-        copyright: "© 2025 لوكسانتر للمقاولات. جميع الحقوق محفوظة."
-      }
-    };
-
     const langSwitcher = document.getElementById('langSwitcher');
-    const menuLinks = document.querySelectorAll('nav.navbar a');
-    const langLabel = document.getElementById('label-langSwitcher');
-    const projectTitles = document.querySelectorAll('.project-title');
-    const projectDescriptions = document.querySelectorAll('.project-description');
-    const projectsTitle = document.getElementById('projects-title');
-    const footerLinks = document.querySelectorAll('.footer-links a');
-    const footerCopyright = document.getElementById('footer-copyright');
 
     function updateLanguage(lang) {
-      menuLinks.forEach((link, i) => {
-        link.textContent = translations[lang].menu[i];
-      });
-      langLabel.textContent = translations[lang].langLabel;
-      projectsTitle.textContent = translations[lang].title;
-      projectsStatus.textContent = translations[lang].projectsStatus;
-      footerLinks[0].textContent = translations[lang].footerLinks[0];
-      footerLinks[1].textContent = translations[lang].footerLinks[1];
-      footerCopyright.textContent = translations[lang].copyright;
-
       document.documentElement.lang = lang;
       document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
 
-      projectTitles.forEach(el => {
-        el.textContent = el.getAttribute(`data-${lang}`);
-      });
-
-      projectDescriptions.forEach(el => {
-        el.textContent = el.getAttribute(`data-${lang}`);
+      document.querySelectorAll('[data-' + lang + ']').forEach(el => {
+        el.textContent = el.getAttribute('data-' + lang);
       });
     }
 
@@ -277,6 +228,7 @@
       updateLanguage(e.target.value);
     });
 
+    // Initialisation
     updateLanguage(langSwitcher.value);
   </script>
 </body>

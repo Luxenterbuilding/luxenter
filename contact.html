@@ -93,11 +93,11 @@
     .flex-container {
       display: flex;
       gap: 2rem;
-      flex-wrap: wrap;
+      flex-wrap: nowrap;
     }
 
     .card {
-      flex: 1 1 48%;
+      flex: 0 0 50%;
       background: #fafafa;
       padding: 2rem;
       border-radius: 16px;
@@ -106,29 +106,25 @@
 
     form {
       display: grid;
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: 1fr;
       gap: 1rem;
     }
 
-    form label {
-      font-weight: 600;
-    }
-
-    form label.full-width,
-    form input.full-width,
-    form textarea.full-width {
-      grid-column: span 2;
+    form label,
+    form input,
+    form textarea,
+    form button {
       width: 100%;
-      box-sizing: border-box;
     }
 
-    form input, form textarea, form button {
+    form input,
+    form textarea,
+    form button {
       padding: 1rem;
       border: 1px solid #ccc;
       border-radius: 8px;
       font-size: 1rem;
       background: #f8f8f8;
-      width: 100%;
     }
 
     textarea {
@@ -144,7 +140,6 @@
       border-radius: 8px;
       cursor: pointer;
       transition: background 0.3s;
-      grid-column: span 2;
     }
 
     button:hover {
@@ -179,7 +174,7 @@
     }
 
     .legal-links {
-      margin-top: 0.5rem;
+      margin-bottom: 0.5rem;
     }
 
     .legal-links a {
@@ -192,9 +187,6 @@
     @media (max-width: 768px) {
       .flex-container {
         flex-direction: column;
-      }
-      form {
-        grid-template-columns: 1fr;
       }
     }
   </style>
@@ -227,11 +219,11 @@
     <div class="flex-container">
       <div class="card">
         <form action="mailto:luxenterbuildingcontracting@gmail.com" method="post" enctype="multipart/form-data">
-          <label for="fullname" id="label-fullname" class="full-width">Full Name</label>
-          <input type="text" id="fullname" name="Full Name" required class="full-width" />
+          <label for="fullname" id="label-fullname">Full Name</label>
+          <input type="text" id="fullname" name="Full Name" required />
 
-          <label for="email" id="label-email" class="full-width">Email</label>
-          <input type="email" id="email" name="Email" required class="full-width" />
+          <label for="email" id="label-email">Email</label>
+          <input type="email" id="email" name="Email" required />
 
           <label for="phone" id="label-phone">Phone Number</label>
           <input type="tel" id="phone" name="Phone" required />
@@ -239,8 +231,8 @@
           <label for="subject" id="label-subject">Subject</label>
           <input type="text" id="subject" name="Subject" required />
 
-          <label for="message" id="label-message" class="full-width">Message</label>
-          <textarea id="message" name="Message" rows="6" required class="full-width"></textarea>
+          <label for="message" id="label-message">Message</label>
+          <textarea id="message" name="Message" rows="6" required></textarea>
 
           <label for="attachment" id="label-attachment">Attachment (optional)</label>
           <input type="file" id="attachment" name="Attachment" />
@@ -264,93 +256,88 @@
   </main>
 
   <footer>
-    <p id="footer-text">© 2025 Luxenter for Building Contracting. All rights reserved.</p>
     <div class="legal-links">
       <a href="privacy.html" id="privacy-policy">Privacy Policy</a>
       <a href="legal.html" id="legal-mentions">Legal Notice</a>
     </div>
+    <p id="footer-text">© 2025 Luxenter for Building Contracting. All rights reserved.</p>
   </footer>
-
   <script>
-    const translations = {
-      en: {
-        nav: ["Home", "About", "Services", "Projects", "Contact"],
-        title: "Contact Us",
-        fullname: "Full Name",
-        email: "Email",
-        phone: "Phone Number",
-        subject: "Subject",
-        message: "Message",
-        send: "Send Message",
-        attachment: "Attachment (optional)",
-        footer: "© 2025 Luxenter for Building Contracting. All rights reserved.",
-        privacy: "Privacy Policy",
-        legal: "Legal Notice",
-        langLabel: "Language:"
-      },
-      fr: {
-        nav: ["Accueil", "À propos", "Services", "Projets", "Contact"],
-        title: "Nous Contacter",
-        fullname: "Nom Complet",
-        email: "E-mail",
-        phone: "Téléphone",
-        subject: "Objet",
-        message: "Message",
-        send: "Envoyer le Message",
-        attachment: "Pièce jointe (optionnelle)",
-        footer: "© 2025 Luxenter pour les Travaux de Construction. Tous droits réservés.",
-        privacy: "Politique de Confidentialité",
-        legal: "Mentions Légales",
-        langLabel: "Langue :"
-      },
-      ar: {
-        nav: ["الرئيسية", "من نحن", "الخدمات", "المشاريع", "اتصل"],
-        title: "اتصل بنا",
-        fullname: "الاسم الكامل",
-        email: "البريد الإلكتروني",
-        phone: "رقم الهاتف",
-        subject: "الموضوع",
-        message: "الرسالة",
-        send: "أرسل الرسالة",
-        attachment: "مرفق (اختياري)",
-        footer: "© 2025 لوكسنتر لأعمال البناء. جميع الحقوق محفوظة.",
-        privacy: "سياسة الخصوصية",
-        legal: "الإشعارات القانونية",
-        langLabel: "اللغة:"
-      }
-    };
+  const translations = {
+    en: {
+      'label-langSwitcher': 'Language:',
+      'nav-home': 'Home',
+      'nav-about': 'About',
+      'nav-services': 'Services',
+      'nav-projects': 'Projects',
+      'nav-contact': 'Contact',
+      'contact-title': 'Contact Us',
+      'label-fullname': 'Full Name',
+      'label-email': 'Email',
+      'label-phone': 'Phone Number',
+      'label-subject': 'Subject',
+      'label-message': 'Message',
+      'label-attachment': 'Attachment (optional)',
+      'submit-btn': 'Send Message',
+      'privacy-policy': 'Privacy Policy',
+      'legal-mentions': 'Legal Notice',
+      'footer-text': '© 2025 Luxenter for Building Contracting. All rights reserved.'
+    },
+    fr: {
+      'label-langSwitcher': 'Langue :',
+      'nav-home': 'Accueil',
+      'nav-about': 'À propos',
+      'nav-services': 'Services',
+      'nav-projects': 'Projets',
+      'nav-contact': 'Contact',
+      'contact-title': 'Nous contacter',
+      'label-fullname': 'Nom complet',
+      'label-email': 'Adresse e-mail',
+      'label-phone': 'Numéro de téléphone',
+      'label-subject': 'Sujet',
+      'label-message': 'Message',
+      'label-attachment': 'Pièce jointe (optionnelle)',
+      'submit-btn': 'Envoyer le message',
+      'privacy-policy': 'Politique de confidentialité',
+      'legal-mentions': 'Mentions légales',
+      'footer-text': '© 2025 Luxenter for Building Contracting. Tous droits réservés.'
+    },
+    ar: {
+      'label-langSwitcher': 'اللغة:',
+      'nav-home': 'الرئيسية',
+      'nav-about': 'من نحن',
+      'nav-services': 'الخدمات',
+      'nav-projects': 'المشاريع',
+      'nav-contact': 'اتصل بنا',
+      'contact-title': 'اتصل بنا',
+      'label-fullname': 'الاسم الكامل',
+      'label-email': 'البريد الإلكتروني',
+      'label-phone': 'رقم الهاتف',
+      'label-subject': 'الموضوع',
+      'label-message': 'الرسالة',
+      'label-attachment': 'مرفق (اختياري)',
+      'submit-btn': 'إرسال الرسالة',
+      'privacy-policy': 'سياسة الخصوصية',
+      'legal-mentions': 'إشعار قانوني',
+      'footer-text': '© 2025 شركة لوكسنتر للمقاولات. جميع الحقوق محفوظة.'
+    }
+  };
 
-    const langSwitcher = document.getElementById('langSwitcher');
+  const langSwitcher = document.getElementById('langSwitcher');
 
-    function updateLanguage(lang) {
-      const t = translations[lang];
-      document.getElementById('nav-home').textContent = t.nav[0];
-      document.getElementById('nav-about').textContent = t.nav[1];
-      document.getElementById('nav-services').textContent = t.nav[2];
-      document.getElementById('nav-projects').textContent = t.nav[3];
-      document.getElementById('nav-contact').textContent = t.nav[4];
-      document.getElementById('contact-title').textContent = t.title;
-      document.getElementById('label-fullname').textContent = t.fullname;
-      document.getElementById('label-email').textContent = t.email;
-      document.getElementById('label-phone').textContent = t.phone;
-      document.getElementById('label-subject').textContent = t.subject;
-      document.getElementById('label-message').textContent = t.message;
-      document.getElementById('label-attachment').textContent = t.attachment;
-      document.getElementById('submit-btn').textContent = t.send;
-      document.getElementById('footer-text').textContent = t.footer;
-      document.getElementById('privacy-policy').textContent = t.privacy;
-      document.getElementById('legal-mentions').textContent = t.legal;
-      document.getElementById('label-langSwitcher').textContent = t.langLabel;
+  langSwitcher.addEventListener('change', () => {
+    const selectedLang = langSwitcher.value;
+    const strings = translations[selectedLang];
 
-      document.documentElement.lang = lang;
-      document.documentElement.dir = (lang === 'ar') ? 'rtl' : 'ltr';
+    for (const id in strings) {
+      const el = document.getElementById(id);
+      if (el) el.textContent = strings[id];
     }
 
-    langSwitcher.addEventListener('change', (e) => {
-      updateLanguage(e.target.value);
-    });
+    document.documentElement.lang = selectedLang;
+    document.documentElement.dir = selectedLang === 'ar' ? 'rtl' : 'ltr';
+  });
+</script>
 
-    updateLanguage(langSwitcher.value);
-  </script>
 </body>
 </html>

@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="fr" dir="ltr">
+<html lang="en" dir="ltr">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Luxenter - Projets</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Luxenter - Nos Projets</title>
   <style>
     :root {
       --marine: #0a1f44;
@@ -15,88 +15,148 @@
       font-family: 'Roboto', sans-serif;
       background: var(--blanc);
       color: var(--marine);
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+      font-size: 18px;
+      line-height: 1.6;
     }
     header, footer {
       background: var(--marine);
       color: var(--or);
-      padding: 1rem 2rem;
     }
     .logo img {
       height: 80px;
     }
-    .navbar {
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+    }
+    .lang-switcher label {
+      margin-right: 0.5rem;
+      font-weight: 600;
+    }
+    select#langSwitcher {
+      background: var(--marine);
+      color: var(--or);
+      border: 1px solid var(--or);
+      padding: 0.3rem 0.6rem;
+      border-radius: 4px;
+      font-weight: 600;
+      cursor: pointer;
+    }
+    nav.navbar {
       background: var(--marine);
       display: flex;
       justify-content: center;
       gap: 2rem;
       padding: 1rem 0;
     }
-    .navbar a {
+    nav.navbar a {
       color: var(--or);
       text-decoration: none;
       font-weight: 600;
     }
-    .navbar a:hover {
+    nav.navbar a:hover {
       text-decoration: underline;
     }
+
     main {
-      padding: 2rem;
+      flex-grow: 1;
+      padding: 2rem 1rem;
+      max-width: 1200px;
+      margin: 0 auto;
     }
-    .projects {
+
+    h1 {
       text-align: center;
+      margin-bottom: 2rem;
+      font-size: 2.5rem;
     }
-    .project-types {
-      display: flex;
-      flex-wrap: wrap;
+
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
       gap: 2rem;
-      justify-content: center;
-      margin-top: 2rem;
     }
+
     .project-card {
-      max-width: 300px;
       border: 1px solid #ddd;
-      border-radius: 10px;
+      border-radius: 12px;
       overflow: hidden;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      background-color: #fff;
+      transition: transform 0.3s ease;
     }
+
+    .project-card:hover {
+      transform: translateY(-5px);
+    }
+
     .project-card img {
       width: 100%;
-      height: auto;
+      height: 200px;
+      object-fit: cover;
     }
-    .project-card h3 {
-      margin: 1rem;
+
+    .project-content {
+      padding: 1rem;
     }
-    .project-card p {
-      margin: 0 1rem 1rem;
-    }
-    .cta-button {
-      background-color: var(--or);
+
+    .project-title {
+      font-size: 1.4rem;
+      margin-bottom: 0.5rem;
       color: var(--marine);
-      padding: 1rem 2rem;
-      border: none;
-      border-radius: 30px;
+    }
+
+    .project-description {
       font-size: 1rem;
-      font-weight: bold;
-      cursor: pointer;
-      margin-top: 2rem;
-      display: inline-block;
+      color: #333;
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem 1rem;
+      font-size: 0.9rem;
+    }
+
+    footer a {
+      color: var(--or);
       text-decoration: none;
     }
-    .lang-switcher {
-      position: absolute;
-      top: 1rem;
-      right: 2rem;
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+
+    .footer-links {
+      margin-bottom: 0.5rem;
     }
   </style>
 </head>
 <body>
-  <header>
+
+  <!-- Header -->
+  <header role="banner">
     <div class="logo">
-      <img src="luxenter-logo.png" alt="Logo Luxenter" />
+      <a href="index.html" aria-label="Luxenter Accueil">
+        <img src="luxenter-logo.png" alt="Logo Luxenter" />
+      </a>
+    </div>
+    <div class="lang-switcher" role="navigation" aria-label="Sélecteur de langue">
+      <label for="langSwitcher" id="label-langSwitcher">Langue :</label>
+      <select id="langSwitcher" aria-labelledby="label-langSwitcher" aria-live="polite">
+        <option value="fr">Français</option>
+        <option value="en" selected>English</option>
+        <option value="ar">العربية</option>
+      </select>
     </div>
   </header>
 
-  <nav class="navbar">
+  <!-- Menu -->
+  <nav class="navbar" role="navigation" aria-label="Menu principal">
     <a href="index.html">Accueil</a>
     <a href="apropos.html">À propos</a>
     <a href="services.html">Services</a>
@@ -104,65 +164,113 @@
     <a href="contact.html">Contact</a>
   </nav>
 
+  <!-- Contenu principal -->
   <main>
-    <section class="projects">
-      <h1 id="projects-title">Nos futurs projets</h1>
-      <p id="projects-description">
-        Luxenter débute ses activités aux Émirats avec des projets ambitieux en phase de conception. Nous collaborons actuellement avec des promoteurs et architectes de renom pour créer des bâtiments d'exception.
-      </p>
-      <div class="project-types">
-        <div class="project-card">
-          <img src="images/villa.jpg" alt="Villa contemporaine de luxe" />
-          <h3>Villa de luxe à Dubai Hills</h3>
-          <p>Conception d'une villa haut de gamme avec piscine, finitions nobles et design moderne.</p>
-        </div>
-        <div class="project-card">
-          <img src="images/residentiel.jpg" alt="Immeuble résidentiel" />
-          <h3>Résidentiel à Abu Dhabi</h3>
-          <p>Projet d'immeuble résidentiel de standing avec espaces verts et services intégrés.</p>
-        </div>
-        <div class="project-card">
-          <img src="images/complexe.jpg" alt="Complexe mixte" />
-          <h3>Complexe mixte</h3>
-          <p>En partenariat avec des promoteurs : commerces, bureaux et logements dans un environnement haut de gamme.</p>
+    <h1 id="projects-title">Nos Projets</h1>
+    <div class="projects-grid">
+      <div class="project-card">
+        <img src="images/villa.jpg" alt="Villa de luxe">
+        <div class="project-content">
+          <div class="project-title" data-fr="Villa Privée à Palm Jumeirah" data-en="Private Villa in Palm Jumeirah" data-ar="فيلا خاصة في نخلة جميرا">Villa Privée à Palm Jumeirah</div>
+          <div class="project-description" data-fr="Un projet résidentiel haut de gamme en cours, alliant élégance et innovation architecturale." data-en="A high-end residential project underway, combining elegance and architectural innovation." data-ar="مشروع سكني فاخر قيد الإنشاء يجمع بين الأناقة والابتكار المعماري.">
+            Un projet résidentiel haut de gamme en cours, alliant élégance et innovation architecturale.
+          </div>
         </div>
       </div>
-      <a class="cta-button" href="contact.html" id="projects-cta">Discutons de votre projet</a>
-    </section>
+      <div class="project-card">
+        <img src="images/residentiel.jpg" alt="Immeuble résidentiel moderne">
+        <div class="project-content">
+          <div class="project-title" data-fr="Résidence Marina View" data-en="Marina View Residence" data-ar="إقامة مارينا فيو">Résidence Marina View</div>
+          <div class="project-description" data-fr="Immeuble de luxe avec vue sur la marina de Dubaï. Livraison prévue fin 2025." data-en="Luxury residential tower overlooking Dubai Marina. Completion expected by end of 2025." data-ar="برج سكني فاخر يطل على مرسى دبي. من المتوقع الانتهاء في نهاية عام 2025.">
+            Immeuble de luxe avec vue sur la marina de Dubaï. Livraison prévue fin 2025.
+          </div>
+        </div>
+      </div>
+      <div class="project-card">
+        <img src="images/complexe.jpg" alt="Projet mixte commerce et résidentiel">
+        <div class="project-content">
+          <div class="project-title" data-fr="Complexe Mixte à Abu Dhabi" data-en="Mixed-Use Complex in Abu Dhabi" data-ar="مجمع متعدد الاستخدامات في أبوظبي">Complexe Mixte à Abu Dhabi</div>
+          <div class="project-description" data-fr="Développement en cours intégrant commerces, bureaux et logements haut de gamme." data-en="Ongoing development combining retail, office and premium residences." data-ar="تطوير قيد التنفيذ يجمع بين المحلات التجارية والمكاتب والمساكن الفاخرة.">
+            Développement en cours intégrant commerces, bureaux et logements haut de gamme.
+          </div>
+        </div>
+      </div>
+    </div>
   </main>
 
-  <footer>
-    <p id="footer-text">© 2025 Luxenter for Building Contracting. Tous droits réservés.</p>
+  <!-- Footer -->
+  <footer role="contentinfo">
+    <div class="footer-links">
+      <a href="mentions-legales.html">Mentions légales</a> |
+      <a href="confidentialite.html">Confidentialité</a>
+    </div>
+    <div id="footer-copyright">
+      © 2025 Luxenter for Building Contracting. Tous droits réservés.
+    </div>
   </footer>
 
+  <!-- Traduction JS -->
   <script>
     const translations = {
       fr: {
-        projects_title: "Nos futurs projets",
-        projects_description: "Luxenter débute ses activités aux Émirats avec des projets ambitieux en phase de conception...",
-        projects_cta: "Discutons de votre projet",
-        footer: "© 2025 Luxenter for Building Contracting. Tous droits réservés."
+        menu: ["Accueil", "À propos", "Services", "Projets", "Contact"],
+        langLabel: "Langue :",
+        title: "Nos Projets",
+        footerLinks: ["Mentions légales", "Confidentialité"],
+        copyright: "© 2025 Luxenter for Building Contracting. Tous droits réservés."
       },
       en: {
-        projects_title: "Our Upcoming Projects",
-        projects_description: "Luxenter is launching operations in the Emirates with ambitious projects currently in design phase...",
-        projects_cta: "Let's discuss your project",
-        footer: "© 2025 Luxenter for Building Contracting. All rights reserved."
+        menu: ["Home", "About", "Services", "Projects", "Contact"],
+        langLabel: "Language:",
+        title: "Our Projects",
+        footerLinks: ["Legal Notice", "Privacy Policy"],
+        copyright: "© 2025 Luxenter for Building Contracting. All rights reserved."
       },
       ar: {
-        projects_title: "مشاريعنا المستقبلية",
-        projects_description: "تبدأ لوكسانتر أنشطتها في الإمارات بمشاريع طموحة قيد التصميم...",
-        projects_cta: "دعنا نناقش مشروعك",
-        footer: "© 2025 لوكسانتر للمقاولات. جميع الحقوق محفوظة."
+        menu: ["الرئيسية", "من نحن", "الخدمات", "المشاريع", "اتصل بنا"],
+        langLabel: "اللغة:",
+        title: "مشاريعنا",
+        footerLinks: ["الإشعارات القانونية", "سياسة الخصوصية"],
+        copyright: "© 2025 لوكسانتر للمقاولات. جميع الحقوق محفوظة."
       }
     };
 
-    const lang = document.documentElement.lang;
-    const t = translations[lang] || translations['fr'];
-    document.getElementById("projects-title").textContent = t.projects_title;
-    document.getElementById("projects-description").textContent = t.projects_description;
-    document.getElementById("projects-cta").textContent = t.projects_cta;
-    document.getElementById("footer-text").textContent = t.footer;
+    const langSwitcher = document.getElementById('langSwitcher');
+    const menuLinks = document.querySelectorAll('nav.navbar a');
+    const langLabel = document.getElementById('label-langSwitcher');
+    const projectTitles = document.querySelectorAll('.project-title');
+    const projectDescriptions = document.querySelectorAll('.project-description');
+    const projectsTitle = document.getElementById('projects-title');
+    const footerLinks = document.querySelectorAll('.footer-links a');
+    const footerCopyright = document.getElementById('footer-copyright');
+
+    function updateLanguage(lang) {
+      menuLinks.forEach((link, i) => {
+        link.textContent = translations[lang].menu[i];
+      });
+      langLabel.textContent = translations[lang].langLabel;
+      projectsTitle.textContent = translations[lang].title;
+      footerLinks[0].textContent = translations[lang].footerLinks[0];
+      footerLinks[1].textContent = translations[lang].footerLinks[1];
+      footerCopyright.textContent = translations[lang].copyright;
+
+      document.documentElement.lang = lang;
+      document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
+
+      projectTitles.forEach(el => {
+        el.textContent = el.getAttribute(`data-${lang}`);
+      });
+
+      projectDescriptions.forEach(el => {
+        el.textContent = el.getAttribute(`data-${lang}`);
+      });
+    }
+
+    langSwitcher.addEventListener('change', (e) => {
+      updateLanguage(e.target.value);
+    });
+
+    updateLanguage(langSwitcher.value);
   </script>
 </body>
 </html>

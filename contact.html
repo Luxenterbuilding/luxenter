@@ -1,240 +1,208 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Luxenter - Contact</title>
-<meta name="description" content="Contact Luxenter for premium construction services across the UAE." />
-<meta name="keywords" content="Contact Luxenter Dubai, construction company UAE, luxury contractor" />
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Roboto&display=swap" rel="stylesheet" />
-<style>
-  /* Reset & Base */
-  body {
-    margin: 0;
-    font-family: 'Roboto', sans-serif;
-    background: linear-gradient(to bottom, #f7f7f9, #fffefa);
-    color: #0a1f44;
-    min-height: 100vh;
-    font-size: 18px;
-    display: flex;
-    flex-direction: column;
-  }
-
-  header, nav, footer {
-    background: #0a1f44;
-    color: #d4af37;
-    padding: 1rem 3rem;
-  }
-
-  header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-  }
-
-  .logo img {
-    height: 70px;
-  }
-
-  .lang-switcher {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-  }
-
-  nav {
-    display: flex;
-    justify-content: center;
-    gap: 2rem;
-    font-weight: 600;
-  }
-
-  nav a {
-    color: #d4af37;
-    text-decoration: none;
-    position: relative;
-    padding-bottom: 3px;
-  }
-
-  nav a::after {
-    content: "";
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 0%;
-    height: 2px;
-    background: #d4af37;
-    transition: width 0.3s ease;
-  }
-
-  nav a:hover::after,
-  nav a[aria-current="page"]::after {
-    width: 100%;
-  }
-
-  main {
-    flex-grow: 1;
-    max-width: 1200px;
-    margin: 3rem auto;
-    padding: 0 1rem;
-  }
-
-  h1 {
-    font-family: 'Playfair Display', serif;
-    font-size: 3rem;
-    text-align: center;
-    margin-bottom: 3rem;
-    color: #0a1f44;
-  }
-
-  /* Container 2 colonnes */
-  .container {
-    display: flex;
-    gap: 3rem;
-    justify-content: center;
-    flex-wrap: wrap;
-  }
-
-  /* Cadre commun */
-  .card {
-    background: #ffffff;
-    border-radius: 16px;
-    box-shadow:
-      0 0 8px rgba(212, 175, 55, 0.4),
-      0 8px 20px rgba(0, 0, 0, 0.12);
-    padding: 2rem;
-    flex: 1 1 450px;
-    max-width: 500px;
-    display: flex;
-    flex-direction: column;
-  }
-
-  /* Formulaire */
-  form {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 1rem 1.5rem;
-  }
-
-  form label {
-    font-weight: 700;
-    color: #b08b2f;
-    grid-column: span 2;
-    letter-spacing: 0.03em;
-  }
-
-  form input,
-  form textarea,
-  form input[type="file"] {
-    padding: 0.9rem 1rem;
-    border: 1.5px solid #b08b2f;
-    border-radius: 10px;
-    font-size: 1rem;
-    font-family: 'Roboto', sans-serif;
-    background: #fffbea;
-    color: #0a1f44;
-    transition: border-color 0.3s;
-    width: 100%;
-    box-sizing: border-box;
-  }
-
-  form input:focus,
-  form textarea:focus,
-  form input[type="file"]:focus {
-    outline: none;
-    border-color: #d4af37;
-    box-shadow: 0 0 8px #d4af37;
-    background: #fffdf1;
-  }
-
-  textarea {
-    grid-column: span 2;
-    resize: vertical;
-    min-height: 110px;
-  }
-
-  input[type="file"] {
-    grid-column: span 2;
-  }
-
-  button {
-    grid-column: span 2;
-    background: linear-gradient(45deg, #d4af37, #b08b2f);
-    border: none;
-    padding: 1.15rem 0;
-    font-weight: 700;
-    font-family: 'Playfair Display', serif;
-    font-size: 1.2rem;
-    color: #0a1f44;
-    border-radius: 12px;
-    cursor: pointer;
-    transition: background 0.3s ease;
-    box-shadow: 0 4px 10px rgba(212, 175, 55, 0.5);
-    letter-spacing: 0.05em;
-  }
-
-  button:hover {
-    background: linear-gradient(45deg, #b08b2f, #8b6e13);
-    box-shadow: 0 6px 16px rgba(176, 139, 47, 0.7);
-  }
-
-  /* Contact infos */
-  .contact-info {
-    color: #0a1f44;
-    font-size: 1rem;
-    line-height: 1.7;
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-  }
-
-  .contact-info p {
-    font-weight: 600;
-    border-bottom: 1px solid #d4af37;
-    padding-bottom: 0.3rem;
-  }
-
-  .contact-info a {
-    color: #b08b2f;
-    text-decoration: none;
-    font-weight: 700;
-    transition: color 0.3s;
-  }
-
-  .contact-info a:hover {
-    color: #d4af37;
-    text-decoration: underline;
-  }
-
-  /* Responsive */
-  @media (max-width: 1000px) {
-    .container {
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Luxenter - Contact</title>
+  <meta name="description" content="Contact Luxenter for premium construction services across the UAE." />
+  <meta name="keywords" content="Contact Luxenter Dubai, construction company UAE, luxury contractor" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Roboto&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Roboto', sans-serif;
+      background: linear-gradient(to bottom, #f0f0f5, #ffffff);
+      color: #0a1f44;
+      display: flex;
       flex-direction: column;
+      min-height: 100vh;
+      font-size: 18px;
+    }
+
+    header {
+      background: #0a1f44;
+      color: #d4af37;
+      padding: 1rem 3rem;
+      display: flex;
+      justify-content: space-between;
       align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .logo img {
+      height: 70px;
+    }
+
+    .lang-switcher {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    nav {
+      background: #0a1f44;
+      color: #d4af37;
+      padding: 0.5rem 3rem;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      margin: 0 1.2rem;
+      color: #d4af37;
+      text-decoration: none;
+      font-weight: 600;
+      position: relative;
+    }
+
+    nav a::after {
+      content: '';
+      display: block;
+      width: 0;
+      height: 2px;
+      background: #d4af37;
+      transition: width 0.3s;
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+    }
+
+    nav a:hover::after {
+      width: 100%;
+    }
+
+    main {
+      flex-grow: 1;
+      padding: 3rem 2rem;
+      max-width: 1200px;
+      margin: 2rem auto;
+      background: #ffffff;
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+      border-radius: 16px;
+    }
+
+    h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 3rem;
+      text-align: center;
+      color: #0a1f44;
+      margin-bottom: 2rem;
+    }
+
+    .flex-container {
+      display: flex;
+      gap: 2rem;
+      flex-wrap: wrap;
     }
 
     .card {
-      max-width: 100%;
+      flex: 1 1 48%;
+      background: #fafafa;
+      padding: 2rem;
+      border-radius: 16px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
     }
 
     form {
-      grid-template-columns: 1fr !important;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
     }
 
-    textarea,
-    input[type="file"],
+    form label {
+      font-weight: 600;
+    }
+
+    form label.full-width,
+    form input.full-width,
+    form textarea.full-width {
+      grid-column: span 2;
+      width: 100%;
+      box-sizing: border-box;
+    }
+
+    form input, form textarea, form button {
+      padding: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 1rem;
+      background: #f8f8f8;
+      width: 100%;
+    }
+
+    textarea {
+      resize: vertical;
+    }
+
     button {
-      grid-column: span 1 !important;
+      background: #d4af37;
+      color: #0a1f44;
+      border: none;
+      font-weight: bold;
+      font-size: 1rem;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background 0.3s;
+      grid-column: span 2;
     }
-  }
 
-</style>
+    button:hover {
+      background: #c49f2f;
+    }
+
+    .contact-info {
+      font-size: 1rem;
+      line-height: 1.8;
+      color: #0a1f44;
+    }
+
+    .contact-info a {
+      color: #0a1f44;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .map-container {
+      margin-top: 1.5rem;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 0 8px rgba(212, 175, 55, 0.4), 0 8px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    footer {
+      background: #0a1f44;
+      color: #d4af37;
+      text-align: center;
+      padding: 2rem 1rem;
+      font-size: 0.95rem;
+    }
+
+    .legal-links {
+      margin-top: 0.5rem;
+    }
+
+    .legal-links a {
+      color: #d4af37;
+      margin: 0 1rem;
+      text-decoration: underline;
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 768px) {
+      .flex-container {
+        flex-direction: column;
+      }
+      form {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
 </head>
 <body>
   <header>
     <div class="logo">
-      <a href="index.html"><img src="luxenter-logo.png" alt="Luxenter logo" /></a>
+      <a href="index.html"><img src="luxenter-logo.png" alt="Luxenter logo"></a>
     </div>
     <div class="lang-switcher">
       <label for="langSwitcher" id="label-langSwitcher">Language:</label>
@@ -256,41 +224,42 @@
 
   <main>
     <h1 id="contact-title">Contact Us</h1>
-    <div class="container">
-      <!-- Formulaire -->
-      <section class="card" aria-label="Contact Form">
-        <form action="mailto:luxenterbuildingcontracting@gmail.com" method="post" enctype="multipart/form-data" novalidate>
-          <label for="fullname" id="label-fullname">Full Name</label>
-          <input type="text" id="fullname" name="Full Name" required autocomplete="name" />
+    <div class="flex-container">
+      <div class="card">
+        <form action="mailto:luxenterbuildingcontracting@gmail.com" method="post" enctype="multipart/form-data">
+          <label for="fullname" id="label-fullname" class="full-width">Full Name</label>
+          <input type="text" id="fullname" name="Full Name" required class="full-width" />
 
-          <label for="email" id="label-email">Email</label>
-          <input type="email" id="email" name="Email" required autocomplete="email" />
+          <label for="email" id="label-email" class="full-width">Email</label>
+          <input type="email" id="email" name="Email" required class="full-width" />
 
           <label for="phone" id="label-phone">Phone Number</label>
-          <input type="tel" id="phone" name="Phone" required autocomplete="tel" />
+          <input type="tel" id="phone" name="Phone" required />
 
           <label for="subject" id="label-subject">Subject</label>
           <input type="text" id="subject" name="Subject" required />
 
-          <label for="message" id="label-message">Message</label>
-          <textarea id="message" name="Message" rows="6" required></textarea>
+          <label for="message" id="label-message" class="full-width">Message</label>
+          <textarea id="message" name="Message" rows="6" required class="full-width"></textarea>
 
           <label for="attachment" id="label-attachment">Attachment (optional)</label>
-          <input type="file" id="attachment" name="Attachment" accept=".jpg,.jpeg,.png,.pdf,.doc,.docx" />
+          <input type="file" id="attachment" name="Attachment" />
 
           <button type="submit" id="submit-btn">Send Message</button>
         </form>
-      </section>
+      </div>
 
-      <!-- Contact infos -->
-      <section class="card" aria-label="Contact Information">
+      <div class="card">
         <div class="contact-info">
           <p><strong>Email:</strong> <a href="mailto:luxenterbuildingcontracting@gmail.com">luxenterbuildingcontracting@gmail.com</a></p>
           <p><strong>Phone:</strong> <a href="tel:+971561123764">+971 56 112 3764</a></p>
-          <p><strong>WhatsApp:</strong> <a href="https://wa.me/971561123764" target="_blank" rel="noopener noreferrer">+971 56 112 3764</a></p>
+          <p><strong>WhatsApp:</strong> <a href="https://wa.me/971561123764" target="_blank">+971 56 112 3764</a></p>
           <p><strong>Address:</strong> AHMAD BUILDING - Office S83, 26th St - Hor Al Anz - Dubai</p>
         </div>
-      </section>
+        <div class="map-container">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3609.1234567890123!2d55.3101234!3d25.2345678!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f5f5f5f5f5f5f%3A0x123456789abcdef!2sAHMAD%20BUILDING%20-%20Office%20S83%2C%2026th%20St%20-%20Hor%20Al%20Anz%20-%20Dubai!5e0!3m2!1sen!2sae!4v1650000000000!5m2!1sen!2sae" width="100%" height="250" style="border:0; border-radius:12px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+      </div>
     </div>
   </main>
 

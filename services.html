@@ -27,6 +27,26 @@
       display: flex;
       flex-direction: column;
     }
+    /* 1. Faire que le html et body remplissent toute la fenêtre */
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+}
+
+/* 2. Pour que le conteneur principal prenne toute la hauteur */
+main {
+  min-height: 100%;
+  /* ou height: 100%; si tu veux */
+}
+
+/* 3. Si tu as un conteneur global, aussi width 100% */
+.container {
+  width: 100%;
+  max-width: 100%;
+}
+
     .main-content {
       max-width: 1200px;
       margin: 0 auto;

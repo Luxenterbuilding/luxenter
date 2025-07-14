@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Mentions Légales - Luxenter</title>
+  <style>
+    body {
+      font-family: 'Roboto', sans-serif;
+      margin: 2rem;
+      background-color: #fff;
+      color: #0a1f44;
+      line-height: 1.6;
+      font-size: 18px;
+    }
+    h1 {
+      color: #d4af37;
+      margin-bottom: 1rem;
+    }
+    .lang-switcher {
+      margin-bottom: 2rem;
+    }
+    select#langSwitcher {
+      padding: 0.3rem 0.6rem;
+      font-weight: 600;
+      border-radius: 4px;
+      border: 1px solid #d4af37;
+      background-color: #0a1f44;
+      color: #d4af37;
+      cursor: pointer;
+    }
+    a {
+      color: #d4af37;
+      text-decoration: none;
+    }
+    a:hover, a:focus {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="lang-switcher">
+    <label for="langSwitcher" id="label-langSwitcher">Langue / Language / اللغة:</label>
+    <select id="langSwitcher" aria-labelledby="label-langSwitcher" aria-live="polite">
+      <option value="fr">Français</option>
+      <option value="en">English</option>
+      <option value="ar">العربية</option>
+    </select>
+  </div>
+
+  <main id="content" role="main" aria-live="polite">
+    <!-- Contenu dynamique ici -->
+  </main>
+
+  <script>
+    const legalTexts = {
+      fr: `
+        <h1>Mentions Légales</h1>
+        <p>Conformément à la loi applicable à Dubaï et aux Émirats Arabes Unis, voici les informations légales concernant le site Luxenter :</p>
+        <ul>
+          <li><strong>Éditeur du site :</strong> Luxenter for Building Contracting</li>
+          <li><strong>Adresse :</strong> AHMAD BUILDING - Office S83, 26th St - Hor Al Anz - Dubai, Émirats Arabes Unis</li>
+          <li><strong>Contact :</strong> <a href="mailto:luxenterbuildingcontracting@gmail.com">luxenterbuildingcontracting@gmail.com</a></li>
+          <li><strong>Numéro d’enregistrement :</strong> 1485925</li>
+          <li><strong>Directeur de la publication :</strong> BOHICO Sloane</li>
+          <li><strong>Hébergeur :</strong> GitHub Pages, 88 Colin P Kelly Jr St, San Francisco, CA, USA</li>
+        </ul>
+        <p>Le contenu de ce site est protégé par les lois relatives à la propriété intellectuelle. Toute reproduction totale ou partielle est interdite sans autorisation préalable.</p>
+      `,
+      en: `
+        <h1>Legal Notice</h1>
+        <p>In accordance with the applicable laws in Dubai and the United Arab Emirates, here is the legal information about the Luxenter website:</p>
+        <ul>
+          <li><strong>Site Publisher:</strong> Luxenter for Building Contracting</li>
+          <li><strong>Address:</strong> AHMAD BUILDING - Office S83, 26th St - Hor Al Anz - Dubai, United Arab Emirates</li>
+          <li><strong>Contact:</strong> <a href="mailto:luxenterbuildingcontracting@gmail.com">luxenterbuildingcontracting@gmail.com</a></li>
+          <li><strong>Registration Number:</strong> 1485925</li>
+          <li><strong>Publication Director:</strong> BOHICO Sloane</li>
+          <li><strong>Hosting Provider:</strong> GitHub Pages, 88 Colin P Kelly Jr St, San Francisco, CA, USA</li>
+        </ul>
+        <p>The content of this site is protected by intellectual property laws. Any total or partial reproduction is prohibited without prior authorization.</p>
+      `,
+      ar: `
+        <h1>الإشعارات القانونية</h1>
+        <p>وفقًا للقوانين المعمول بها في دبي والإمارات العربية المتحدة، فيما يلي المعلومات القانونية المتعلقة بموقع لوكسانتر:</p>
+        <ul>
+          <li><strong>ناشر الموقع:</strong> لوكسانتر للمقاولات البناء</li>
+          <li><strong>العنوان:</strong> مبنى أحمد - مكتب S83، شارع 26 - خور العنز - دبي، الإمارات العربية المتحدة</li>
+          <li><strong>الاتصال:</strong> <a href="mailto:luxenterbuildingcontracting@gmail.com">luxenterbuildingcontracting@gmail.com</a></li>
+          <li><strong>رقم التسجيل:</strong> 1485925</li>
+          <li><strong>مدير النشر:</strong> BOHICO Sloane</li>
+          <li><strong>مزود الاستضافة:</strong> GitHub Pages, 88 Colin P Kelly Jr St, San Francisco, CA, USA</li>
+        </ul>
+        <p>محتوى هذا الموقع محمي بموجب قوانين الملكية الفكرية. يُحظر أي نسخ كلي أو جزئي دون إذن مسبق.</p>
+      `
+    };
+
+    const langSwitcher = document.getElementById('langSwitcher');
+    const content = document.getElementById('content');
+
+    function updateLanguage(lang) {
+      content.innerHTML = legalTexts[lang];
+      document.documentElement.lang = lang;
+      document.documentElement.dir = (lang === 'ar') ? 'rtl' : 'ltr';
+    }
+
+    langSwitcher.addEventListener('change', (e) => {
+      updateLanguage(e.target.value);
+    });
+
+    // Initialisation avec la langue française par défaut
+    updateLanguage('fr');
+  </script>
+
+</body>
+</html>

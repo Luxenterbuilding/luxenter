@@ -3,12 +3,18 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Luxenter - Services</title>
+  <title>Luxenter - Premium Building and Renovation Services in Dubai</title>
+  <meta name="description" content="Luxenter offers high-quality construction, luxury renovation, and developer collaboration services in Dubai. Experience premium craftsmanship and design." />
   <style>
     :root {
       --marine: #0a1f44;
       --or: #d4af37;
       --blanc: #ffffff;
+      --gris-clair: #f7f7f7;
+      --gris-text: #555555;
+    }
+    * {
+      box-sizing: border-box;
     }
     body {
       margin: 0;
@@ -16,45 +22,52 @@
       background: var(--blanc);
       color: var(--marine);
       line-height: 1.6;
-      font-size: 18px;
+      font-size: 16px;
       display: flex;
       flex-direction: column;
       min-height: 100vh;
+      max-width: 1200px;
+      margin-left: auto;
+      margin-right: auto;
+      padding: 0 1rem;
     }
     header, footer {
       background: var(--marine);
       color: var(--or);
-      padding: 1rem 2rem;
+      padding: 1rem 1rem;
     }
     .logo img {
-      height: 80px;
+      height: 60px;
+      width: auto;
     }
-     .logo-link {
-  display: flex;
-  align-items: center;
-  gap: 0.8rem;
-  text-decoration: none;
-}
-.company-name {
-  font-family: 'Georgia', serif;
-  font-size: 2.4rem;
-  font-weight: 700;
-  color: var(--or);
-  letter-spacing: 0.1em;
-  user-select: none;
-  transition: color 0.3s ease;
-  transform: translateY(-6px); /* Ajouté */
-}
-
-.logo-link:hover .company-name,
-.logo-link:focus-visible .company-name {
-  color: #fff3d1;
-  outline: none;
-}
+    .logo-link {
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+      text-decoration: none;
+      outline-offset: 3px;
+    }
+    .company-name {
+      font-family: 'Georgia', serif;
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--or);
+      letter-spacing: 0.1em;
+      user-select: none;
+      transition: color 0.3s ease;
+      transform: translateY(-4px);
+    }
+    .logo-link:hover .company-name,
+    .logo-link:focus-visible .company-name {
+      color: #fff3d1;
+      outline: 2px solid #fff3d1;
+    }
     header {
       display: flex;
       justify-content: space-between;
       align-items: center;
+      flex-wrap: wrap;
+      gap: 0.8rem;
     }
     .lang-switcher label {
       margin-right: 0.5rem;
@@ -64,10 +77,11 @@
       background: var(--marine);
       color: var(--or);
       border: 1px solid var(--or);
-      padding: 0.3rem 0.6rem;
+      padding: 0.4rem 0.8rem;
       border-radius: 4px;
       font-weight: 600;
       cursor: pointer;
+      min-width: 110px;
     }
     nav.navbar {
       background: var(--marine);
@@ -75,20 +89,34 @@
       justify-content: center;
       gap: 2rem;
       padding: 1rem 0;
+      flex-wrap: wrap;
     }
     nav.navbar a {
       color: var(--or);
       text-decoration: none;
       font-weight: 600;
+      font-size: 1rem;
+      padding: 0.4rem 0.2rem;
+      border-radius: 4px;
+      outline-offset: 3px;
     }
     nav.navbar a:hover,
     nav.navbar a:focus-visible {
       text-decoration: underline;
+      outline: 2px solid var(--or);
     }
 
     main {
       flex-grow: 1;
-      padding: 2rem;
+      padding: 2rem 0;
+    }
+
+    main h1 {
+      font-size: 2.5rem;
+      margin-bottom: 2.5rem;
+      text-align: center;
+      color: var(--marine);
+      font-weight: 700;
     }
 
     .service {
@@ -96,34 +124,95 @@
       flex-direction: column;
       margin-bottom: 3rem;
       gap: 1.5rem;
+      background: var(--gris-clair);
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 4px 6px rgb(0 0 0 / 0.1);
+      transition: transform 0.3s ease;
+    }
+    .service:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 12px rgb(0 0 0 / 0.15);
     }
     .service img {
       width: 100%;
-      max-height: 300px;
+      max-height: 320px;
       object-fit: cover;
-      border-radius: 10px;
+      border-radius: 10px 10px 0 0;
+      loading: lazy;
     }
     .service-content {
-      padding: 1rem 0;
+      padding: 1rem 2rem 2rem;
+      color: var(--marine);
     }
     .service-content h2 {
       font-size: 2rem;
       margin-bottom: 0.5rem;
+      color: var(--marine);
+      font-weight: 700;
+    }
+    .service-content p {
+      font-size: 1.1rem;
+      color: var(--gris-text);
+      margin-bottom: 1rem;
+    }
+    .service-content ul {
+      margin: 0 0 1.2rem 1.2rem;
+      color: var(--gris-text);
+    }
+    .service-content ul li {
+      margin-bottom: 0.5rem;
+      line-height: 1.4;
+    }
+    .service-content .cta-btn {
+      background: var(--or);
+      color: var(--marine);
+      font-weight: 700;
+      padding: 0.7rem 1.3rem;
+      border: none;
+      border-radius: 30px;
+      cursor: pointer;
+      font-size: 1rem;
+      transition: background 0.3s ease;
+      user-select: none;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      display: inline-block;
+      text-align: center;
+      text-decoration: none;
+    }
+    .service-content .cta-btn:hover,
+    .service-content .cta-btn:focus-visible {
+      background: #b88a2f;
+      outline: 2px solid #b88a2f;
+      outline-offset: 3px;
+      color: var(--marine);
     }
 
     footer {
       text-align: center;
       font-size: 0.9rem;
+      padding: 1rem;
+      color: var(--or);
     }
     footer a {
       color: var(--or);
       text-decoration: none;
+      margin: 0 0.5rem;
+      font-weight: 600;
     }
-    footer a:hover {
+    footer a:hover,
+    footer a:focus-visible {
       text-decoration: underline;
+      outline: 2px solid var(--or);
+      outline-offset: 2px;
     }
 
+    /* Responsive */
     @media (min-width: 768px) {
+      body {
+        font-size: 18px;
+      }
       .service {
         flex-direction: row;
         align-items: center;
@@ -133,10 +222,32 @@
       }
       .service img {
         width: 50%;
+        border-radius: 10px 0 0 10px;
+        border-bottom: none;
+      }
+      .service:nth-child(even) img {
+        border-radius: 0 10px 10px 0;
       }
       .service-content {
         width: 50%;
-        padding: 0 2rem;
+        padding: 2rem 3rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      nav.navbar {
+        gap: 1rem;
+        font-size: 0.9rem;
+      }
+      .company-name {
+        font-size: 1.8rem;
+      }
+      .service-content h2 {
+        font-size: 1.6rem;
+      }
+      .service-content p,
+      .service-content ul li {
+        font-size: 1rem;
       }
     }
   </style>
@@ -145,14 +256,14 @@
 
   <header>
     <div class="logo">
-      <a href="index.html">
-        <img src="luxenter-logo.png" alt="Logo Luxenter" />
+      <a href="index.html" class="logo-link">
+        <img src="luxenter-logo.png" alt="Luxenter logo" />
         <span class="company-name">Luxenter</span>
       </a>
     </div>
-    <div class="lang-switcher" role="navigation">
+    <div class="lang-switcher" role="navigation" aria-label="Language selection">
       <label for="langSwitcher" id="label-langSwitcher">Langue :</label>
-      <select id="langSwitcher" aria-labelledby="label-langSwitcher" aria-live="polite">
+      <select id="langSwitcher" aria-labelledby="label-langSwitcher" aria-live="polite" aria-haspopup="listbox">
         <option value="fr">Français</option>
         <option value="en" selected>English</option>
         <option value="ar">العربية</option>
@@ -160,46 +271,66 @@
     </div>
   </header>
 
-  <nav class="navbar">
-    <a href="index.html">Accueil</a>
-    <a href="apropos.html">À propos</a>
-    <a href="services.html">Services</a>
-    <a href="projets.html">Projets</a>
-    <a href="contact.html">Contact</a>
+  <nav class="navbar" role="navigation" aria-label="Main navigation">
+    <a href="index.html" tabindex="0">Home</a>
+    <a href="apropos.html" tabindex="0">About</a>
+    <a href="services.html" tabindex="0" aria-current="page">Services</a>
+    <a href="projets.html" tabindex="0">Projects</a>
+    <a href="contact.html" tabindex="0">Contact</a>
   </nav>
 
-  <main>
-    <div class="service" id="service1">
-      <img src="palm-villa.jpeg" alt="Construction de bâtiments haut de gamme">
-      <div class="service-content">
-        <h2></h2>
-        <p></p>
-      </div>
-    </div>
+  <main role="main">
+    <h1>Our Services</h1>
 
-    <div class="service" id="service2">
-      <img src="pexels-heyho-6489127.jpg" alt="Rénovation de luxe">
+    <section class="service" id="service1" aria-labelledby="service1-title">
+      <img src="palm-villa.jpeg" alt="Construction of high-end buildings" loading="lazy" />
       <div class="service-content">
-        <h2></h2>
+        <h2 id="service1-title"></h2>
         <p></p>
+        <ul aria-label="Key features of Construction service">
+          <li></li>
+          <li></li>
+          <li></li>
+        </ul>
+        <a href="contact.html" class="cta-btn" role="button" tabindex="0"></a>
       </div>
-    </div>
+    </section>
 
-    <div class="service" id="service3">
-      <img src="pexels-thirdman-5584052.jpg" alt="Collaboration avec les promoteurs immobiliers">
+    <section class="service" id="service2" aria-labelledby="service2-title">
+      <img src="pexels-heyho-6489127.jpg" alt="Luxury renovation work" loading="lazy" />
       <div class="service-content">
-        <h2></h2>
+        <h2 id="service2-title"></h2>
         <p></p>
+        <ul aria-label="Key features of Renovation service">
+          <li></li>
+          <li></li>
+          <li></li>
+        </ul>
+        <a href="contact.html" class="cta-btn" role="button" tabindex="0"></a>
       </div>
-    </div>
+    </section>
+
+    <section class="service" id="service3" aria-labelledby="service3-title">
+      <img src="pexels-thirdman-5584052.jpg" alt="Collaboration with real estate developers" loading="lazy" />
+      <div class="service-content">
+        <h2 id="service3-title"></h2>
+        <p></p>
+        <ul aria-label="Key features of Developer Collaboration service">
+          <li></li>
+          <li></li>
+          <li></li>
+        </ul>
+        <a href="contact.html" class="cta-btn" role="button" tabindex="0"></a>
+      </div>
+    </section>
   </main>
 
   <footer>
-    <div class="footer-links">
-      <a href="mentions-legales.html">Mentions légales</a> |
-      <a href="confidentialite.html">Confidentialité</a>
-    </div>
-    <div id="footerCopy">© 2025 Luxenter for Building Contracting. Tous droits réservés.</div>
+    <nav aria-label="Footer navigation" class="footer-links">
+      <a href="mentions-legales.html" tabindex="0">Legal Notice</a> |
+      <a href="confidentialite.html" tabindex="0">Privacy Policy</a>
+    </nav>
+    <div id="footerCopy">© 2025 Luxenter for Building Contracting. All rights reserved.</div>
   </footer>
 
   <script>
@@ -210,15 +341,33 @@
         services: [
           {
             title: "Construction",
-            desc: "Nous réalisons des constructions neuves de haute qualité, en alliant design moderne, durabilité et standards architecturaux stricts pour les villas, immeubles résidentiels et bâtiments commerciaux."
+            desc: "Nous réalisons des constructions neuves de haute qualité, en alliant design moderne, durabilité et standards architecturaux stricts pour les villas, immeubles résidentiels et bâtiments commerciaux.",
+            features: [
+              "Utilisation de matériaux durables et écologiques",
+              "Respect strict des délais et du budget",
+              "Expertise dans les constructions haut de gamme et personnalisées"
+            ],
+            cta: "Demandez un devis"
           },
           {
             title: "Rénovation",
-            desc: "Nous transformons vos espaces existants en chefs-d'œuvre modernes grâce à notre expertise en rénovation intérieure et extérieure de luxe."
+            desc: "Nous transformons vos espaces existants en chefs-d'œuvre modernes grâce à notre expertise en rénovation intérieure et extérieure de luxe.",
+            features: [
+              "Design personnalisé selon vos goûts et besoins",
+              "Travaux soignés avec finitions haut de gamme",
+              "Gestion complète du projet, de la conception à la réalisation"
+            ],
+            cta: "Contactez-nous"
           },
           {
             title: "Collaboration avec Promoteurs",
-            desc: "Nous travaillons en étroite collaboration avec des promoteurs immobiliers pour concrétiser des projets ambitieux, depuis la planification jusqu'à la livraison clé en main."
+            desc: "Nous travaillons en étroite collaboration avec des promoteurs immobiliers pour concrétiser des projets ambitieux, depuis la planification jusqu'à la livraison clé en main.",
+            features: [
+              "Coordination efficace avec toutes les parties prenantes",
+              "Optimisation des coûts et respect des normes locales",
+              "Suivi rigoureux de la qualité et des délais"
+            ],
+            cta: "Discutons de votre projet"
           }
         ],
         footerLinks: ["Mentions légales", "Confidentialité"],
@@ -230,15 +379,33 @@
         services: [
           {
             title: "Construction",
-            desc: "We deliver premium new constructions with modern design, durability, and high architectural standards for villas, residential buildings, and commercial spaces."
+            desc: "We deliver premium new constructions with modern design, durability, and high architectural standards for villas, residential buildings, and commercial spaces.",
+            features: [
+              "Use of sustainable and eco-friendly materials",
+              "Strict adherence to deadlines and budget",
+              "Expertise in high-end and customized constructions"
+            ],
+            cta: "Request a Quote"
           },
           {
             title: "Renovation",
-            desc: "We transform existing spaces into luxurious environments through expert interior and exterior renovation services."
+            desc: "We transform existing spaces into luxurious environments through expert interior and exterior renovation services.",
+            features: [
+              "Customized design tailored to your tastes and needs",
+              "Meticulous work with high-end finishes",
+              "Complete project management from design to execution"
+            ],
+            cta: "Get in Touch"
           },
           {
             title: "Developer Collaboration",
-            desc: "We closely collaborate with real estate developers to realize ambitious projects, from planning to turnkey delivery."
+            desc: "We closely collaborate with real estate developers to realize ambitious projects, from planning to turnkey delivery.",
+            features: [
+              "Efficient coordination with all stakeholders",
+              "Cost optimization and compliance with local standards",
+              "Rigorous quality and deadline monitoring"
+            ],
+            cta: "Let's Discuss Your Project"
           }
         ],
         footerLinks: ["Legal Notice", "Privacy Policy"],
@@ -250,60 +417,34 @@
         services: [
           {
             title: "البناء",
-            desc: "نقوم بتنفيذ مشاريع بناء جديدة عالية الجودة تجمع بين التصميم العصري والمتانة والمعايير المعمارية الصارمة للفلل والمباني السكنية والتجارية."
+            desc: "نقوم بتنفيذ مشاريع بناء جديدة عالية الجودة تجمع بين التصميم العصري والمتانة والمعايير المعمارية الصارمة للفلل والمباني السكنية والتجارية.",
+            features: [
+              "استخدام مواد مستدامة وصديقة للبيئة",
+              "الالتزام الصارم بالمواعيد والميزانية",
+              "خبرة في البناءات الفاخرة والمخصصة"
+            ],
+            cta: "طلب عرض سعر"
           },
           {
             title: "التجديد",
-            desc: "نحول المساحات الحالية إلى أماكن فاخرة من خلال خدماتنا المتخصصة في التجديد الداخلي والخارجي."
+            desc: "نحول المساحات الحالية إلى أماكن فاخرة من خلال خدماتنا المتخصصة في التجديد الداخلي والخارجي.",
+            features: [
+              "تصميم مخصص حسب أذواقكم واحتياجاتكم",
+              "عمل متقن مع تشطيبات عالية الجودة",
+              "إدارة كاملة للمشروع من التصميم إلى التنفيذ"
+            ],
+            cta: "اتصل بنا"
           },
           {
             title: "التعاون مع المطورين",
-            desc: "نتعاون بشكل وثيق مع المطورين العقاريين لتحقيق مشاريع طموحة من التخطيط حتى التسليم النهائي."
+            desc: "نتعاون بشكل وثيق مع المطورين العقاريين لتحقيق مشاريع طموحة من التخطيط إلى التسليم الكامل.",
+            features: [
+              "تنسيق فعال مع جميع الأطراف المعنية",
+              "تحسين التكاليف والالتزام بالمعايير المحلية",
+              "متابعة صارمة للجودة والمواعيد"
+            ],
+            cta: "ناقش مشروعك معنا"
           }
         ],
         footerLinks: ["الإشعارات القانونية", "سياسة الخصوصية"],
-        copyright: "© 2025 لوكسانتر للمقاولات البناء. جميع الحقوق محفوظة."
-      }
-    };
-
-    const langSwitcher = document.getElementById('langSwitcher');
-    const labelLang = document.getElementById('label-langSwitcher');
-    const navLinks = document.querySelectorAll('nav.navbar a');
-    const services = document.querySelectorAll('.service');
-    const footerLinks = document.querySelectorAll('.footer-links a');
-    const footerCopy = document.getElementById('footerCopy');
-
-    function updateLanguage(lang) {
-      const t = translations[lang];
-
-      labelLang.textContent = t.langLabel;
-
-      navLinks.forEach((link, i) => {
-        link.textContent = t.nav[i];
-      });
-
-      services.forEach((block, i) => {
-        block.querySelector("h2").textContent = t.services[i].title;
-        block.querySelector("p").textContent = t.services[i].desc;
-      });
-
-      footerLinks.forEach((link, i) => {
-        link.textContent = t.footerLinks[i];
-      });
-
-      footerCopy.textContent = t.copyright;
-
-      document.documentElement.lang = lang;
-      document.documentElement.dir = (lang === "ar") ? "rtl" : "ltr";
-    }
-
-    langSwitcher.addEventListener("change", (e) => {
-      updateLanguage(e.target.value);
-    });
-
-    // Init
-    updateLanguage(langSwitcher.value);
-  </script>
-
-</body>
-</html>
+        copyright:

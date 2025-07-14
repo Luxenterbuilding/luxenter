@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Politique de Confidentialité - Luxenter</title>
+  <style>
+    body {
+      font-family: 'Roboto', sans-serif;
+      margin: 2rem;
+      background-color: #fff;
+      color: #0a1f44;
+      line-height: 1.6;
+      font-size: 18px;
+    }
+    h1 {
+      color: #d4af37;
+      margin-bottom: 1rem;
+    }
+    .lang-switcher {
+      margin-bottom: 2rem;
+    }
+    select#langSwitcher {
+      padding: 0.3rem 0.6rem;
+      font-weight: 600;
+      border-radius: 4px;
+      border: 1px solid #d4af37;
+      background-color: #0a1f44;
+      color: #d4af37;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="lang-switcher">
+    <label for="langSwitcher" id="label-langSwitcher">Langue / Language / اللغة:</label>
+    <select id="langSwitcher" aria-labelledby="label-langSwitcher" aria-live="polite">
+      <option value="fr">Français</option>
+      <option value="en">English</option>
+      <option value="ar">العربية</option>
+    </select>
+  </div>
+
+  <main id="content" role="main" aria-live="polite">
+    <!-- Contenu dynamique ici -->
+  </main>
+
+  <script>
+    const privacyTexts = {
+      fr: `
+        <h1>Politique de Confidentialité</h1>
+        <p>Luxenter attache une grande importance à la protection de vos données personnelles.</p>
+        <ol>
+          <li><strong>Responsable du traitement</strong><br>
+          Luxenter for Building Contracting, dont les coordonnées figurent dans les mentions légales, est responsable du traitement de vos données.</li>
+          <li><strong>Données collectées</strong><br>
+          Nous collectons uniquement les données nécessaires à la gestion de vos demandes (nom, email, téléphone, message).</li>
+          <li><strong>Utilisation des données</strong><br>
+          Vos données sont utilisées uniquement pour répondre à vos demandes, gérer la relation client et, si vous y consentez, pour vous envoyer des communications commerciales.</li>
+          <li><strong>Durée de conservation</strong><br>
+          Vos données sont conservées pendant une durée raisonnable nécessaire aux finalités indiquées, sauf obligation légale contraire.</li>
+          <li><strong>Partage des données</strong><br>
+          Nous ne partageons pas vos données avec des tiers, sauf obligation légale.</li>
+          <li><strong>Vos droits</strong><br>
+          Conformément à la législation en vigueur, vous pouvez demander l’accès, la rectification ou la suppression de vos données en nous contactant à <a href="mailto:contact@luxenterbuilding.com">contact@luxenterbuilding.com</a>.</li>
+          <li><strong>Cookies</strong><br>
+          Le site utilise des cookies techniques indispensables à son fonctionnement. Aucun cookie marketing n’est déposé sans votre consentement.</li>
+        </ol>
+      `,
+      en: `
+        <h1>Privacy Policy</h1>
+        <p>Luxenter places great importance on the protection of your personal data.</p>
+        <ol>
+          <li><strong>Data Controller</strong><br>
+          Luxenter for Building Contracting, whose contact details are in the legal notice, is responsible for processing your data.</li>
+          <li><strong>Data Collected</strong><br>
+          We only collect the data necessary to manage your requests (name, email, phone, message).</li>
+          <li><strong>Use of Data</strong><br>
+          Your data is used solely to respond to your requests, manage customer relations, and, if you consent, to send you commercial communications.</li>
+          <li><strong>Data Retention</strong><br>
+          Your data is kept for a reasonable period necessary for the indicated purposes, unless otherwise required by law.</li>
+          <li><strong>Data Sharing</strong><br>
+          We do not share your data with third parties except as required by law.</li>
+          <li><strong>Your Rights</strong><br>
+          In accordance with applicable laws, you may request access, correction, or deletion of your data by contacting us at <a href="mailto:contact@luxenterbuilding.com">contact@luxenterbuilding.com</a>.</li>
+          <li><strong>Cookies</strong><br>
+          The site uses technical cookies essential for its operation. No marketing cookies are deposited without your consent.</li>
+        </ol>
+      `,
+      ar: `
+        <h1>سياسة الخصوصية</h1>
+        <p>تولي شركة لوكسانتر أهمية كبيرة لحماية بياناتكم الشخصية.</p>
+        <ol>
+          <li><strong>مسؤول معالجة البيانات</strong><br>
+          شركة لوكسانتر للمقاولات البناء، التي توجد تفاصيل الاتصال بها في الإشعارات القانونية، هي المسؤولة عن معالجة بياناتكم.</li>
+          <li><strong>البيانات التي تم جمعها</strong><br>
+          نحن نجمع فقط البيانات الضرورية لمعالجة طلباتكم (الاسم، البريد الإلكتروني، الهاتف، الرسالة).</li>
+          <li><strong>استخدام البيانات</strong><br>
+          تُستخدم بياناتكم فقط للرد على طلباتكم، وإدارة علاقة العملاء، وإذا وافقتم، لإرسال الاتصالات التجارية.</li>
+          <li><strong>مدة الاحتفاظ بالبيانات</strong><br>
+          تُحتفظ بياناتكم لمدة معقولة ضرورية للأغراض المشار إليها، ما لم تُفرض قوانين أخرى خلاف ذلك.</li>
+          <li><strong>مشاركة البيانات</strong><br>
+          لا نشارك بياناتكم مع أطراف ثالثة إلا إذا كانت هناك التزامات قانونية.</li>
+          <li><strong>حقوقكم</strong><br>
+          وفقاً للقوانين المعمول بها، يمكنكم طلب الوصول إلى بياناتكم أو تصحيحها أو حذفها عن طريق التواصل معنا على <a href="mailto:contact@luxenterbuilding.com">contact@luxenterbuilding.com</a>.</li>
+          <li><strong>الكوكيز</strong><br>
+          يستخدم الموقع ملفات تعريف الارتباط التقنية الضرورية لتشغيله. لا يتم وضع ملفات تعريف ارتباط تسويقية دون موافقتكم.</li>
+        </ol>
+      `
+    };
+
+    const langSwitcher = document.getElementById('langSwitcher');
+    const content = document.getElementById('content');
+
+    function updateLanguage(lang) {
+      content.innerHTML = privacyTexts[lang];
+      document.documentElement.lang = lang;
+      document.documentElement.dir = (lang === 'ar') ? 'rtl' : 'ltr';
+    }
+
+    langSwitcher.addEventListener('change', (e) => {
+      updateLanguage(e.target.value);
+    });
+
+    // Initialisation avec la langue française par défaut
+    updateLanguage('fr');
+  </script>
+
+</body>
+</html>

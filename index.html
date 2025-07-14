@@ -1,15 +1,24 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="fr" dir="ltr">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Luxenter - Construction Haut de Gamme aux Émirats Arabes Unis</title>
+  <meta name="description" content="Luxenter réalise des projets de construction haut de gamme aux Émirats Arabes Unis. Expertise, design moderne et excellence au service de vos ambitions." />
+  <meta name="keywords" content="construction, immobilier de luxe, Émirats Arabes Unis, projets haut de gamme, bâtiment, architecture moderne, Dubaï" />
+  <meta name="author" content="Luxenter for Building Contracting" />
+  <meta name="robots" content="index, follow" />
+  <link rel="icon" href="favicon.ico" type="image/x-icon" />
+  <link rel="apple-touch-icon" href="apple-touch-icon.png" />
   <style>
     :root {
       --marine: #0a1f44;
       --or: #d4af37;
       --blanc: #ffffff;
       --focus-color: #ffd54f;
+    }
+    * {
+      box-sizing: border-box;
     }
     body {
       margin: 0;
@@ -29,45 +38,23 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
+      flex-wrap: wrap;
+    }
+    .logo-link {
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+      text-decoration: none;
     }
     .logo img {
       height: 80px;
     }
-    .logo-link {
-  display: flex;
-  align-items: center;
-  gap: 0.8rem;
-  text-decoration: none;
-}
-
-.company-name {
-  font-family: 'Georgia', serif;
-  font-size: 2.4rem;
-  font-weight: 700;
-  color: var(--or);
-  letter-spacing: 0.1em;
-  user-select: none;
-  transition: color 0.3s ease;
-}
-
-.logo-link:hover .company-name,
-.logo-link:focus-visible .company-name {
-  color: #fff3d1;
-  outline: none;
-}
-
-    .lang-switcher label {
-      margin-right: 0.5rem;
-      font-weight: 600;
-    }
-    select#langSwitcher {
-      background: var(--marine);
+    .company-name {
+      font-family: 'Georgia', serif;
+      font-size: 2rem;
+      font-weight: 700;
       color: var(--or);
-      border: 1px solid var(--or);
-      padding: 0.3rem 0.6rem;
-      border-radius: 4px;
-      font-weight: 600;
-      cursor: pointer;
+      letter-spacing: 0.1em;
     }
     nav.navbar {
       background: var(--marine);
@@ -75,6 +62,7 @@
       justify-content: center;
       gap: 2rem;
       padding: 1rem 0;
+      flex-wrap: wrap;
     }
     nav.navbar a {
       color: var(--or);
@@ -90,22 +78,19 @@
       flex-grow: 1;
     }
     .hero {
-  position: relative;
-  height: 80vh;
-  background: 
-    linear-gradient(135deg, rgba(10,31,68,0.6) 0%, rgba(212,175,55,0.6) 100%),
-    url('dubai-ville.jpg') no-repeat center center;
-  background-size: 110%;
-  animation: zoomBackground 20s ease-in-out infinite alternate;
-  color: var(--blanc);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  padding: 1rem;
-  transition: background-size 0.5s ease-in-out;
-}
-
+      position: relative;
+      height: 80vh;
+      background:
+        linear-gradient(135deg, rgba(10,31,68,0.6), rgba(212,175,55,0.6)),
+        url('dubai-ville.jpg') no-repeat center center;
+      background-size: cover;
+      color: var(--blanc);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 1rem;
+    }
     .hero-content {
       max-width: 700px;
     }
@@ -128,7 +113,6 @@
       cursor: pointer;
       text-decoration: none;
       display: inline-block;
-      transition: background-color 0.3s ease, transform 0.3s ease;
     }
     .cta-button:hover,
     .cta-button:focus-visible {
@@ -152,54 +136,70 @@
       text-decoration: underline;
       outline: none;
     }
-    @keyframes zoomBackground {
-  0% {
-    background-size: 110%;
-  }
-  100% {
-    background-size: 120%;
-  }
-}
+    a:focus {
+      outline: 2px dashed var(--focus-color);
+      outline-offset: 4px;
+    }
+    @media (max-width: 768px) {
+      header, nav.navbar {
+        flex-direction: column;
+        align-items: center;
+      }
+      .hero h1 {
+        font-size: 2rem;
+      }
+      .hero p {
+        font-size: 1.1rem;
+      }
+      .cta-button {
+        font-size: 1rem;
+        padding: 0.8rem 2rem;
+      }
+      nav.navbar a {
+        display: block;
+        margin: 0.5rem 0;
+      }
+      .logo img {
+        height: 60px;
+      }
+    }
   </style>
 </head>
 <body>
-
-  <header role="banner">
-    <div class="logo">
-  <a href="index.html" aria-label="Luxenter Accueil" class="logo-link">
-    <img src="luxenter-logo.png" alt="Logo Luxenter" />
-    <span class="company-name">Luxenter</span>
-  </a>
-</div>
-    <div class="lang-switcher" role="navigation" aria-label="Sélecteur de langue">
+  <header>
+    <a href="index.html" class="logo-link">
+      <img src="luxenter-logo.png" alt="Logo Luxenter" loading="lazy" />
+      <span class="company-name">Luxenter</span>
+    </a>
+    <div class="lang-switcher">
       <label for="langSwitcher" id="label-langSwitcher">Langue :</label>
       <select id="langSwitcher" aria-labelledby="label-langSwitcher" aria-live="polite">
-       <option value="fr">Français</option>
-       <option value="en" selected>English</option>
+        <option value="fr" selected>Français</option>
+        <option value="en">English</option>
         <option value="ar">العربية</option>
       </select>
     </div>
   </header>
 
-  <nav class="navbar" role="navigation" aria-label="Menu principal">
-    <a href="index.html" tabindex="0">Accueil</a>
-    <a href="apropos.html" tabindex="0">À propos</a>
-    <a href="services.html" tabindex="0">Services</a>
-    <a href="projets.html" tabindex="0">Projets</a>
-    <a href="contact.html" tabindex="0">Contact</a>
+  <nav class="navbar">
+    <a href="index.html">Accueil</a>
+    <a href="apropos.html">À propos</a>
+    <a href="services.html">Services</a>
+    <a href="projets.html">Projets</a>
+    <a href="contact.html">Contact</a>
   </nav>
 
-  <main role="main">
-    <section class="hero" aria-label="Présentation principale">
+  <main>
+    <section class="hero">
       <div class="hero-content">
-        <h1 id="hero-title">Luxenter for Building Contracting</h1>
+        <h1 id="hero-title">Luxenter – Construction Haut de Gamme à Dubaï et aux Émirats</h1>
         <p id="hero-description">Réalisation de projets prestigieux aux Émirats Arabes Unis. Excellence, innovation et architecture de pointe.</p>
         <a class="cta-button" href="tel:+971561123764" aria-label="Appeler Luxenter">Nous contacter</a>
       </div>
     </section>
   </main>
 
-  <footer role="contentinfo">
+  <footer>
     <div class="footer-links">
       <a href="mentions-legales.html">Mentions légales</a> |
       <a href="confidentialite.html">Confidentialité</a>
@@ -212,7 +212,7 @@
   <script>
     const translations = {
       fr: {
-        title: "Luxenter for Building Contracting",
+        title: "Luxenter – Construction Haut de Gamme à Dubaï et aux Émirats",
         description: "Réalisation de projets prestigieux aux Émirats Arabes Unis. Excellence, innovation et architecture de pointe.",
         menu: ["Accueil", "À propos", "Services", "Projets", "Contact"],
         langLabel: "Langue :",
@@ -250,30 +250,17 @@
     const footerCopyright = document.querySelector('footer > div:last-child');
 
     function updateLanguage(lang) {
-      // Texte de la hero
       heroTitle.textContent = translations[lang].title;
       heroDescription.textContent = translations[lang].description;
-
-      // Label langue
       langLabel.textContent = translations[lang].langLabel;
-
-      // Menu
       translations[lang].menu.forEach((text, i) => {
         menuLinks[i].textContent = text;
       });
-
-      // Bouton CTA
       ctaButton.textContent = translations[lang].cta;
-
-      // Footer liens
       translations[lang].footerLinks.forEach((text, i) => {
         footerLinks[i].textContent = text;
       });
-
-      // Footer copyright
       footerCopyright.textContent = translations[lang].copyright;
-
-      // Lang et direction
       document.documentElement.lang = lang;
       document.documentElement.dir = (lang === 'ar') ? 'rtl' : 'ltr';
     }
@@ -282,9 +269,7 @@
       updateLanguage(e.target.value);
     });
 
-    // Initialiser à la langue par défaut
     updateLanguage(langSwitcher.value);
   </script>
-
 </body>
 </html>

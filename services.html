@@ -3,91 +3,38 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Luxenter - Premium Building and Renovation Services in Dubai</title>
-  <meta name="description" content="Luxenter offers high-quality construction, luxury renovation, and developer collaboration services in Dubai. Experience premium craftsmanship and design." />
+  <title>Luxenter - Services</title>
   <style>
     :root {
       --marine: #0a1f44;
       --or: #d4af37;
       --blanc: #ffffff;
       --gris-clair: #f7f7f7;
-      --gris-text: #555555;
+      --gris-text: #555;
     }
-    * {
-      box-sizing: border-box;
-    }
-    body {
-      margin: 0;
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html, body {
+      height: 100%;
+      width: 100%;
       font-family: 'Roboto', sans-serif;
       background: var(--blanc);
       color: var(--marine);
-      line-height: 1.6;
-      font-size: 16px;
-      min-height: 100vh;
+    }
+    body {
       display: flex;
       flex-direction: column;
     }
-    /* 1. Faire que le html et body remplissent toute la fenêtre */
-html, body {
-  margin: 0;
-  padding: 0;
-  height: 100%;
-  width: 100%;
-}
-
-/* 2. Pour que le conteneur principal prenne toute la hauteur */
-main {
-  min-height: 100%;
-  /* ou height: 100%; si tu veux */
-}
-
-/* 3. Si tu as un conteneur global, aussi width 100% */
-.container {
-  width: 100%;
-  max-width: 100%;
-}
-
-    .main-content {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 1rem;
-      width: 100%;
-      flex-grow: 1;
+    .container {
       display: flex;
       flex-direction: column;
+      flex-grow: 1;
+      min-height: 100vh;
     }
 
     header, footer {
       background: var(--marine);
       color: var(--or);
-      padding: 1rem;
-    }
-
-    .logo img {
-      height: 60px;
-      width: auto;
-    }
-    .logo-link {
-      display: flex;
-      align-items: center;
-      gap: 0.8rem;
-      text-decoration: none;
-      outline-offset: 3px;
-    }
-    .company-name {
-      font-family: 'Georgia', serif;
-      font-size: 2rem;
-      font-weight: 700;
-      color: var(--or);
-      letter-spacing: 0.1em;
-      user-select: none;
-      transition: color 0.3s ease;
-      transform: translateY(-4px);
-    }
-    .logo-link:hover .company-name,
-    .logo-link:focus-visible .company-name {
-      color: #fff3d1;
-      outline: 2px solid #fff3d1;
+      padding: 1rem 2rem;
     }
 
     header {
@@ -95,515 +42,352 @@ main {
       justify-content: space-between;
       align-items: center;
       flex-wrap: wrap;
-      gap: 0.8rem;
     }
 
-    .lang-switcher label {
-      margin-right: 0.5rem;
-      font-weight: 600;
-    }
-    select#langSwitcher {
-      background: var(--marine);
+    .logo-link {
+      display: flex;
+      align-items: center;
+      text-decoration: none;
       color: var(--or);
-      border: 1px solid var(--or);
+      gap: 0.6rem;
+    }
+
+    .logo-link img {
+      height: 50px;
+    }
+
+    .company-name {
+      font-size: 1.8rem;
+      font-weight: bold;
+      font-family: Georgia, serif;
+    }
+
+    .lang-switcher {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    select#langSwitcher {
       padding: 0.4rem 0.8rem;
       border-radius: 4px;
-      font-weight: 600;
-      cursor: pointer;
-      min-width: 110px;
+      border: 1px solid var(--or);
+      background: var(--marine);
+      color: var(--or);
+      font-weight: bold;
     }
 
     nav.navbar {
       background: var(--marine);
       display: flex;
       justify-content: center;
-      gap: 2rem;
-      padding: 1rem 0;
+      gap: 1.5rem;
+      padding: 1rem;
       flex-wrap: wrap;
     }
 
     nav.navbar a {
       color: var(--or);
       text-decoration: none;
-      font-weight: 600;
-      font-size: 1rem;
-      padding: 0.4rem 0.2rem;
-      border-radius: 4px;
-      outline-offset: 3px;
+      font-weight: bold;
+      padding: 0.3rem 0.5rem;
     }
 
-    nav.navbar a:hover,
-    nav.navbar a:focus-visible {
+    nav.navbar a:hover {
       text-decoration: underline;
-      outline: 2px solid var(--or);
     }
 
     main {
       flex-grow: 1;
-      padding: 2rem 0;
+      padding: 2rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
     }
 
     main h1 {
       font-size: 2.5rem;
-      margin-bottom: 2.5rem;
-      text-align: center;
-      color: var(--marine);
-      font-weight: 700;
+      margin-bottom: 2rem;
+    }
+
+    .services {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+      width: 100%;
+      max-width: 1200px;
     }
 
     .service {
+      background: var(--gris-clair);
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
       display: flex;
       flex-direction: column;
-      margin-bottom: 3rem;
-      gap: 1.5rem;
-      background: var(--gris-clair);
-      border-radius: 10px;
-      overflow: hidden;
-      box-shadow: 0 4px 6px rgb(0 0 0 / 0.1);
-      transition: transform 0.3s ease;
-    }
-
-    .service:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 8px 12px rgb(0 0 0 / 0.15);
     }
 
     .service img {
       width: 100%;
-      max-height: 320px;
+      height: auto;
+      max-height: 300px;
       object-fit: cover;
-      border-radius: 10px 10px 0 0;
     }
 
     .service-content {
-      padding: 1rem 2rem 2rem;
-      color: var(--marine);
+      padding: 1.5rem;
     }
 
     .service-content h2 {
       font-size: 2rem;
       margin-bottom: 0.5rem;
-      font-weight: 700;
     }
 
     .service-content p {
-      font-size: 1.1rem;
       color: var(--gris-text);
       margin-bottom: 1rem;
     }
 
     .service-content ul {
-      margin: 0 0 1.2rem 1.2rem;
+      padding-left: 1.2rem;
       color: var(--gris-text);
+      margin-bottom: 1rem;
     }
 
-    .service-content ul li {
+    .service-content li {
       margin-bottom: 0.5rem;
-      line-height: 1.4;
     }
 
     .cta-btn {
+      display: inline-block;
+      padding: 0.6rem 1.2rem;
       background: var(--or);
       color: var(--marine);
-      font-weight: 700;
-      padding: 0.7rem 1.3rem;
-      border: none;
-      border-radius: 30px;
-      cursor: pointer;
-      font-size: 1rem;
-      transition: background 0.3s ease;
-      user-select: none;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-      display: inline-block;
-      text-align: center;
+      font-weight: bold;
+      border-radius: 25px;
       text-decoration: none;
+      transition: background 0.3s ease;
     }
 
-    .cta-btn:hover,
-    .cta-btn:focus-visible {
+    .cta-btn:hover {
       background: #b88a2f;
-      outline: 2px solid #b88a2f;
-      outline-offset: 3px;
     }
 
     footer {
       text-align: center;
       font-size: 0.9rem;
-      padding: 1rem;
     }
 
     footer a {
       color: var(--or);
-      text-decoration: none;
       margin: 0 0.5rem;
-      font-weight: 600;
+      text-decoration: none;
     }
 
-    footer a:hover,
-    footer a:focus-visible {
+    footer a:hover {
       text-decoration: underline;
-      outline: 2px solid var(--or);
-      outline-offset: 2px;
     }
 
-    /* Responsive */
     @media (min-width: 768px) {
-      body {
-        font-size: 18px;
-      }
       .service {
         flex-direction: row;
-        align-items: center;
-      }
-      .service:nth-child(even) {
-        flex-direction: row-reverse;
       }
       .service img {
         width: 50%;
-        border-radius: 10px 0 0 10px;
-        border-bottom: none;
-      }
-      .service:nth-child(even) img {
-        border-radius: 0 10px 10px 0;
+        max-height: none;
       }
       .service-content {
         width: 50%;
-        padding: 2rem 3rem;
       }
-    }
-
-    @media (max-width: 480px) {
-      nav.navbar {
-        gap: 1rem;
-        font-size: 0.9rem;
-      }
-      .company-name {
-        font-size: 1.8rem;
-      }
-      .service-content h2 {
-        font-size: 1.6rem;
-      }
-      .service-content p,
-      .service-content ul li {
-        font-size: 1rem;
+      .service:nth-child(even) {
+        flex-direction: row-reverse;
       }
     }
   </style>
 </head>
 
 <body>
-  <div class="main-content">
+  <div class="container">
     <header>
-      <div class="logo">
-        <a href="index.html" class="logo-link">
-          <img src="luxenter-logo.png" alt="Luxenter logo" />
-          <span class="company-name">Luxenter</span>
-        </a>
-      </div>
-      <div class="lang-switcher" role="navigation" aria-label="Language selection">
-        <label for="langSwitcher" id="label-langSwitcher">Language:</label>
-        <select id="langSwitcher" aria-labelledby="label-langSwitcher" aria-live="polite" aria-haspopup="listbox">
-          <option value="fr">Français</option>
+      <a href="#" class="logo-link">
+        <img src="luxenter-logo.png" alt="Luxenter Logo" />
+        <span class="company-name">Luxenter</span>
+      </a>
+      <div class="lang-switcher">
+        <label for="langSwitcher">Language:</label>
+        <select id="langSwitcher">
           <option value="en" selected>English</option>
+          <option value="fr">Français</option>
           <option value="ar">العربية</option>
         </select>
       </div>
     </header>
 
-    <nav class="navbar" role="navigation" aria-label="Main navigation">
-      <a href="index.html" tabindex="0">Home</a>
-      <a href="apropos.html" tabindex="0">About</a>
-      <a href="services.html" tabindex="0" aria-current="page">Services</a>
-      <a href="projets.html" tabindex="0">Projects</a>
-      <a href="contact.html" tabindex="0">Contact</a>
+    <nav class="navbar">
+      <a href="#" data-key="navHome">Home</a>
+      <a href="#" data-key="navAbout">About</a>
+      <a href="#" data-key="navServices">Services</a>
+      <a href="#" data-key="navProjects">Projects</a>
+      <a href="#" data-key="navContact">Contact</a>
     </nav>
 
-    <main role="main">
-      <h1>Our Services</h1>
+    <main>
+      <h1 data-key="mainTitle">Our Services</h1>
+      <div class="services">
+        <section class="service">
+          <img src="palm-villa.jpeg" alt="Construction" />
+          <div class="service-content">
+            <h2 data-key="service1Title">Construction</h2>
+            <p data-key="service1Desc">We deliver premium constructions with modern designs and high-quality standards.</p>
+            <ul>
+              <li data-key="s1li1">Eco-friendly materials</li>
+              <li data-key="s1li2">On-time and on-budget</li>
+              <li data-key="s1li3">Custom high-end designs</li>
+            </ul>
+            <a href="#" class="cta-btn" data-key="btnQuote">Request a Quote</a>
+          </div>
+        </section>
 
-      <section class="service" id="service1">
-        <img src="palm-villa.jpeg" alt="Construction of high-end buildings" />
-        <div class="service-content">
-          <h2>Construction</h2>
-          <p>We deliver premium new constructions with modern design, durability, and high architectural standards for villas, residential buildings, and commercial spaces.</p>
-          <ul>
-            <li>Use of sustainable and eco-friendly materials</li>
-            <li>Strict adherence to deadlines and budget</li>
-            <li>Expertise in high-end and customized constructions</li>
-          </ul>
-          <a href="contact.html" class="cta-btn">Request a Quote</a>
-        </div>
-      </section>
+        <section class="service">
+          <img src="pexels-heyho-6489127.jpg" alt="Renovation" />
+          <div class="service-content">
+            <h2 data-key="service2Title">Renovation</h2>
+            <p data-key="service2Desc">Transform your space with luxurious renovation tailored to your style.</p>
+            <ul>
+              <li data-key="s2li1">Custom design</li>
+              <li data-key="s2li2">Premium finishes</li>
+              <li data-key="s2li3">Full project management</li>
+            </ul>
+            <a href="#" class="cta-btn" data-key="btnContact">Get in Touch</a>
+          </div>
+        </section>
 
-      <section class="service" id="service2">
-        <img src="pexels-heyho-6489127.jpg" alt="Luxury renovation work" />
-        <div class="service-content">
-          <h2>Renovation</h2>
-          <p>We transform existing spaces into luxurious environments through expert interior and exterior renovation services.</p>
-          <ul>
-            <li>Customized design tailored to your tastes and needs</li>
-            <li>Meticulous work with high-end finishes</li>
-            <li>Complete project management from design to execution</li>
-          </ul>
-          <a href="contact.html" class="cta-btn">Get in Touch</a>
-        </div>
-      </section>
-
-      <section class="service" id="service3">
-        <img src="pexels-thirdman-5584052.jpg" alt="Collaboration with real estate developers" />
-        <div class="service-content">
-          <h2>Developer Collaboration</h2>
-          <p>We closely collaborate with real estate developers to realize ambitious projects, from planning to turnkey delivery.</p>
-          <ul>
-            <li>Efficient coordination with all stakeholders</li>
-            <li>Cost optimization and compliance with local standards</li>
-            <li>Rigorous quality and deadline monitoring</li>
-          </ul>
-          <a href="contact.html" class="cta-btn">Let's Discuss Your Project</a>
-        </div>
-      </section>
+        <section class="service">
+          <img src="pexels-thirdman-5584052.jpg" alt="Developer" />
+          <div class="service-content">
+            <h2 data-key="service3Title">Developer Collaboration</h2>
+            <p data-key="service3Desc">Partnering with developers for efficient, high-quality turnkey projects.</p>
+            <ul>
+              <li data-key="s3li1">Stakeholder coordination</li>
+              <li data-key="s3li2">Cost-effective solutions</li>
+              <li data-key="s3li3">Deadline-driven results</li>
+            </ul>
+            <a href="#" class="cta-btn" data-key="btnDiscuss">Let's Discuss</a>
+          </div>
+        </section>
+      </div>
     </main>
 
     <footer>
-      <nav aria-label="Footer navigation">
-        <a href="mentions-legales.html">Legal Notice</a> |
-        <a href="confidentialite.html">Privacy Policy</a>
-      </nav>
-      <div>© 2025 Luxenter for Building Contracting. All rights reserved.</div>
+      <div>
+        <a href="#" data-key="legalNotice">Legal Notice</a> |
+        <a href="#" data-key="privacyPolicy">Privacy Policy</a>
+      </div>
+      <div>© 2025 Luxenter. All rights reserved.</div>
     </footer>
   </div>
+
   <script>
-  const translations = {
-    fr: {
-      langLabel: "Langue :",
-      nav: {
-        home: "Accueil",
-        about: "À propos",
-        services: "Services",
-        projects: "Projets",
-        contact: "Contact"
+    const translations = {
+      en: {
+        navHome: "Home",
+        navAbout: "About",
+        navServices: "Services",
+        navProjects: "Projects",
+        navContact: "Contact",
+        mainTitle: "Our Services",
+        service1Title: "Construction",
+        service1Desc: "We deliver premium constructions with modern designs and high-quality standards.",
+        s1li1: "Eco-friendly materials",
+        s1li2: "On-time and on-budget",
+        s1li3: "Custom high-end designs",
+        service2Title: "Renovation",
+        service2Desc: "Transform your space with luxurious renovation tailored to your style.",
+        s2li1: "Custom design",
+        s2li2: "Premium finishes",
+        s2li3: "Full project management",
+        service3Title: "Developer Collaboration",
+        service3Desc: "Partnering with developers for efficient, high-quality turnkey projects.",
+        s3li1: "Stakeholder coordination",
+        s3li2: "Cost-effective solutions",
+        s3li3: "Deadline-driven results",
+        btnQuote: "Request a Quote",
+        btnContact: "Get in Touch",
+        btnDiscuss: "Let's Discuss",
+        legalNotice: "Legal Notice",
+        privacyPolicy: "Privacy Policy"
       },
-      title: "Nos Services",
-      services: {
-        construction: {
-          title: "Construction",
-          description: "Nous livrons des constructions neuves premium avec design moderne, durabilité et normes architecturales élevées pour villas, résidences et espaces commerciaux.",
-          list: [
-            "Utilisation de matériaux durables et écologiques",
-            "Respect strict des délais et budgets",
-            "Expertise en constructions haut de gamme et personnalisées"
-          ],
-          cta: "Demandez un devis"
-        },
-        renovation: {
-          title: "Rénovation",
-          description: "Nous transformons les espaces existants en environnements luxueux via des rénovations intérieures et extérieures expertes.",
-          list: [
-            "Design personnalisé selon goûts et besoins",
-            "Travail méticuleux avec finitions haut de gamme",
-            "Gestion complète du projet du design à l'exécution"
-          ],
-          cta: "Contactez-nous"
-        },
-        developer: {
-          title: "Collaboration avec Promoteurs",
-          description: "Nous collaborons étroitement avec les promoteurs immobiliers pour réaliser des projets ambitieux, de la planification à la livraison clés en main.",
-          list: [
-            "Coordination efficace avec tous les acteurs",
-            "Optimisation des coûts et conformité aux normes locales",
-            "Suivi rigoureux de qualité et délais"
-          ],
-          cta: "Discutons de votre projet"
-        }
+      fr: {
+        navHome: "Accueil",
+        navAbout: "À propos",
+        navServices: "Services",
+        navProjects: "Projets",
+        navContact: "Contact",
+        mainTitle: "Nos Services",
+        service1Title: "Construction",
+        service1Desc: "Nous réalisons des constructions haut de gamme au design moderne et de qualité.",
+        s1li1: "Matériaux écologiques",
+        s1li2: "Respect des délais et budget",
+        s1li3: "Designs personnalisés",
+        service2Title: "Rénovation",
+        service2Desc: "Transformez votre espace avec une rénovation de luxe sur mesure.",
+        s2li1: "Design personnalisé",
+        s2li2: "Finitions haut de gamme",
+        s2li3: "Gestion complète du projet",
+        service3Title: "Collaboration avec Promoteurs",
+        service3Desc: "Partenariat avec les promoteurs pour des projets clés en main de qualité.",
+        s3li1: "Coordination des parties prenantes",
+        s3li2: "Solutions économiques",
+        s3li3: "Respect des délais",
+        btnQuote: "Demander un devis",
+        btnContact: "Nous contacter",
+        btnDiscuss: "Discutons-en",
+        legalNotice: "Mentions légales",
+        privacyPolicy: "Politique de confidentialité"
       },
-      footer: {
-        legal: "Mentions légales",
-        privacy: "Politique de confidentialité",
-        copyright: "© 2025 Luxenter pour la construction. Tous droits réservés."
+      ar: {
+        navHome: "الرئيسية",
+        navAbout: "من نحن",
+        navServices: "الخدمات",
+        navProjects: "المشاريع",
+        navContact: "اتصل بنا",
+        mainTitle: "خدماتنا",
+        service1Title: "الإنشاءات",
+        service1Desc: "نقدم إنشاءات فاخرة بتصاميم عصرية وجودة عالية.",
+        s1li1: "مواد صديقة للبيئة",
+        s1li2: "في الوقت المحدد وضمن الميزانية",
+        s1li3: "تصاميم مخصصة راقية",
+        service2Title: "التجديد",
+        service2Desc: "حوّل مساحتك مع تجديد فاخر حسب ذوقك.",
+        s2li1: "تصميم مخصص",
+        s2li2: "تشطيبات فاخرة",
+        s2li3: "إدارة شاملة للمشروع",
+        service3Title: "التعاون مع المطورين",
+        service3Desc: "شراكة فعالة مع المطورين لإنجاز مشاريع متكاملة.",
+        s3li1: "تنسيق أصحاب المصلحة",
+        s3li2: "حلول فعالة من حيث التكلفة",
+        s3li3: "نتائج ضمن المواعيد",
+        btnQuote: "اطلب عرض سعر",
+        btnContact: "اتصل بنا",
+        btnDiscuss: "دعنا نناقش",
+        legalNotice: "إشعار قانوني",
+        privacyPolicy: "سياسة الخصوصية"
       }
-    },
-    en: {
-      langLabel: "Language:",
-      nav: {
-        home: "Home",
-        about: "About",
-        services: "Services",
-        projects: "Projects",
-        contact: "Contact"
-      },
-      title: "Our Services",
-      services: {
-        construction: {
-          title: "Construction",
-          description: "We deliver premium new constructions with modern design, durability, and high architectural standards for villas, residential buildings, and commercial spaces.",
-          list: [
-            "Use of sustainable and eco-friendly materials",
-            "Strict adherence to deadlines and budget",
-            "Expertise in high-end and customized constructions"
-          ],
-          cta: "Request a Quote"
-        },
-        renovation: {
-          title: "Renovation",
-          description: "We transform existing spaces into luxurious environments through expert interior and exterior renovation services.",
-          list: [
-            "Customized design tailored to your tastes and needs",
-            "Meticulous work with high-end finishes",
-            "Complete project management from design to execution"
-          ],
-          cta: "Get in Touch"
-        },
-        developer: {
-          title: "Developer Collaboration",
-          description: "We closely collaborate with real estate developers to realize ambitious projects, from planning to turnkey delivery.",
-          list: [
-            "Efficient coordination with all stakeholders",
-            "Cost optimization and compliance with local standards",
-            "Rigorous quality and deadline monitoring"
-          ],
-          cta: "Let's Discuss Your Project"
-        }
-      },
-      footer: {
-        legal: "Legal Notice",
-        privacy: "Privacy Policy",
-        copyright: "© 2025 Luxenter for Building Contracting. All rights reserved."
-      }
-    },
-    ar: {
-      langLabel: "اللغة:",
-      nav: {
-        home: "الرئيسية",
-        about: "من نحن",
-        services: "الخدمات",
-        projects: "المشاريع",
-        contact: "اتصل بنا"
-      },
-      title: "خدماتنا",
-      services: {
-        construction: {
-          title: "البناء",
-          description: "نقدم مباني جديدة فاخرة بتصميم حديث، متانة ومعايير معمارية عالية للفيلات والمباني السكنية والمساحات التجارية.",
-          list: [
-            "استخدام مواد مستدامة وصديقة للبيئة",
-            "الالتزام الصارم بالمواعيد والميزانيات",
-            "خبرة في البناء عالي الجودة والمخصص"
-          ],
-          cta: "اطلب عرض سعر"
-        },
-        renovation: {
-          title: "التجديد",
-          description: "نحوّل المساحات القائمة إلى بيئات فاخرة من خلال خدمات تجديد داخلية وخارجية محترفة.",
-          list: [
-            "تصميم مخصص وفقًا لذوقك واحتياجاتك",
-            "عمل دقيق مع تشطيبات عالية الجودة",
-            "إدارة كاملة للمشروع من التصميم إلى التنفيذ"
-          ],
-          cta: "تواصل معنا"
-        },
-        developer: {
-          title: "التعاون مع المطورين",
-          description: "نتعاون بشكل وثيق مع مطوري العقارات لتنفيذ مشاريع طموحة، من التخطيط إلى التسليم المفتاح.",
-          list: [
-            "تنسيق فعال مع جميع الأطراف المعنية",
-            "تحسين التكاليف والامتثال للمعايير المحلية",
-            "مراقبة صارمة للجودة والمواعيد"
-          ],
-          cta: "لنناقش مشروعك"
-        }
-      },
-      footer: {
-        legal: "الإشعارات القانونية",
-        privacy: "سياسة الخصوصية",
-        copyright: "© 2025 لوكسينتر للبناء. جميع الحقوق محفوظة."
-      }
-    }
-  };
+    };
 
-  const langSwitcher = document.getElementById("langSwitcher");
-  const htmlEl = document.documentElement;
+    const langSwitcher = document.getElementById("langSwitcher");
+    const translatableElements = document.querySelectorAll("[data-key]");
 
-  function updateContent(lang) {
-    const t = translations[lang];
+    langSwitcher.addEventListener("change", () => {
+      const selectedLang = langSwitcher.value;
+      document.documentElement.lang = selectedLang;
+      document.documentElement.dir = selectedLang === "ar" ? "rtl" : "ltr";
 
-    // Mettre à jour l'attribut dir
-    if(lang === "ar") {
-      htmlEl.setAttribute("dir", "rtl");
-      htmlEl.setAttribute("lang", "ar");
-    } else {
-      htmlEl.setAttribute("dir", "ltr");
-      htmlEl.setAttribute("lang", lang);
-    }
-
-    // Label du sélecteur de langue
-    document.querySelector('label[for="langSwitcher"]').textContent = t.langLabel;
-
-    // Navigation principale
-    const navLinks = document.querySelectorAll("nav.navbar a");
-    navLinks[0].textContent = t.nav.home;
-    navLinks[1].textContent = t.nav.about;
-    navLinks[2].textContent = t.nav.services;
-    navLinks[3].textContent = t.nav.projects;
-    navLinks[4].textContent = t.nav.contact;
-
-    // Titre principal
-    document.querySelector("main h1").textContent = t.title;
-
-    // Services
-    // Service 1 - Construction
-    const s1 = document.querySelector("#service1");
-    s1.querySelector("h2").textContent = t.services.construction.title;
-    s1.querySelector("p").textContent = t.services.construction.description;
-    const s1ul = s1.querySelector("ul");
-    s1ul.innerHTML = "";
-    t.services.construction.list.forEach(item => {
-      const li = document.createElement("li");
-      li.textContent = item;
-      s1ul.appendChild(li);
+      translatableElements.forEach(el => {
+        const key = el.dataset.key;
+        el.textContent = translations[selectedLang][key] || el.textContent;
+      });
     });
-    s1.querySelector(".cta-btn").textContent = t.services.construction.cta;
-
-    // Service 2 - Renovation
-    const s2 = document.querySelector("#service2");
-    s2.querySelector("h2").textContent = t.services.renovation.title;
-    s2.querySelector("p").textContent = t.services.renovation.description;
-    const s2ul = s2.querySelector("ul");
-    s2ul.innerHTML = "";
-    t.services.renovation.list.forEach(item => {
-      const li = document.createElement("li");
-      li.textContent = item;
-      s2ul.appendChild(li);
-    });
-    s2.querySelector(".cta-btn").textContent = t.services.renovation.cta;
-
-    // Service 3 - Developer Collaboration
-    const s3 = document.querySelector("#service3");
-    s3.querySelector("h2").textContent = t.services.developer.title;
-    s3.querySelector("p").textContent = t.services.developer.description;
-    const s3ul = s3.querySelector("ul");
-    s3ul.innerHTML = "";
-    t.services.developer.list.forEach(item => {
-      const li = document.createElement("li");
-      li.textContent = item;
-      s3ul.appendChild(li);
-    });
-    s3.querySelector(".cta-btn").textContent = t.services.developer.cta;
-
-    // Footer
-    const footerNavLinks = document.querySelectorAll("footer nav a");
-    footerNavLinks[0].textContent = t.footer.legal;
-    footerNavLinks[1].textContent = t.footer.privacy;
-    document.querySelector("footer div").textContent = t.footer.copyright;
-  }
-
-  langSwitcher.addEventListener("change", (e) => {
-    updateContent(e.target.value);
-  });
-
-  // Initialiser la langue à celle sélectionnée par défaut (en)
-  updateContent(langSwitcher.value);
-</script>
-
+  </script>
 </body>
 </html>

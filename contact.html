@@ -1,3 +1,21 @@
+<?php
+// On place ce fichier en .php pour pouvoir utiliser PHP dans la page
+
+// Fonction pour afficher les avis depuis le fichier JSON
+function getReviews() {
+    $reviewsFile = __DIR__ . '/reviews.json';
+    if (file_exists($reviewsFile)) {
+        $reviews = json_decode(file_get_contents($reviewsFile), true);
+        if (is_array($reviews)) {
+            return $reviews;
+        }
+    }
+    return [];
+}
+
+$reviews = getReviews();
+?>
+
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 <head>
@@ -8,13 +26,13 @@
   <meta name="keywords" content="Contact Luxenter Dubai, construction company UAE, luxury contractor" />
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Roboto&display=swap" rel="stylesheet">
   <style>
+    /* (Copie ici tout ton CSS déjà existant dans la balise <style>) */
     :root {
       --marine: #0a1f44;
       --or: #d4af37;
       --blanc: #ffffff;
       --focus-color: #ffd54f;
     }
-
     body {
       margin: 0;
       font-family: 'Roboto', sans-serif;
@@ -25,7 +43,6 @@
       min-height: 100vh;
       font-size: 18px;
     }
-
     header {
       background: var(--marine);
       color: var(--or);
@@ -34,18 +51,15 @@
       justify-content: space-between;
       align-items: center;
     }
-
     .logo img {
       height: 80px;
     }
-
     .logo-link {
       display: flex;
       align-items: center;
       gap: 0.8rem;
       text-decoration: none;
     }
-
     .company-name {
       font-family: 'Georgia', serif;
       font-size: 2.4rem;
@@ -55,18 +69,15 @@
       user-select: none;
       transition: color 0.3s ease;
     }
-
     .logo-link:hover .company-name,
     .logo-link:focus-visible .company-name {
       color: #fff3d1;
       outline: none;
     }
-
     .lang-switcher label {
       margin-right: 0.5rem;
       font-weight: 600;
     }
-
     select#langSwitcher {
       background: var(--marine);
       color: var(--or);
@@ -76,7 +87,6 @@
       font-weight: 600;
       cursor: pointer;
     }
-
     nav.navbar {
       background: var(--marine);
       display: flex;
@@ -84,19 +94,16 @@
       gap: 2rem;
       padding: 1rem 0;
     }
-
     nav.navbar a {
       color: var(--or);
       font-weight: 600;
       text-decoration: none;
     }
-
     nav.navbar a:hover,
     nav.navbar a:focus-visible {
       text-decoration: underline;
       outline: none;
     }
-
     main {
       flex-grow: 1;
       padding: 3rem 2rem;
@@ -106,7 +113,6 @@
       box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
       border-radius: 16px;
     }
-
     h1 {
       font-family: 'Playfair Display', serif;
       font-size: 3rem;
@@ -114,13 +120,11 @@
       color: var(--marine);
       margin-bottom: 2rem;
     }
-
     .flex-container {
       display: flex;
       gap: 2rem;
       flex-wrap: nowrap;
     }
-
     .card {
       flex: 0 0 50%;
       background: #fafafa;
@@ -128,13 +132,11 @@
       border-radius: 16px;
       box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
     }
-
     form {
       display: grid;
       grid-template-columns: 1fr;
       gap: 1rem;
     }
-
     form input,
     form textarea,
     form button {
@@ -144,11 +146,9 @@
       font-size: 1rem;
       background: #f8f8f8;
     }
-
     textarea {
       resize: vertical;
     }
-
     button {
       background: var(--or);
       color: var(--marine);
@@ -159,29 +159,24 @@
       cursor: pointer;
       transition: background 0.3s;
     }
-
     button:hover {
       background: #c49f2f;
     }
-
     .contact-info {
       font-size: 1rem;
       line-height: 1.8;
     }
-
     .contact-info a {
       color: var(--marine);
       text-decoration: none;
       font-weight: 500;
     }
-
     .map-container {
       margin-top: 1.5rem;
       border-radius: 12px;
       overflow: hidden;
       box-shadow: 0 0 8px rgba(212, 175, 55, 0.4), 0 8px 20px rgba(0, 0, 0, 0.1);
     }
-
     footer {
       background: var(--marine);
       color: var(--or);
@@ -189,26 +184,30 @@
       text-align: center;
       font-size: 0.9rem;
     }
-
     footer a {
       color: var(--or);
       text-decoration: none;
     }
-
     footer a:hover,
     footer a:focus-visible {
       text-decoration: underline;
       outline: none;
     }
-
     .footer-links {
       margin-bottom: 0.5rem;
     }
-
     @media (max-width: 768px) {
       .flex-container {
         flex-direction: column;
       }
+    }
+    /* Styles pour la section avis */
+    #reviews-list div {
+      border-bottom: 1px solid #ddd;
+      padding: 1rem 0;
+    }
+    #reviews-list div:last-child {
+      border-bottom: none;
     }
   </style>
 </head>
@@ -236,7 +235,7 @@
     <a href="apropos.html" tabindex="0">À propos</a>
     <a href="services.html" tabindex="0">Services</a>
     <a href="projets.html" tabindex="0">Projets</a>
-    <a href="contact.html" tabindex="0">Contact</a>
+    <a href="contact.php" tabindex="0">Contact</a>
   </nav>
 
   <main role="main">
@@ -270,84 +269,74 @@
         <div class="contact-info">
           <p><strong>Email:</strong> <a href="mailto:luxenterbuildingcontracting@gmail.com">luxenterbuildingcontracting@gmail.com</a></p>
           <p><strong>Phone:</strong> <a href="tel:+971561123764">+971 56 112 3764</a></p>
-          <p><strong>WhatsApp:</strong> <a href="https://wa.me/971561123764" target="_blank">+971 56 112 3764</a></p>
+          <p><strong>WhatsApp:</strong> <a href="https://wa.me/971561123764" target="_blank" rel="noopener noreferrer">+971 56 112 3764</a></p>
           <p><strong>Address:</strong> AHMAD BUILDING - Office S83, 26th St - Hor Al Anz - Dubai</p>
         </div>
         <div class="map-container">
           <iframe
-  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3627.0000000000005!2d55.310000!3d25.234000!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f5f5f5f5f5f5f%3A0x123456789abcdef!2sAhmad+Building%2C+Hor+Al+Anz%2C+Dubai!5e0!3m2!1sen!2sae!4v169...your_timestamp_here"
-  width="100%" height="300" style="border:0; border-radius:12px;" allowfullscreen="" loading="lazy"></iframe>
-
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3627.0000000000005!2d55.310000!3d25.234000!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f5f5f5f5f5f5f%3A0x123456789abcdef!2sAhmad+Building%2C+Hor+Al+Anz%2C+Dubai!5e0!3m2!1sen!2sae!4v169...your_timestamp_here"
+            width="100%" height="300" style="border:0; border-radius:12px;" allowfullscreen="" loading="lazy"></iframe>
         </div>
       </div>
     </div>
+
+    <!-- Section Avis Clients -->
+    <section aria-labelledby="reviews-title" style="margin-top: 3rem;">
+      <h2 id="reviews-title" style="font-family: 'Playfair Display', serif; font-size: 2rem; color: var(--marine); margin-bottom: 1rem;">Avis clients</h2>
+
+      <form action="reviews.php" method="post" novalidate style="margin-bottom: 2rem; max-width: 600px;">
+        <label for="review-name">Votre nom</label>
+        <input type="text" id="review-name" name="review_name" required />
+
+        <label for="review-message">Votre avis</label>
+        <textarea id="review-message" name="review_message" rows="4" required></textarea>
+
+        <button type="submit">Envoyer avis</button>
+      </form>
+
+      <div id="reviews-list" style="max-width: 600px;">
+        <?php if (!empty($reviews)): ?>
+          <?php foreach ($reviews as $r): ?>
+            <div>
+              <strong><?= htmlspecialchars($r['name']) ?></strong>
+              <p><?= nl2br(htmlspecialchars($r['message'])) ?></p>
+              <small style="color: #888; font-size: 0.85rem;"><?= htmlspecialchars($r['date']) ?></small>
+            </div>
+          <?php endforeach; ?>
+        <?php else: ?>
+          <p>Aucun avis pour le moment.</p>
+        <?php endif; ?>
+      </div>
+    </section>
   </main>
 
   <footer role="contentinfo">
     <div class="footer-links">
       <a href="mentions-legales.html">Mentions légales</a> |
-      <a href="confidentialite.html">Confidentialité</a>
+      <a href="politique-confidentialite.html">Politique de confidentialité</a>
     </div>
-    <div>
-      © 2025 Luxenter for Building Contracting. Tous droits réservés.
-    </div>
+    <p>&copy; 2025 Luxenter. Tous droits réservés.</p>
   </footer>
 
   <script>
-    const translations = {
-      fr: {
-        title: "Nous contacter",
-        menu: ["Accueil", "À propos", "Services", "Projets", "Contact"],
-        langLabel: "Langue :",
-        footerLinks: ["Mentions légales", "Confidentialité"],
-        copyright: "© 2025 Luxenter for Building Contracting. Tous droits réservés."
-      },
-      en: {
-        title: "Contact Us",
-        menu: ["Home", "About", "Services", "Projects", "Contact"],
-        langLabel: "Language:",
-        footerLinks: ["Legal Notice", "Privacy Policy"],
-        copyright: "© 2025 Luxenter for Building Contracting. All rights reserved."
-      },
-      ar: {
-        title: "اتصل بنا",
-        menu: ["الرئيسية", "من نحن", "الخدمات", "المشاريع", "اتصل بنا"],
-        langLabel: "اللغة:",
-        footerLinks: ["الإشعارات القانونية", "سياسة الخصوصية"],
-        copyright: "© 2025 لوكسانتر للمقاولات البناء. جميع الحقوق محفوظة."
+    // Afficher une alerte quand un avis est envoyé
+    window.addEventListener('DOMContentLoaded', () => {
+      const params = new URLSearchParams(window.location.search);
+      if (params.get('review') === 'success') {
+        alert("Merci pour votre avis !");
+        history.replaceState(null, '', window.location.pathname);
       }
-    };
-
-    const langSwitcher = document.getElementById('langSwitcher');
-    const langLabel = document.getElementById('label-langSwitcher');
-    const menuLinks = document.querySelectorAll('nav.navbar a');
-    const footerLinks = document.querySelectorAll('.footer-links a');
-    const footerCopyright = document.querySelector('footer > div:last-child');
-    const contactTitle = document.getElementById('contact-title');
-
-    function updateLanguage(lang) {
-      contactTitle.textContent = translations[lang].title;
-      langLabel.textContent = translations[lang].langLabel;
-
-      translations[lang].menu.forEach((text, i) => {
-        if (menuLinks[i]) menuLinks[i].textContent = text;
-      });
-
-      translations[lang].footerLinks.forEach((text, i) => {
-        if (footerLinks[i]) footerLinks[i].textContent = text;
-      });
-
-      document.documentElement.lang = lang;
-      document.documentElement.dir = (lang === 'ar') ? 'rtl' : 'ltr';
-
-      footerCopyright.textContent = translations[lang].copyright;
-    }
-
-    langSwitcher.addEventListener('change', (e) => {
-      updateLanguage(e.target.value);
     });
 
-    updateLanguage(langSwitcher.value);
+    // Gestion du changement de langue (simplifié)
+    const langSwitcher = document.getElementById('langSwitcher');
+    langSwitcher.addEventListener('change', e => {
+      const lang = e.target.value;
+      // Ici tu peux rediriger vers les pages selon la langue (exemple)
+      if (lang === 'fr') window.location.href = 'contact.php'; // changer si page fr différente
+      else if (lang === 'en') window.location.href = 'contact.php'; // version anglaise
+      else if (lang === 'ar') window.location.href = 'contact-ar.php'; // version arabe
+    });
   </script>
 
 </body>
